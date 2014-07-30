@@ -12,11 +12,16 @@ Squarn Themes
 
 Theme 03 and Theme 04 are currently a work in progress, and have not been published. Sources will be available once themes have become hosted on github.
 
+### Updates
+
+**[07-29-2014]** Theme 03 is currently being finished.  
+**[07-29-2014]** Theme 04 will be completed after 03.  
+**[07-29-2014]** Theme 01 and Theme 02 have been optimized and will be updated.
+
 ### Terms of Use
 
 - Do not claim any theme or code as your own
-- If you are inspired by a theme or theme element, please leave a credit to squarn.tumblr.com
-- Do not remove or tamper with the credit on the top of a theme
+- If you are inspired by a theme or theme element and mirror it on your own theme, please leave a credit to squarn.tumblr.com
+- Do not remove or tamper with the credit on the top of a theme source
 - Do not remove the theme credit in the body of the layout
-- Edit any element you wish to
-- Squarn.tumblr.com will supply support through asks and e-mails
+- Squarn.tumblr.com will supply support through asks and e-mails. You may ask how to accomplish an edit, but I will not supply support on how to fix the theme after you have made edits.
