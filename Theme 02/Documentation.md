@@ -1,7 +1,8 @@
-Theme 02
---
-Changelog
-==
+# Theme 02
+
+*July 30, 2014*
+
+## Changelog
 
 **2.0**: Condensed post body to shorten code length  
 **2.0**: Removed header functionanlity (broken)  
@@ -10,12 +11,11 @@ Changelog
 **1.1**: Added custom scrollbar  
 **1.1**: Added tags in the post body  
 
-Documentation:
-==
+## Documentation:
 
 Theme02 was made to be as simple as possible, while still offering a bit of customization. The header has many toggleable options, including a tagline, links, description, and top and bottom borders. Text and color options in this theme are made to be customized completely.
 
-### Specs & Features:
+####Specs & Features:
 - Layout Type: Single Column
 - Sidebar Type: None
 - Navigation Type: Header
