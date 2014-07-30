@@ -1,7 +1,8 @@
-Theme 01
---
-Changelog
-==
+# Theme 01
+
+*July 30, 2014*
+
+## Changelog
 
 **2.00**: Rewrote post body to be significantly shorter and less repetitive.  
 **2.00**: Changed z-index of sidebar to be on top.  
@@ -12,8 +13,7 @@ Changelog
 **1.10**: Added an adaptive, custom scrollbar (only works in webkit browsers like chrome and safari)  
 **1.01**: Changed post images from "width: 500px" to "max-width: 500px". Silly mistake.  
 
-Documentation
-==
+## Documentation
 
 This is somewhat of a complicated theme, but doesn't require much explanation for customization through the tumblr sidebar. It might require some experience with html, css, and tumblr markup to edit yourself (though, of course, this is a great way to learn and I would recommend it). The main aspects of customization for this theme are in the sidebar. The sidebar uses 2 trigger points for its transitions. By default, it will simply show the background image built in within the sidebar. When you scroll over anywhere in the sidebar, a description and small navigation (5 links total) are revealed. These originate in the middle of the image and spread down or up, respectively. When you hover your cursor over the image within the sidebar, a second description is revealed. This div will cover the image in the sidebar. Disabling transitions causes the three mentioned parts to display constantly in their final positions (as if you hovered over the sidebar image continuously).
 
