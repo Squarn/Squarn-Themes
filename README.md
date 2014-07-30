@@ -24,4 +24,6 @@ Theme 03 and Theme 04 are currently a work in progress, and have not been publis
 - If you are inspired by a theme or theme element and mirror it on your own theme, please leave a credit to squarn.tumblr.com
 - Do not remove or tamper with the credit on the top of a theme source
 - Do not remove the theme credit in the body of the layout
-- Squarn.tumblr.com will supply support through asks and e-mails. You may ask how to accomplish an edit, but I will not supply support on how to fix the theme after you have made edits.
+- Squarn.tumblr.com will supply support through asks, github, and e-mail. 
+- You may ask how to accomplish an edit, but I will not supply support on how to fix the theme after you have made edits.
+- If you need help, please ask.
