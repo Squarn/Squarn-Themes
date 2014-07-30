@@ -1,8 +1,8 @@
 Squarn-Themes
 =============
 
-Themes by Squarn.tumblr.com
--------------
+*Tumblr Themes by Squarn.tumblr.com*
+
 
 ### Current Themes
 
