@@ -1,3 +1,5 @@
+Theme 02
+--
 Changelog
 ==
 
@@ -11,7 +13,7 @@ Changelog
 Documentation:
 ==
 
-Theme02 was made to be as simple as possible, while still offering a bit of customization. The header has many toggleable options, including a tagline, links, description, and top and bottom borders. Text and clor options in this theme are made to be customized completely.
+Theme02 was made to be as simple as possible, while still offering a bit of customization. The header has many toggleable options, including a tagline, links, description, and top and bottom borders. Text and color options in this theme are made to be customized completely.
 
 ### Specs & Features:
 - Layout Type: Single Column
