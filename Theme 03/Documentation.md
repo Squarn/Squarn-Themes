@@ -1,12 +1,10 @@
-Theme 03
---
-Changelog
-==
+# Theme 03
+
+## Changelog
 
 **1.0**: Published
 
-Documentation
-==
+## Documentation
 
 Theme 03 is a simple (in looks) grid theme with a 1, 2, or 3 column layout style and 2-column Permalink layout. It uses Masonry for it's grid, Paul Irish's Infinite Scroll, and Photoset Extended to format its Photosets. All color elements are configurable. The header contains vertically aligned title, tagline, avatar, and description.
 
