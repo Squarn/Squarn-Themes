@@ -6,6 +6,7 @@ Theme 03
 By: Squarn.tumblr.com
 Version: 1.0
 Please do not remove the credit.
+Github: https://github.com/Squarn/Squarn-Themes/tree/master/Theme%2003
 -->
  
 <head>
@@ -238,6 +239,7 @@ vertically, be careful if you change them */
 
 /* Be careful when editing description and description span,
 deleting a property can break the vertical alignment */
+
 .description
 {
 	width: 250px;	
@@ -422,6 +424,26 @@ deleting a property can break the vertical alignment */
 	bottom: 0px;
 }
 
+.audioem
+{
+	position:relative;
+	z-index: -10;
+}
+
+.audioemmeta
+{
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	background-color: rgba(0,0,0,.8);
+	width: 20px;
+	height: 20px;
+	color: #fff;
+	font-size: 30px;
+	z-index: 15;
+	line-height: 20px;
+}
+
 .post:hover .meta
 {
 	height:22px;
@@ -531,7 +553,7 @@ deleting a property can break the vertical alignment */
 	bottom:;
 }
 
-.entry[data-info~="video"] .tmask {opacity:.95;};
+.entry[data-info~="video"] .tmask {opacity:.9;};
 
 .entry[data-info~="video"] .lmask, .entry[data-info~="video"] .lmask2 {display:none;}
 
@@ -577,6 +599,7 @@ blockquote
 {/block:IfNotPostMargins}
 {/block:IndexPage}
 
+/* Music Post Selectors */
 .playbox
 {
 	position:absolute;
@@ -605,6 +628,9 @@ blockquote
 .audioc
 {
 	float:left;
+	min-width: 180px;
+	min-height: 180px;
+	background-color: #fff;
 }
 
 .music-info
@@ -635,20 +661,22 @@ blockquote
 
 .audio-meta 
 {
-	background-color: rgb(224, 224, 224);
+	background-color: {color:Body Text Color};
 	margin: 0px -5px 0px -5px;
 	padding: 8px 5px;
+	color: {color:Background Color}
 }
 
 .pcount 
 {
 	margin-left: 10px;
-	background-color: #ECECEC;
+	background-color:{color:Body Link Color};
 	margin: 5px 0px -2px 5px;
 	padding: 6px;
 	display: block;
 	white-space: nowrap;
 	display: table;
+	color: {color:Background Color};
 }
 
 .acaption
@@ -657,6 +685,7 @@ blockquote
 	margin-right:-5px;
 }
 
+/* Tags */
 .tags
 {
 	display:inline;
@@ -676,12 +705,13 @@ blockquote
 	margin-right:5px;
 }
 
+/* Permalink Page Only - Be Careful */
 {block:PermalinkPage}
 ol 
 {
 	margin:20px 0px 0px 0px;
 	padding:0px 0px 0px 17px; 
-	max-width:380;
+	max-width:380px;
 }
 
 .notes li img
@@ -733,7 +763,7 @@ ol
 }
 {/block:PermalinkPage}
 
-.pagination 
+.pagination /* Do not Change */
 {
 	display: none;
 }
@@ -754,6 +784,11 @@ pre {
 	margin: 2px 0px;
 }
 
+/* Soundcloud fuckery fix*/
+.top_bar > .music-info {display: none;}
+.top_bar > .clearfix{display: none;}
+.top_bar > .ppage {width: 400px;float: left;}
+
 /* Scrollbar */
 ::-webkit-scrollbar-thumb:vertical {background-color:{color:Header Color};}
 ::-webkit-scrollbar-thumb:horizontal {background-color:#c1c1c1;height:10px !important;}
@@ -771,8 +806,9 @@ pre {
 		<div class="links {select:navigation}">
 			<ul>
 				<li><a href="{BlogURL}">{lang:Home}</a></li>
-				<li><a href="/ask">{AskLabel}</a></li>
+				{block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
 				
+				<!-- First Block of Links -->
 				{block:IfLink1Name}
 					<li><a href="{text:Link 1 URL}">{text:Link 1 Name}</a></li>
 				{/block:IfLink1Name}
@@ -789,6 +825,7 @@ pre {
 					<li><a href="{text:Link 5 URL}">{text:Link 5 Name}</a></li>
 				{/block:IfLink5Name}
 
+				<!-- Second Block of Links -->
 				{block:IfLink6Name}
 					<li><a href="{text:Link 6 URL}">{text:Link 6 Name}</a></li>
 				{/block:IfLink6Name}
@@ -810,7 +847,6 @@ pre {
 					{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
 				{/block:HasPages}
 			</ul>
-
 		</div><!--End of Links-->
 	</div><!-- End of Nav -->
 
@@ -818,16 +854,16 @@ pre {
 		<div id="header-positioner">
 			<div class="title-and-tagline">
 			    <div class="mover">
-			    <div class="title">
-			    {block:IfNotLongerBlogTitle}
-			        {Title}
-			    {/block:IfNotLongerBlogTitle}
-			    
-			    {block:IfLongerBlogTitle}
-			        {text:Longer Title}
-			    {/block:IfLongerBlogTitle}
-			    </div>
-                <div class="tagline">{text:Tagline}</div>
+					<div class="title">
+						{block:IfNotLongerBlogTitle}
+							{Title}
+						{/block:IfNotLongerBlogTitle}
+						
+						{block:IfLongerBlogTitle}
+							{text:Longer Title}
+						{/block:IfLongerBlogTitle}
+					</div>
+					<div class="tagline">{text:Tagline}</div>
                 </div>
             </div>
             <a href="{BlogURL}">
@@ -837,113 +873,124 @@ pre {
 				<span>{Description}</span>
 			</div>
 		</div>
-	</div>
+	</div><!-- End of Header Container -->
 </div><!-- End of Fixer -->
 
-<div class="wrapper">
-<div class="postbody {select:Layout} .ppage">
+<div class="postbody {select:Layout}">
 {block:Posts}
-
     <div class="post {block:Date}p{/block:Date}page">
     <div class="entry {block:Date}p{/block:Date}page" {block:IndexPage}data-info="{posttype}"{/block:IndexPage}>
-        {block:Text}
+        
+		<!-- Text -->
+		{block:Text}
 			{Body}
 		{/block:Text}
 				
+		<!-- Photo -->
 		{block:Photo}
-
 			{LinkOpenTag}<img src="{PhotoURL-400}" alt="{PhotoAlt}">{LinkCloseTag}
 			
 			{block:IfShowTextualContent}
-			    <div class="pcaption">
-			    {block:Caption}
-			        {Caption}
-		        {/block:Caption}
-		        </div>
+				{block:Caption}
+					<div class="pcaption">
+						{Caption}
+					</div>
+				{/block:Caption}
 			{/block:IfShowTextualContent}
 		{/block:Photo}
 		
+		<!-- Photoset -->
 		<!-- Photoset thanks to Photoset Extended-->
-	{block:IndexPage}	
-	{block:Photoset}
+		{block:IndexPage}	
+		{block:Photoset}
+			<div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
+				{block:Photos}
+					<div class="photo-data">
+						<div class="pxu-photo">
+							<img alt="{PhotoAlt}" src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" class="{block:Exif}exif-yes {/block:Exif}{block:Caption}caption-yes{/block:Caption}" {block:Exif}data-camera="{block:Camera}{Camera}{/block:Camera}" data-iso="{block:ISO}{ISO}{/block:ISO}" data-aperture="{block:Aperture}{Aperture}{/block:Aperture}" data-exposure="{block:Exposure}{Exposure}{/block:Exposure}" data-focal="{block:FocalLength}{FocalLength}{/block:FocalLength}"{/block:Exif} {block:Caption}data-caption="{Caption}"{/block:Caption}>
+						</div>
+						<div class="icons">
+							<a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}">
+								<span class="zoom">{lang:Zoom}</span>
+							</a>
+						<span class="info">Info</span>
+					  </div>
+					</div>
+				{/block:Photos}
 
-		<div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
+			</div><!-- close SLIDESHOW -->
 
-			{block:Photos}
-			<div class="photo-data">
-				<div class="pxu-photo">
-					<img alt="{PhotoAlt}" src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" class="{block:Exif}exif-yes {/block:Exif}{block:Caption}caption-yes{/block:Caption}" {block:Exif}data-camera="{block:Camera}{Camera}{/block:Camera}" data-iso="{block:ISO}{ISO}{/block:ISO}" data-aperture="{block:Aperture}{Aperture}{/block:Aperture}" data-exposure="{block:Exposure}{Exposure}{/block:Exposure}" data-focal="{block:FocalLength}{FocalLength}{/block:FocalLength}"{/block:Exif} {block:Caption}data-caption="{Caption}"{/block:Caption}>
-				</div>
-				<div class="icons">
-					<a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}">
-					<span class="zoom">{lang:Zoom}</span>
-					</a>
-				<span class="info">Info</span>
-			  </div>
-			</div>
-			{/block:Photos}
-
-		</div><!-- close SLIDESHOW -->
-
-		{block:IfShowTextualData}{block:Caption}{Caption}{/block:Caption}{/block:IfShowTextualData}
+			{block:IfShowTextualContent}
+				{block:Caption}
+					<div class="pcaption">
+						{Caption}
+					</div>
+				{/block:Caption}
+			{/block:IfShowTextualContent}
 		{/block:Photoset}
 		{/block:IndexPage}
 		
+		<!-- Permalink Photoset -->
 		{block:PermalinkPage}
 		{block:Photoset}
 			{Photoset-400}
 					     
 			{block:IfShowTextualContent}
-				<div class="pcaption">
-			    	{Caption}
-				</div>
+				{block:Caption}
+					<div class="pcaption">
+						{Caption}
+					</div>
+				{/block:Caption}
 			{/block:IfShowTextualContent}
 		{/block:Photoset}
 		{/block:PermalinkPage}
 
-<!-- Panorama -->
-{block:Panorama}
-	{LinkOpenTag}<img src="{PhotoURL-400}" alt="{PhotoAlt}"/>{LinkCloseTag}
-	
-	{block:IfShowTextualContent}
-		<div class="pcaption">
-	    	{Caption}
-	    </div>
-	{/block:IfShowTextualContent}
-{/block:Panorama}
+		<!-- Panorama -->
+		{block:Panorama}
+			{LinkOpenTag}<img src="{PhotoURL-400}" alt="{PhotoAlt}"/>{LinkCloseTag}
+			
+			{block:IfShowTextualContent}
+					{block:Caption}
+						<div class="pcaption">
+							{Caption}
+						</div>
+					{/block:Caption}
+			{/block:IfShowTextualContent}
+		{/block:Panorama}
 		
-<!-- Link -->		
-{block:Link}
-	<a href="{URL}" class="quote">{Name}</a>
-		   
-	{block:Description}
-		<div class="pcontent">{Description}</div>
-	{/block:Description}
-{/block:Link}
+		<!-- Link -->		
+		{block:Link}
+			<a href="{URL}" class="quote">{Name}</a>
+			
+			{block:Description}
+				<div class="pcontent">{Description}</div>
+			{/block:Description}
+		{/block:Link}
 				
+		<!-- Quote -->
 		{block:Quote}
 			<div class="quote"><a href="{Permalink}">"{Quote}"</a></div>
 			
+			{block:Source}
 			<div class="pcontent">
-				<p>
-				{block:Source}
-					— {Source}
-				{block:Source}
-				</p>
+				<p>— {Source}</p>
 			</div>
+			{block:Source}
 		{/block:Quote}
 				
+		<!-- Answer -->
 		{block:Answer}
 			<div class="ask">{lang:Asker asked 2}: "{Question}"</div>
 				
-				{block:Answerer}
-					<p>{Answerer} answered:</p>
-					<blockquote><p>{Answer}</p></blockquote>
-				{/block:Answerer}
-						
-				<p>{Replies}</p>
+			{block:Answerer}
+				<p>{Answerer} answered:</p>
+				<blockquote><p>{Answer}</p></blockquote>
+			{/block:Answerer}
+					
+			<p>{Replies}</p>
 		{/block:Answer}
 			
+		<!-- Chat -->
 		{block:Chat}
 			<div class="pcontent">
 				{block:Lines}
@@ -952,23 +999,34 @@ pre {
 			</div>
 		{/block:Chat}
 				
+		<!-- Audio -->
 		{block:Audio}
-			<div class="audioc">
-			<div class="playbox">
-				<div class="playbutton">
-				{block:AudioPlayer}
-					{AudioPlayerBlack}
-				{/block:AudioPlayer}
-				</div>
-			</div>
-			
 			{block:AudioEmbed}
-				{AudioEmbed-400}
+			{AudioEmbed-400}
+				
+				{block:IndexPage}<a href="{Permalink}">Permalink</a>{/block:IndexPage}
+				
+				{block:PermalinkPage}
+					{block:TrackName}<p>"{TrackName}"</p>{/block:TrackName}
+					{block:Artist}<p>by {Artist}</p>{/block:Artist}
+					{block:Album}<p>on "{Album}"</p>{/block:Album}
+				{/block:PermalinkPage}
+			</div>
 			{/block:AudioEmbed}
-			
-			{block:AlbumArt}
-				<img src="{AlbumArtURL}" class="art">
-			{/block:AlbumArt}
+	
+			{block:AudioPlayer} 
+			<div class="audioc">
+				<div class="playbox">
+					<div class="playbutton">
+					{block:AudioPlayer}
+						{AudioPlayerBlack}
+					{/block:AudioPlayer}
+					</div>
+				</div>
+				
+				{block:AlbumArt}
+					<img src="{AlbumArtURL}" class="art">
+				{/block:AlbumArt}
 			</div>
 			
 			<div class="music-info">
@@ -986,22 +1044,23 @@ pre {
 			</div>
 			
 			<div class="clearfix"></div>
+			{/block:AudioPlayer}
 		{/block:Audio}
 				
-				
+		<!-- Video -->
 		{block:Video}
 			<div class="content">
-			{VideoEmbed-400}
-					
-			{block:IfShowTextualContent}
-				{block:Caption}
-					<div class="pcaption">{Caption}</div>
-				{/block:Caption}
-			{/block:IfShowTextualContent}
+				{VideoEmbed-400}
+						
+				{block:IfShowTextualContent}
+					{block:Caption}
+						<div class="pcaption">{Caption}</div>
+					{/block:Caption}
+				{/block:IfShowTextualContent}
 			</div>
 		{/block:Video}
 		
-		 <!-- Gets rid of "via()" text. Don't ask why I named the div how I did.--> 
+		 <!-- Gets rid of "via()" text. Don't ask why I named  it how I did.--> 
         <div id="boyYOUREAWOLF">
     	    {block:ContentSource} 
     	    	<p>from <a href="{SourceURL}">{SourceTitle}</a></p>
@@ -1014,10 +1073,10 @@ pre {
     	    {/block:RebloggedFrom}
         </div>
 	
+		<!-- Hover Menu -->
 	    {block:IndexPage}
 		{block:IfNotDisplayTagsBelowPost}
 		{block:IfNotDisplayNotesBelowPost}
-		<!--This is the meta pop up!-->
 		<div class="meta">
 		<div class="lmask"></div>
 		<div class="lmask2"></div>
@@ -1030,12 +1089,9 @@ pre {
 				<a href="{Permalink}">&nbsp&nbsp+&nbsp&nbsp</a>
 					 
 				{block:HasTags}
-				
-				<div class="tags">
-					<ul>
-						{block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
-					</ul>  
-				</div>
+					<div class="tags">
+						<ul>{block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}</ul>  
+					</div>
 				{/block:HasTags}        
 			</div>
 		</div>
@@ -1056,9 +1112,7 @@ pre {
 		{block:IfDisplayTagsBelowPost}
 		{block:HasTags} 
 			<div class="below-tags">
-				<ul>
-				{block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
-				</ul>
+				<ul>{block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}</ul>
 			</div>
 		{/block:HasTags} 
 		{/block:IfDisplayTagsBelowPost}
@@ -1066,32 +1120,30 @@ pre {
 	
 		<!-- Permalink Page -->
 		{block:PermalinkPage}
+			<div class="entry {block:Date}p{/block:Date}page">
+			<p>{lang:Posted on DayOfWeek Month DayOfMonthWithSuffix Year}</p>
+			<p>{lang:Originally from ReblogRootTitle 2}</p>
 
-	    <div class="entry {block:Date}p{/block:Date}page">
-		<p>{lang:Posted on DayOfWeek Month DayOfMonthWithSuffix Year}</p>
-		<p>{lang:Originally from ReblogRootTitle 2}</p>
+			{block:HasTags}
+				<div class="tags">
+					<ul>
+					{block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
+					</ul>  
+				</div>
+			{/block:HasTags}  
 
-		{block:HasTags}
-			<div class="tags">
-				<ul>
-				{block:Tags}<li><a href="{TagURL}">#{Tag}</a></li>{/block:Tags}
-				</ul>  
+			{block:PostNotes}
+				{block:NoteCount}<p>{NoteCountWithLabel}</p>{/block:NoteCount}
+				{PostNotes}
+			{/block:PostNotes}
+
 			</div>
-		{/block:HasTags}  
-
-		{block:PostNotes}
-		{block:NoteCount}<p>{NoteCountWithLabel}</p>{/block:NoteCount}
-		{PostNotes}
-		{/block:PostNotes}
-
-        </div>
 		{/block:PermalinkPage}
 		<!-- End Permalink Page -->
 
 	</div><!--End Post-->
 {/block:Posts}
 </div><!-- End Postbody -->
-</div><!-- End Wrapper -->
 
 <!--Pagination needed for Infinite Scroll. Do not delete!-->
 <div class="pagination">
@@ -1125,7 +1177,6 @@ $(document).ready(function() {
     'photoWrap' : '.photo-data', // photo data wrapper (includes photo, icons + exif)
     'photo'     : '.pxu-photo' // photo wrap (includes photo only)
     }, function() {
-        // callback
     });
 });
 </script>
