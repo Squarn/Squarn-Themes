@@ -1,14 +1,14 @@
 Changelog
 ==
 
-**1.01**: Changed post images from "width: 500px" to "max-width: 500px". Silly mistake.  
+**2.00**: Rewrote post body to be significantly shorter and less repetitive.  
+**2.00**: Changed z-index of sidebar to be on top.  
+**2.00**: Updated answer posts to support reblogged asks.
+**1.11**: Fixed the z-index of the hover meta so that it works in chrome.  
 **1.10**: Changed post notes to show post count in permalink.  
 **1.10**: Added Favicon, RSS, and meta description.  
 **1.10**: Added an adaptive, custom scrollbar (only works in webkit browsers like chrome and safari)  
-**1.11**: Fixed the z-index of the hover meta so that it works in chrome.  
-**2.00**: Rewrote post body to be significantly shorter and less repetitive.  
-**2.00**: Changed z-index of sidebar to be on top.  
-**2.00**: Updated answer posts to support reblogged asks.  
+**1.01**: Changed post images from "width: 500px" to "max-width: 500px". Silly mistake.  
 
 Documentation
 ==
@@ -24,8 +24,9 @@ This is somewhat of a complicated theme, but doesn't require much explanation fo
 - Captions: Toggleable
 - Links: 5
 - Can Links Be Added: No
-- Update Notices: Yes
 - Scrollbar: Custom
+- Update Notices: Yes
+
 
 ### Warnings:
 
