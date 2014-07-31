@@ -3,3 +3,13 @@ Resources
 
 - PXU.css  
   A stylesheet that the jquery script Photoset Extended uses to format its icons and exif hover. It is hosted as a Tumblr asset in my themes, but it's here if you need it.
+
+
+#### Customization Menu Order
+
+1. Images
+2. Colors
+3. Fonts
+3. Drop-downs
+3. Booleans
+4. Text
