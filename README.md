@@ -3,6 +3,8 @@ Squarn Themes
 
 *Tumblr Themes by [Squarn.tumblr.com](http://squarn.tumblr.com)*
 
+Squarn themes strives to build versatile, customizable themes for Tumblr users. All backgrounds, images, and colors are editable. They're made to be, by default, a launching point for you to make a theme that's *you*.
+
 ### Current Themes
 
 - Theme 01 [Live Preview](http://square-theme1.tumblr.com) | Source
@@ -12,6 +14,12 @@ Squarn Themes
 
 Theme 03 and Theme 04 are currently a work in progress, and have not been published. Sources will be available once themes have become hosted on github.
 
+### Updates
+
+**[07-29-2014]** Theme 03 is currently being finished.  
+**[07-29-2014]** Theme 04 will be completed after 03.  
+**[07-29-2014]** Theme 01 and Theme 02 have been optimized and will be updated.
+
 ### How to Submit a Bug or Ask a Question
 
 [Submit an Issue on Github](https://github.com/Squarn/Squarn-Themes/issues)  
@@ -19,12 +27,6 @@ Theme 03 and Theme 04 are currently a work in progress, and have not been publis
 Send an e-mail to Kotsuzui@gmail.com
 
 *Please be specific as possible when asking questions or submitting bugs!*
-
-### Updates
-
-**[07-29-2014]** Theme 03 is currently being finished.  
-**[07-29-2014]** Theme 04 will be completed after 03.  
-**[07-29-2014]** Theme 01 and Theme 02 have been optimized and will be updated.
 
 ### Terms of Use
 
