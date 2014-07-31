@@ -1,7 +1,7 @@
 Squarn Themes
 =============
 
-*Tumblr Themes by Squarn.tumblr.com*
+*Tumblr Themes by [Squarn.tumblr.com](http://squarn.tumblr.com)*
 
 ### Current Themes
 
@@ -11,6 +11,14 @@ Squarn Themes
 - Theme 04 [Live Preview](http://square-theme4.tumblr.com) | Source
 
 Theme 03 and Theme 04 are currently a work in progress, and have not been published. Sources will be available once themes have become hosted on github.
+
+### How to Submit a Bug or Ask a Question
+
+[Submit an Issue on Github](https://github.com/Squarn/Squarn-Themes/issues)  
+[Send an Ask](http://squarn.tumblr.com/ask)  
+Send an e-mail to Kotsuzui@gmail.com
+
+*Please be specific as possible when asking questions or submitting bugs!*
 
 ### Updates
 
