@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<head>
+<!-- 
+	Theme 01
+	Theme by: Squarn.tumblr.com
+	Version: 2.0
+	Please do not remove the credit.
+	Github: 
+-->
+
+<!-- BOOLEANS -->
+<meta name="if:Show Textual Content" content="1"/>
+<meta name="if:Show Tags" content="1"/>
+<meta name="if:Disable Title" content="0"/>
+<meta name="if:Disable Second Description" content="0"/>
+<meta name="if:Disable Transitions" content="0"/>
+<meta name="if:Show Camera Info" content="1"/>
+
+<!-- COLORS -->
+<meta name="color:Sidebar Color" content="#000000"/>
+<meta name="color:Text Color" content="#000000"/>
+<meta name="color:Background Color" content="#ffffff"/>
+<meta name="color:Link Color" content="#C1C1C1"/>
+<meta name="color:Header Color" content="#0A0A0A"/>
+<meta name="color:Header Text Color" content="#FFFFFF"/>
+<meta name="color:Sidebar Text Color" content="#000000"/>
+<meta name="color:Nav Hover Text Color" content="#FFFFFF"/>
+<meta name="color:Body Link Fade Color" content="#c1c1c1"/>
+
+<!-- TEXT -->
+<meta name="text:Title Size" content="60px"/>
+<meta name="text:Second Description" content=""/>
+<meta name="text:Permalink Name" content="Post Page"/>
+<meta name="text:Title Pos From Top" content="40px"/>
+
+<meta name="text:Link 1 URL" content="/ask"/>
+<meta name="text:Link 1 Name" content="Ask"/>
+<meta name="text:Link 2 URL" content=""/>
+<meta name="text:Link 2 Name" content="II"/>
+<meta name="text:Link 3 URL" content=""/>
+<meta name="text:Link 3 Name" content="III"/>
+<meta name="text:Link 4 URL" content=""/>
+<meta name="text:Link 4 Name" content="IV"/>
+<meta name="text:Link 5 URL" content=""/>
+<meta name="text:Link 5 Name" content="V"/>
+
+<!-- IMAGES -->
+<meta name="image:Sidebar Image" content="http://sqrs.us/blog/wp-content/uploads/2012/05/www.jpg"/>
+<meta name="image:Sidebar Background Image" content=""/>
+
+<title>{Title}</title>
+
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+		
+<style>
+
+body 
+{
+	background-color: {color:Background Color};
+	font-family: calibri, helvetica;
+	font-size: 10px;
+	color: {color:Text Color};
+}
+
+p
+{
+	 margin: 0px;
+	 margin-bottom: 5px;
+}  
+
+.meta ul
+{
+	padding: 0px;
+	margin: 0px;
+}
+
+#sidebar
+{
+	position: fixed;
+	width: 300px;
+	background-color: {color:Sidebar Color};
+	background-image: url('{image:Sidebar Background Image}');
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	z-index: 10;
+}
+
+#sidebar a
+{
+	color: {color:Sidebar Text Color};
+	text-decoration: none;
+}
+
+#sbimg img
+{
+	width: 100%;
+}
+
+#sbimg
+{
+	z-index: 1;
+	position: relative;
+	background-color: #fff;
+	opacity: .7;
+	
+	-moz-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	-webkit-transition-duration: 1s;
+	transition-duration: 1s;
+}
+
+/* Pagination */
+
+#pagn a, #pagp a
+{
+	position: absolute;
+	background-color: {color:Sidebar Color};
+	border: 1px solid {color:Background Color};	
+	padding: 7px;
+	color: #fff;
+	top: 280px;
+	left: 290px;
+	text-decoration: none;
+}
+
+#pagp a
+{
+	top: 320px;
+}
+
+#title
+{
+	opacity: 0.8;
+	z-index: 2;
+	position: absolute;
+	top: {text:Title Pos From Top};
+	left: 20px;
+	color: #fff;
+	font-size: {text:Title Size};
+	line-height: 70%;
+	font-family: georgia;
+}
+
+#revolvingDoor 
+{
+	position: relative;
+	top: 100px;
+	width: 80%;
+	margin: auto;
+	background-color: #fff;
+}
+
+/* If Transitions are Enabled */
+{block:IfNotDisableTransitions}
+#prize
+{
+	z-index: 2;
+	opacity: 0.0;
+	background-color: #0A0A0A;
+	padding: 10px;
+	position: absolute;
+	bottom: 20px;
+	width: 80%
+	margin: auto;
+	color: #fff;
+	
+	-moz-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	-webkit-transition-duration: 1s;
+	transition-duration: 1s;
+}
+
+#loser, #nav
+{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	opacity: 0.0;
+	background-color: #fff;
+	color: #000;
+	padding: 10px;
+	width: 80%;
+	margin: auto;
+	position: relative;
+	top: 5px;
+	
+	-moz-transition-duration: .8s;
+	-o-transition-duration: .8s;
+	-webkit-transition-duration: .8s;
+	transition-duration: .8s;
+}
+
+#nav 
+{
+	display: table;
+	top: 200px;
+	padding: 6px 0px;
+}
+{/block:IfNotDisableTransitions}
+
+/* If Transitions are Disabled */
+{block:IfDisableTransitions}
+#prize
+{
+	z-index: 2;
+	opacity: 1;
+	background-color: #0A0A0A;
+	padding: 10px;
+	position: absolute;
+	bottom: 20px;
+	width: 80%
+	margin: auto;
+	color: #fff;
+}
+
+#loser, #nav
+{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	opacity: 1;
+	background-color: #fff;
+	color: #000;
+	padding: 10px;
+	width: 80%;
+	margin: auto;
+	position: relative;
+	top: 105px;
+}
+
+#nav 
+{
+	display: table;
+	top: 95px;
+	padding: 6px 0px;
+	text-align: center;
+}
+{/block:IfDisableTransitions}
+
+#nav a
+{
+	color: {color:Sidebar Text Color};
+	text-decoration: none;
+	padding: 10px;
+}
+
+#nav li
+{
+	display: table-cell;
+	padding: 5px 0px;
+	text-align: center;
+	border-right: 1px solid {color:Sidebar Text Color};
+	background-color: #fff;
+	width: 10%;
+	
+	-moz-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	-webkit-transition-duration: .5s;
+	transition-duration: .5s;
+}
+
+#nav li:hover
+{
+	background-color: {color:Sidebar Color};
+	
+	-moz-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	-webkit-transition-duration: .5s;
+	transition-duration: .5s;
+}
+
+#nav li:hover a
+{
+	color: {color:Nav Hover Text Color};
+	
+	-moz-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	-webkit-transition-duration: .5s;
+	transition-duration: .5s;
+}
+
+#nav li:last-child
+{
+	border: none;
+}
+
+#nav ul
+{
+	display: table-row;
+	padding: 0px;
+	margin: 0px;
+}
+
+{block:IfNotDisableTransitions}
+#revolvingDoor:hover #prize
+{
+	opacity: 1.0;
+	-moz-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	-webkit-transition-duration: 1s;
+	transition-duration: 1s;
+}
+
+#revolvingDoor:hover #sbimg
+{
+	opacity: 1;
+	-moz-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	-webkit-transition-duration: 1s;
+	transition-duration: 1s;
+}
+
+#sidebar:hover #loser, #sidebar:hover #nav
+{
+	z-index: 3;
+	top: 105px;
+	opacity: 0.9;
+	-moz-transition-duration: .8s;
+	-o-transition-duration: .8s;
+	-webkit-transition-duration: .8s;
+	transition-duration: .8s;
+}
+
+#sidebar:hover #nav
+{
+	top: 95px;
+}
+{/block:IfNotDisableTransitions}
+
+
+/* Main Post Container */
+
+#main
+{
+	width:500px;
+	margin: auto;
+	z-index: 2;
+}
+
+#main a
+{
+	color: {color:Link Color};
+	text-decoration: none;
+	
+	-moz-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	-webkit-transition-duration: .5s;
+	transition-duration: .5s;
+}
+			
+#main a:hover
+{
+	color:{Color:Body Link Fade Color};
+	
+	-moz-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	-webkit-transition-duration: .5s;
+	transition-duration: .5s;
+}
+
+/* Posts */
+
+#ptitle
+{
+	background-color: {color:Header Color};
+	color: #fff;
+	font-size: 11px;
+	text-transform: uppercase;
+	padding: 10px;
+}
+
+#ptitle a
+{
+	color:{color:Header Text Color};
+}
+
+#post p:first-child
+{
+	margin-top: 10px;
+}
+
+blockquote
+{
+	border-left: 1px solid #000;
+	padding-left: 10px;
+}
+
+#post 
+{
+	margin-top: 30px;
+	position: relative;
+	width: 500px;
+}
+
+.content img
+{
+	max-width: 500px;
+}
+
+/* Tags */
+
+.meta
+{
+	margin-top: 10px;
+}
+
+.tags li
+{
+	list-style-type:none;
+	display:inline;
+	color: #c1c1c1;
+	padding-right: 15px;
+	
+	-moz-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	-webkit-transition-duration: .5s;
+	transition-duration: .5s;
+}
+
+.pcaption
+{
+	margin-top: 5px;
+}
+
+.quote
+{
+	font-size: 15px;
+			font-family: helvetica, arial;
+}
+
+.even {
+	background-color:;
+}
+
+.port
+{
+	opacity: .8;
+	position: relative;
+	top: 20px;
+	width: 30px;
+}
+
+/* Post Options Slide out Thingy */
+
+#rbmeta
+{
+	opacity: 0;
+	position: absolute;
+	left: 410px;
+	width: 100px;
+	z-index: -1000;
+	height: 100%;
+	
+	-moz-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	-webkit-transition-duration: .5s;
+	transition-duration: .5s;
+}
+
+#rbmeta p
+{
+	margin: 2px 0px;
+}
+
+.post:hover #rbmeta, #rbmeta:hover
+{
+	opacity: 1;
+	left: 500px;
+	
+	-moz-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	-webkit-transition-duration: .5s;
+	transition-duration: .5s;
+}
+
+#kyo 
+{
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+}
+
+#kyo a
+{
+	color: #6E6D6D;
+	text-decoration: none;
+}
+
+.update
+{
+	opacity: 0;
+	-moz-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	-webkit-transition-duration: .5s;
+	transition-duration: .5s;
+}
+
+#kyo:hover .update
+{
+	opacity: .8;
+	-moz-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	-webkit-transition-duration: .5s;
+	transition-duration: .5s;
+}
+
+#gutter
+{
+	width: 550px;
+}
+
+#gutter:hover #rbmeta
+{
+	opacity: 1;
+	left: 510px;
+	z-index: 0;
+	
+	-moz-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	-webkit-transition-duration: .5s;
+	transition-duration: .5s;
+}
+
+.notes img
+{
+	display: none;
+}
+
+/* Disables "via ()" Tumblr default */
+
+#boyYOUREAWOLF
+{
+	display: none;
+}
+
+::-webkit-scrollbar-thumb:vertical {background-color:{color:Sidebar Color};}
+::-webkit-scrollbar-thumb:horizontal {background-color:{color:Sidebar Color};height:10px !important;}
+::-webkit-scrollbar {height:7px; width:7px; background-color:{color:Background Color};}
+
+</style>
+</head>
+<body>
+	<div id="sidebar">
+	
+		{block:Pagination}
+			{block:PreviousPage}<div id="pagp"><a href="{PreviousPage}">></a></div>{/block:PreviousPage}
+			{block:NextPage}<div id="pagn"><a href="{NextPage}"><</a></div>{/block:NextPage}
+		{/block:Pagination}
+		<div id="nav">
+		
+			<ul>
+				<li><a href="{text:Link 1 URL}">{text:Link 1 Name}</a></li>
+				<li><a href="{text:Link 2 URL}">{text:Link 2 Name}</a></li>
+				<li><a href="{text:Link 3 URL}">{text:Link 3 Name}</a></li>
+				<li><a href="{text:Link 4 URL}">{text:Link 4 Name}</a></li>
+				<li><a href="{text:Link 5 URL}">{text:Link 5 Name}</a></li>
+			</ul>
+		</div>	
+	
+		<div id="revolvingDoor"> 
+			{block:IfNotDisableTitle}<div id="title">{title}</div>{/block:IfNotDisableTitle}
+			<div id="sbimg"><img src="{image:Sidebar Image}"></div>
+			
+			{block:IfNotDisableSecondDescription}
+			<div id="prize">{text:Second Description}</div>
+			{/block:IfNotDisableSecondDescription}
+			
+		</div>
+		
+		<div id="loser">
+			{description}
+		</div>
+		
+		<div id="kyo">
+			<img src="http://www.sqrs.us/theme/images/update1.gif" class="update"><br>
+			<a href="http://squarn.tumblr.com">Theme</a>
+		</div>
+		
+	</div>
+	
+	
+	<div id="main">
+	
+		
+		
+		{block:Posts}
+		<div id="gutter">
+			<div id="post">
+			
+				<!-- Slide-out Meta Info-->
+				<div id="rbmeta">
+					{reblogbutton}{likebutton}
+					{block:ContentSource} 
+						<p>from <a href="{SourceURL}">{SourceTitle}</a></p>
+					{/block:ContentSource}
+					{block:NoteCount}
+						<p>Notes: {NoteCount}</p>
+					{/block:NoteCount}
+					<p><a href="{Permalink}">{Text:Permalink Name}</a></p>
+				</div>
+				
+				<!-- Title on all posts if used -->
+				{block:Title}<div id="ptitle"><a href="{Permalink}">{Title}</a></div>{/block:Title}
+				
+					<div class="content">
+					
+					<!-- Text Posts -->
+					{block:Text}
+						{Body}
+					{/block:Text}
+					
+					<!-- Photo -->
+					{block:Photo}
+						{block:HighRes}<a href="{PhotoURL-HighRes}">{/block:HighRes}<img src="{PhotoURL-500}">{block:HighRes}</a>{/block:HighRes}
+						
+						{block:IfShowTextualContent}
+							<div class="pcaption">
+							{Caption}
+							{block:IfShowCameraInfo}
+							{block:Exif}
+								{block:Camera}
+									<p>Taken with: <strong>{Camera}</strong></p>
+								{/block:Camera}
+							{/block:Exif}
+							{/block:IfShowCameraInfo}
+							</div>
+						{/block:IfShowTextualContent}
+					
+					{/block:Photo}
+					
+					<!-- Photosets -->
+					{block:Photoset}
+						{Photoset-500}
+						
+						{block:IfShowTextualContent}
+							<div class="pcaption">
+							{Caption}
+							</div>
+						{/block:IfShowTextualContent}
+					{/block:Photoset}
+					
+					<!-- Quotes -->
+					{block:Quote}
+						<div class="quote">"{Quote}"</div>
+							{block:Source}
+								{Source}
+							{/block:Source}
+					{/block:Quote}
+					
+					<!-- Links -->
+					{block:Link}
+						<div class="quote">
+							<a href="{URL}">{Name}</a>
+						</div>
+				
+						{block:Description}<div class="content">{Description}</div>{/block:Description}
+					{/block:Link}
+					
+					<!-- Chat Posts -->
+					{block:Chat}
+						{block:Lines}
+							<p class="{ALT}">{Name}: {Line}</p>
+						{/block:Lines}
+					{/block:Chat}
+					
+					<!-- Audio Posts -->
+					{block:Audio}
+						{block:AudioEmbed} 
+								{AudioEmbed}
+						{/block:AudioEmbed}
+							
+						{block:AudioPlayer} 
+							{AudioPlayerBlack}
+						{/block:AudioPlayer}
+							
+						<p>
+						{block:TrackName}"{TrackName}" {/block:TrackName}{block:Artist}by {Artist}{/block:Artist}{block:Album} on "{Album}"{/block:Album}
+						</p>
+							
+						{block:IfShowTextualContent}
+							<p>{block:Caption}{Caption}{/block:Caption}</p>
+								
+							{block:PlayCount}
+								<p>{PlayCountWithLabel}</p>
+							{/block:PlayCount}
+						{/block:IfShowTextualContent}
+							
+						{block:ExternalAudio}
+							<p><a href="{ExternalAudioURL}">Download</a></p>
+						{/block:ExternalAudio}
+					{/block:Audio}
+					
+					<!-- Video Posts -->
+					{block:Video}
+						{VideoEmbed-500}
+						
+						{block:IfShowTextualContent}
+							{block:Caption}
+								{Caption}
+							{/block:Caption}
+						
+							<p>{PlayCountWithLabel}</p>
+						{/block:IfShowTextualContent}
+					{/block:Video}
+					
+					<!-- Ask Posts -->
+					{block:Answer}
+						<div class="quote">{Asker} <a href="{Permalink}">asked</a>: "{Question}"</div>
+						{block:Answerer}
+							
+								<p>{Answerer} answered:</p>
+								<blockquote><p>{Answer}</p></blockquote>
+						{/block:Answerer}
+						
+						<p>{Replies}</p>
+					{/block:Answer}
+					
+					<div id="boyYOUREAWOLF">
+						{block:ContentSource}
+							{SourceTitle}
+						{/block:ContentSource}
+						{block:RebloggedFrom}
+							via <a href="{ReblogParentURL}">({ReblogParentName})</a>
+						{/block:RebloggedFrom}
+					</div>
+					
+					</div>
+
+				{block:IfShowTags}
+					<div class="meta">
+						{block:HasTags}
+							<ul class="tags">
+								{block:Tags}
+								<li>
+									#<a href="{TagURLChrono}">{Tag}</a>
+								</li>
+								{/block:Tags}
+							</ul>
+						{/block:HasTags}
+					</div>
+				{/block:IfShowTags}
+				
+				{block:PostNotes}
+					{block:NoteCount}
+						<p>Notes: {NoteCount}</p>
+					{/block:NoteCount}
+					
+					{PostNotes}
+				{/block:PostNotes}
+			</div>
+		</div>	
+		
+		{/block:Posts}
+	</div>
+</body>
