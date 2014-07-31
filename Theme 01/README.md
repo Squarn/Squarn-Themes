@@ -15,20 +15,19 @@
 
 ## Documentation
 
-This is somewhat of a complicated theme, but doesn't require much explanation for customization through the tumblr sidebar. It might require some experience with html, css, and tumblr markup to edit yourself (though, of course, this is a great way to learn and I would recommend it). The main aspects of customization for this theme are in the sidebar. The sidebar uses 2 trigger points for its transitions. By default, it will simply show the background image built in within the sidebar. When you scroll over anywhere in the sidebar, a description and small navigation (5 links total) are revealed. These originate in the middle of the image and spread down or up, respectively. When you hover your cursor over the image within the sidebar, a second description is revealed. This div will cover the image in the sidebar. Disabling transitions causes the three mentioned parts to display constantly in their final positions (as if you hovered over the sidebar image continuously).
+Theme 01 is a contrasting single column, single sidebar layout. The sidebar uses two different triggers for transitions: Mousing anywhere over the sidebar will reveal links (5) and the description. Mousing over the sidebar image will trigger a second, smaller description to appear over the image (which will in turn increase in opacity). Disabling transitions will cause these elements to be revealed by default. Like, Reblog, Note, and Permalink options are revealed when hovering over a post; a meta menu will transition from behind the post, to the right of the post.
 
 ### Specs & Features
 
 - Layout Type: Single Column
 - Sidebar Type: Long, Fixed
 - Navigation Type: Sidebar
-- Tags: Displayed
+- Tags: Toggleable
 - Captions: Toggleable
-- Links: 5
+- Links: 5 (or less)
 - Can Links Be Added: No
 - Scrollbar: Custom
-- Update Notices: Yes
-
+- Notes/Permalink: Hover
 
 ### Warnings:
 
