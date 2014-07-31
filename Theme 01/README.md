@@ -1,6 +1,6 @@
 # Theme 01
 
-*July 30, 2014*
+[Live Preview](http://square-theme1.tumblr.com)
 
 ## Changelog
 
