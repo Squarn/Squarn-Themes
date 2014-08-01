@@ -19,7 +19,7 @@
 
 ## Documentation
 
-Theme 01 is a contrasting single column, single sidebar layout. The sidebar uses two different triggers for transitions: Mousing anywhere over the sidebar will reveal links (5) and the description. Mousing over the sidebar image will trigger a second, smaller description to appear over the image (which will in turn increase in opacity). Disabling transitions will cause these elements to be revealed by default. Like, Reblog, Note, and Permalink options are revealed when hovering over a post; a meta menu will transition from behind the post, to the right of the post.
+Theme 01 is a contrasting single column (500px), single sidebar layout. The sidebar uses two different triggers for transitions: Mousing anywhere over the sidebar will reveal links (5) and the description. Mousing over the sidebar image will trigger a second, smaller description to appear over the image (which will in turn increase in opacity). Disabling transitions will cause these elements to be revealed by default. Like, Reblog, Note, and Permalink options are revealed when hovering over a post; a meta menu will transition from behind the post, to the right of the post.
 
 ### Specs & Features
 
