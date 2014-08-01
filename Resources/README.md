@@ -4,6 +4,8 @@ Resources
   The starting point for a new theme. Basic `<head>` contents.
 - PXU.css  
   A stylesheet that the jquery script Photoset Extended uses to format its icons and exif hover. It is hosted as a Tumblr asset in my themes, but it's here if you need it.
+- SquarnAddins.txt
+  Personal snippet for my theme blog theme (how it differs from SQ Theme 01).
 
 
 #### Customization Menu Order
