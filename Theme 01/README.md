@@ -1,6 +1,10 @@
 # Theme 01
 
-[Live Preview](http://square-theme1.tumblr.com)
+[Live Preview](http://square-theme1.tumblr.com)  
+
+[Screenshot](https://raw.githubusercontent.com/Squarn/Squarn-Themes/master/Screenshots/t1s1.png) (No Transition Trigger)  
+[Screenshot 2](https://raw.githubusercontent.com/Squarn/Squarn-Themes/master/Screenshots/t1s2.png) (Transition Trigger)  
+[Screenshot 3](https://raw.githubusercontent.com/Squarn/Squarn-Themes/master/Screenshots/t1sb.png) (Sidebar)
 
 ## Changelog
 
