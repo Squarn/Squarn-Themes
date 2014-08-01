@@ -7,10 +7,12 @@ Squarn Themes strives to build versatile, customizable layouts for Tumblr users.
 
 ### Current Themes
 
-- Theme 01 [Live Preview](http://square-theme1.tumblr.com) | Source
-- Theme 02 [Live Preview](http://square-theme2.tumblr.com) | Source
-- Theme 03 [Live Preview](http://square-theme3.tumblr.com) | Source
-- Theme 04 [Live Preview](http://square-theme4.tumblr.com) | Source
+ Theme # | Preview | Source | Version 
+ --- | --- | --- | --- 
+Theme 01 | [Live](http://square-theme1.tumblr.com) | Source | Ver
+Theme 02 | [Live](http://square-theme2.tumblr.com) | Source | Ver
+Theme 03 | [Live](http://square-theme3.tumblr.com) | Source | Ver
+Theme 04 | [Live](http://square-theme4.tumblr.com) | Source | Ver
 
 Theme 03 and Theme 04 are currently a work in progress, and have not been published. Sources will be available once themes have become hosted on github.
 
