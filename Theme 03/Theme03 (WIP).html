@@ -22,6 +22,7 @@ Github: https://github.com/Squarn/Squarn-Themes/tree/master/Theme%2003
 
 <!-- Tumblr Variables -->
 <meta name="image:Background" content=""/>
+<meta name="image:Header Image" content="http://static.tumblr.com/aan1aaf/a4Zn9jlpq/img-noise-361x200.png"/>
 
 <meta name="color:Background Color" content="#fff"/>
 <meta name="color:Navigation Background Color" content="#f3f3f3"/>
@@ -142,7 +143,7 @@ p
 
 #header-cont
 {
-	background: {color:Header Color} url('http://static.tumblr.com/aan1aaf/a4Zn9jlpq/img-noise-361x200.png');
+	background: {color:Header Color} url('{image:Header Background}');
 	margin: 0px;
 	color: {color:Header Text Color};
 }
@@ -369,8 +370,8 @@ deleting a property can break the vertical alignment */
 {
 	margin: 0px;
 	position: relative;
-	float: left;
 	{block:IndexPage}
+	float: left;
 	{block:IfPostMargins}
 		margin:0px 0px 10px 0px;
 	{/block:IfPostMargins}
@@ -798,6 +799,7 @@ pre {
 	/* width: 99%; */
 	word-wrap: break-word; /* Internet Explorer 5.5+ */
 	margin: 2px 0px;
+	font-family: serif;
 }
 
 /* Soundcloud fuckery fix*/
