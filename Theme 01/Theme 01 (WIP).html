@@ -441,7 +441,7 @@ blockquote
 	width: 30px;
 }
 
-/* Post Options Slide out Thingy */
+/* Post Options */
 
 #rbmeta
 {
@@ -449,13 +449,14 @@ blockquote
 	position: absolute;
 	left: 410px;
 	width: 100px;
-	z-index: -1000;
+	z-index: -10;
 	height: 100%;
 	
-	-moz-transition-duration: .5s;
-	-o-transition-duration: .5s;
-	-webkit-transition-duration: .5s;
-	transition-duration: .5s;
+	-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
 #rbmeta p
@@ -463,15 +464,36 @@ blockquote
 	margin: 2px 0px;
 }
 
-.post:hover #rbmeta, #rbmeta:hover
+#rbmeta p:first-of-type
+{
+    margin:0px;
+}
+
+#gutter
+{
+	width: 550px;
+	position:relative;
+	z-index:5;
+}
+
+#gutter:hover #rbmeta
 {
 	opacity: 1;
-	left: 500px;
+	left: 510px;
+	z-index: 0;
 	
-	-moz-transition-duration: .5s;
-	-o-transition-duration: .5s;
-	-webkit-transition-duration: .5s;
-	transition-duration: .5s;
+	-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+#reblog
+{
+    position:absolute;
+    top:0px;
+    left: 23px;
 }
 
 #kyo 
@@ -490,32 +512,6 @@ blockquote
 .update
 {
 	opacity: 0;
-	-moz-transition-duration: .5s;
-	-o-transition-duration: .5s;
-	-webkit-transition-duration: .5s;
-	transition-duration: .5s;
-}
-
-#kyo:hover .update
-{
-	opacity: .8;
-	-moz-transition-duration: .5s;
-	-o-transition-duration: .5s;
-	-webkit-transition-duration: .5s;
-	transition-duration: .5s;
-}
-
-#gutter
-{
-	width: 550px;
-}
-
-#gutter:hover #rbmeta
-{
-	opacity: 1;
-	left: 510px;
-	z-index: 0;
-	
 	-moz-transition-duration: .5s;
 	-o-transition-duration: .5s;
 	-webkit-transition-duration: .5s;
@@ -594,7 +590,9 @@ pre {
 			
 				<!-- Slide-out Meta Info-->
 				<div id="rbmeta">
-					{reblogbutton}{likebutton}
+				    <div id="like">{likebutton}</div>
+					<div id="reblog">{reblogbutton}</div>
+	
 					{block:ContentSource} 
 						<p>from <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
