@@ -16,7 +16,7 @@ Theme 04 | [Live](http://square-theme4.tumblr.com) | Source | Ver
 
 Theme 03 and Theme 04 are currently a work in progress, and have not been published. Sources will be available once themes have become hosted on github.
 
-### Updates
+### Updates/Plans
 
 **[07-29-2014]** Theme 03 is currently being finished.  
 **[07-29-2014]** Theme 04 will be completed after 03.  
