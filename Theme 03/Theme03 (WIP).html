@@ -113,7 +113,15 @@ body
 }
 
 a {color:{color:Body Link Color}; text-decoration:none;}
-a:hover {-moz-transition-duration: .5s; -o-transition-duration: .5s; -webkit-transition-duration: .5s; transition-duration: .5s; color:{color:Body Color};}
+
+a:hover {
+	-moz-transition-duration: .5s; 
+	-o-transition-duration: .5s; 
+	-webkit-transition-duration: .5s; 
+	transition-duration: .5s;
+	color:{color:Body Text Color};
+}
+
 a:visited {}
 
 p
@@ -327,10 +335,12 @@ deleting a property can break the vertical alignment */
 	margin-right: auto;
 	margin-top: 15px;
 	
+	{block:IndexPage}
 	{block:IfPostBackground}
 	    background-color: #fff;
 	    padding:10px;
 	{/block:IfPostBackground}
+	{/block:IndexPage}
 }
 
 .one-column
@@ -376,12 +386,12 @@ deleting a property can break the vertical alignment */
 
 .entry a
 {
-	color: {color:Link Color};
+	color: {color:Body Link Color};
 }
 
 .entry a:hover
 {
-	color: {color:Body Color};
+	color: {color:Body Text Color};
 	-moz-transition-duration: .5s;
 	-o-transition-duration: .5s;
 	-webkit-transition-duration: .5s;
@@ -553,10 +563,9 @@ deleting a property can break the vertical alignment */
 	width: 350px;
 	left:20px;
 	top:-2px;
-	bottom:;
 }
 
-.entry[data-info~="video"] .tmask {opacity:.9;};
+.entry[data-info~="video"] .tmask {opacity:.9;}
 
 .entry[data-info~="video"] .lmask, .entry[data-info~="video"] .lmask2 {display:none;}
 
@@ -724,7 +733,6 @@ ol
 
 .post
 {
-	float:none;
 	margin: 0px auto;
 	position:static;
 }
@@ -733,6 +741,11 @@ ol
 {
 	width:842px;
 	max-width:842px;
+	
+	{block:IfPostBackground}
+	width:862px;
+	max-width: 862px;
+	{/block:IfPostBackground}
 }
 
 .post > .ppage
@@ -879,7 +892,7 @@ pre {
 	</div><!-- End of Header Container -->
 </div><!-- End of Fixer -->
 
-<div class="postbody {select:Layout}">
+<div class="postbody {block:IndexPage}{select:Layout}{/block:IndexPage}">
 {block:Posts}
     <div class="post {block:Date}p{/block:Date}page">
     <div class="entry {block:Date}p{/block:Date}page" {block:IndexPage}data-info="{posttype}"{/block:IndexPage}>

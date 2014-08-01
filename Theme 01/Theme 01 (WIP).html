@@ -4,35 +4,43 @@
 	Theme 01
 	Theme by: Squarn.tumblr.com
 	Version: 2.0
+	Github: http://goo.gl/43wnGy
 	Please do not remove the credit.
-	Github: 
 -->
 
+<!-- IMAGES -->
+<meta name="image:Sidebar Image" content="http://sqrs.us/blog/wp-content/uploads/2012/05/www.jpg"/>
+<meta name="image:Sidebar Background Image" content=""/>
+
+<!-- COLORS -->
+<meta name="color:Background Color" content="#ffffff"/>
+<meta name="color:Sidebar Color" content="#000000"/>
+<meta name="color:Nav Link Color" content="#000000"/>
+<meta name="color:Nav Background Color" content="#FFFFFF"/>
+<meta name="color:Description Text Color" content="#000000"/>
+<meta name="color:Text Color" content="#000000"/>
+<meta name="color:Link Color" content="#C1C1C1"/>
+<meta name="color:Post Header Color" content="#0A0A0A"/>
+<meta name="color:Post Header Text Color" content="#FFFFFF"/>
+<meta name="color:Body Link Fade Color" content="#c1c1c1"/>
+
+<!-- FONTS -->
+<meta name="font:Title" content="Georgia"/>
+
 <!-- BOOLEANS -->
-<meta name="if:Show Textual Content" content="1"/>
-<meta name="if:Show Tags" content="1"/>
 <meta name="if:Disable Title" content="0"/>
 <meta name="if:Disable Second Description" content="0"/>
 <meta name="if:Disable Transitions" content="0"/>
+<meta name="if:Show Textual Content" content="1"/>
+<meta name="if:Show Tags" content="1"/>
 <meta name="if:Show Camera Info" content="1"/>
 
-<!-- COLORS -->
-<meta name="color:Sidebar Color" content="#000000"/>
-<meta name="color:Text Color" content="#000000"/>
-<meta name="color:Background Color" content="#ffffff"/>
-<meta name="color:Link Color" content="#C1C1C1"/>
-<meta name="color:Header Color" content="#0A0A0A"/>
-<meta name="color:Header Text Color" content="#FFFFFF"/>
-<meta name="color:Sidebar Text Color" content="#000000"/>
-<meta name="color:Nav Hover Text Color" content="#FFFFFF"/>
-<meta name="color:Body Link Fade Color" content="#c1c1c1"/>
-
 <!-- TEXT -->
-<meta name="text:Title Size" content="60px"/>
 <meta name="text:Second Description" content=""/>
-<meta name="text:Permalink Name" content="Post Page"/>
-<meta name="text:Title Pos From Top" content="40px"/>
+<meta name="text:Title Size" content="60px"/>
+<meta name="text:Title Position From Top" content="40px"/>
 
+<!-- LINKS -->
 <meta name="text:Link 1 URL" content="/ask"/>
 <meta name="text:Link 1 Name" content="Ask"/>
 <meta name="text:Link 2 URL" content=""/>
@@ -44,17 +52,12 @@
 <meta name="text:Link 5 URL" content=""/>
 <meta name="text:Link 5 Name" content="V"/>
 
-<!-- IMAGES -->
-<meta name="image:Sidebar Image" content="http://sqrs.us/blog/wp-content/uploads/2012/05/www.jpg"/>
-<meta name="image:Sidebar Background Image" content=""/>
-
-<title>{Title}</title>
-
+<title>{title} - {block:PostTitle}{PostTitle}{/block:PostTitle}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link rel="shortcut icon" href="{Favicon}">
 <link rel="alternate" type="application/rss+xml" href="{RSS}">
-
 {block:Description}
-<meta name="description" content="{MetaDescription}" />
+	<meta name="description" content="{MetaDescription}" />
 {/block:Description}
 		
 <style>
@@ -83,6 +86,7 @@ p
 {
 	position: fixed;
 	width: 300px;
+	color: {color:Description Text Color};
 	background-color: {color:Sidebar Color};
 	background-image: url('{image:Sidebar Background Image}');
 	height: 100%;
@@ -93,7 +97,7 @@ p
 
 #sidebar a
 {
-	color: {color:Sidebar Text Color};
+	color: {color:Description Text Color};
 	text-decoration: none;
 }
 
@@ -123,7 +127,7 @@ p
 	background-color: {color:Sidebar Color};
 	border: 1px solid {color:Background Color};	
 	padding: 7px;
-	color: #fff;
+	color: {color:Nav Background Color};
 	top: 280px;
 	left: 290px;
 	text-decoration: none;
@@ -139,12 +143,12 @@ p
 	opacity: 0.8;
 	z-index: 2;
 	position: absolute;
-	top: {text:Title Pos From Top};
+	top: {text:Title Position From Top};
 	left: 20px;
 	color: #fff;
 	font-size: {text:Title Size};
 	line-height: 70%;
-	font-family: georgia;
+	font-family: {font:Title};
 }
 
 #revolvingDoor 
@@ -166,7 +170,7 @@ p
 	padding: 10px;
 	position: absolute;
 	bottom: 20px;
-	width: 80%
+	width: 80%;
 	margin: auto;
 	color: #fff;
 	
@@ -224,7 +228,7 @@ p
 	-moz-box-sizing:border-box;
 	opacity: 1;
 	background-color: #fff;
-	color: #000;
+	color: {color:Description Text Color};
 	padding: 10px;
 	width: 80%;
 	margin: auto;
@@ -238,12 +242,13 @@ p
 	top: 95px;
 	padding: 6px 0px;
 	text-align: center;
+	background-color: {color:Nav Background Color};
 }
 {/block:IfDisableTransitions}
 
 #nav a
 {
-	color: {color:Sidebar Text Color};
+	color: {color:Nav Link Color};
 	text-decoration: none;
 	padding: 10px;
 }
@@ -253,19 +258,14 @@ p
 	display: table-cell;
 	padding: 5px 0px;
 	text-align: center;
-	border-right: 1px solid {color:Sidebar Text Color};
-	background-color: #fff;
+	border-right: 1px solid {color:Nav Link Color};
+	background-color: {color:Nav Background Color};
 	width: 10%;
-	
-	-moz-transition-duration: .5s;
-	-o-transition-duration: .5s;
-	-webkit-transition-duration: .5s;
-	transition-duration: .5s;
 }
 
 #nav li:hover
 {
-	background-color: {color:Sidebar Color};
+	background-color: {color:Nav Link Color};
 	
 	-moz-transition-duration: .5s;
 	-o-transition-duration: .5s;
@@ -275,7 +275,7 @@ p
 
 #nav li:hover a
 {
-	color: {color:Nav Hover Text Color};
+	color: {color:Nav Background Color};
 	
 	-moz-transition-duration: .5s;
 	-o-transition-duration: .5s;
@@ -366,7 +366,7 @@ p
 
 #ptitle
 {
-	background-color: {color:Header Color};
+	background-color: {color:Post Header Color};
 	color: #fff;
 	font-size: 11px;
 	text-transform: uppercase;
@@ -375,7 +375,7 @@ p
 
 #ptitle a
 {
-	color:{color:Header Text Color};
+	color:{color:Post Header Text Color};
 }
 
 #post p:first-child
@@ -385,8 +385,9 @@ p
 
 blockquote
 {
-	border-left: 1px solid #000;
+	border-left: 1px solid {color:Text Color};
 	padding-left: 10px;
+	margin-left: 10px;
 }
 
 #post 
@@ -430,10 +431,6 @@ blockquote
 {
 	font-size: 15px;
 			font-family: helvetica, arial;
-}
-
-.even {
-	background-color:;
 }
 
 .port
@@ -537,6 +534,16 @@ blockquote
 	display: none;
 }
 
+pre {
+ overflow-x: auto; 
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ /* width: 99%; */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
 ::-webkit-scrollbar-thumb:vertical {background-color:{color:Sidebar Color};}
 ::-webkit-scrollbar-thumb:horizontal {background-color:{color:Sidebar Color};height:10px !important;}
 ::-webkit-scrollbar {height:7px; width:7px; background-color:{color:Background Color};}
@@ -550,14 +557,14 @@ blockquote
 			{block:PreviousPage}<div id="pagp"><a href="{PreviousPage}">></a></div>{/block:PreviousPage}
 			{block:NextPage}<div id="pagn"><a href="{NextPage}"><</a></div>{/block:NextPage}
 		{/block:Pagination}
-		<div id="nav">
 		
+		<div id="nav">
 			<ul>
-				<li><a href="{text:Link 1 URL}">{text:Link 1 Name}</a></li>
-				<li><a href="{text:Link 2 URL}">{text:Link 2 Name}</a></li>
-				<li><a href="{text:Link 3 URL}">{text:Link 3 Name}</a></li>
-				<li><a href="{text:Link 4 URL}">{text:Link 4 Name}</a></li>
-				<li><a href="{text:Link 5 URL}">{text:Link 5 Name}</a></li>
+				{block:IfLink1Name}<li><a href="{text:Link 1 URL}">{text:Link 1 Name}</a></li>{/block:IfLink1Name}
+				{block:IfLink2Name}<li><a href="{text:Link 2 URL}">{text:Link 2 Name}</a></li>{/block:IfLink2Name}
+				{block:IfLink3Name}<li><a href="{text:Link 3 URL}">{text:Link 3 Name}</a></li>{/block:IfLink3Name}
+				{block:IfLink4Name}<li><a href="{text:Link 4 URL}">{text:Link 4 Name}</a></li>{/block:IfLink4Name}
+				{block:IfLink5Name}<li><a href="{text:Link 5 URL}">{text:Link 5 Name}</a></li>{/block:IfLink5Name}
 			</ul>
 		</div>	
 	
@@ -568,7 +575,6 @@ blockquote
 			{block:IfNotDisableSecondDescription}
 			<div id="prize">{text:Second Description}</div>
 			{/block:IfNotDisableSecondDescription}
-			
 		</div>
 		
 		<div id="loser">
@@ -576,17 +582,11 @@ blockquote
 		</div>
 		
 		<div id="kyo">
-			<img src="http://www.sqrs.us/theme/images/update1.gif" class="update"><br>
 			<a href="http://squarn.tumblr.com">Theme</a>
 		</div>
-		
-	</div>
-	
+	</div><!-- End Sidebar -->
 	
 	<div id="main">
-	
-		
-		
 		{block:Posts}
 		<div id="gutter">
 			<div id="post">
@@ -598,17 +598,16 @@ blockquote
 						<p>from <a href="{SourceURL}">{SourceTitle}</a></p>
 					{/block:ContentSource}
 					{block:NoteCount}
-						<p>Notes: {NoteCount}</p>
+						<p>{lang:Notes}: {NoteCount}</p>
 					{/block:NoteCount}
-					<p><a href="{Permalink}">{Text:Permalink Name}</a></p>
+					<p><a href="{Permalink}">{lang:Permalink}</a></p>
 				</div>
 				
 				<!-- Title on all posts if used -->
 				{block:Title}<div id="ptitle"><a href="{Permalink}">{Title}</a></div>{/block:Title}
 				
-					<div class="content">
-					
-					<!-- Text Posts -->
+				<div class="content">
+					<!-- Text -->
 					{block:Text}
 						{Body}
 					{/block:Text}
@@ -629,7 +628,6 @@ blockquote
 							{/block:IfShowCameraInfo}
 							</div>
 						{/block:IfShowTextualContent}
-					
 					{/block:Photo}
 					
 					<!-- Photosets -->
@@ -642,6 +640,19 @@ blockquote
 							</div>
 						{/block:IfShowTextualContent}
 					{/block:Photoset}
+					
+					<!-- Panorama -->
+					{block:Panorama}
+						{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+			
+					{block:IfShowTextualContent}
+					{block:Caption}
+						<div class="pcaption">
+							{Caption}
+						</div>
+					{/block:Caption}
+					{/block:IfShowTextualContent}
+					{/block:Panorama}
 					
 					<!-- Quotes -->
 					{block:Quote}
@@ -656,7 +667,6 @@ blockquote
 						<div class="quote">
 							<a href="{URL}">{Name}</a>
 						</div>
-				
 						{block:Description}<div class="content">{Description}</div>{/block:Description}
 					{/block:Link}
 					
@@ -670,25 +680,22 @@ blockquote
 					<!-- Audio Posts -->
 					{block:Audio}
 						{block:AudioEmbed} 
-								{AudioEmbed}
+							{AudioEmbed}
 						{/block:AudioEmbed}
 							
 						{block:AudioPlayer} 
 							{AudioPlayerBlack}
-						{/block:AudioPlayer}
+								<p>{block:TrackName}"{TrackName}" {/block:TrackName}{block:Artist}by {Artist}{/block:Artist}{block:Album} on "{Album}"{/block:Album}</p>
+							{/block:AudioPlayer}
 							
-						<p>
-						{block:TrackName}"{TrackName}" {/block:TrackName}{block:Artist}by {Artist}{/block:Artist}{block:Album} on "{Album}"{/block:Album}
-						</p>
-							
-						{block:IfShowTextualContent}
-							<p>{block:Caption}{Caption}{/block:Caption}</p>
-								
-							{block:PlayCount}
-								<p>{PlayCountWithLabel}</p>
-							{/block:PlayCount}
-						{/block:IfShowTextualContent}
-							
+							{block:IfShowTextualContent}
+								<p>{block:Caption}{Caption}{/block:Caption}</p>
+									
+								{block:PlayCount}
+									<p>{PlayCountWithLabel}</p>
+								{/block:PlayCount}
+							{/block:IfShowTextualContent}
+						
 						{block:ExternalAudio}
 							<p><a href="{ExternalAudioURL}">Download</a></p>
 						{/block:ExternalAudio}
@@ -709,11 +716,10 @@ blockquote
 					
 					<!-- Ask Posts -->
 					{block:Answer}
-						<div class="quote">{Asker} <a href="{Permalink}">asked</a>: "{Question}"</div>
+						<div class="quote">{lang:Asker asked 2}: "{Question}"</div>
 						{block:Answerer}
-							
-								<p>{Answerer} answered:</p>
-								<blockquote><p>{Answer}</p></blockquote>
+							<p>{Answerer} answered:</p>
+							<blockquote><p>{Answer}</p></blockquote>
 						{/block:Answerer}
 						
 						<p>{Replies}</p>
@@ -727,8 +733,7 @@ blockquote
 							via <a href="{ReblogParentURL}">({ReblogParentName})</a>
 						{/block:RebloggedFrom}
 					</div>
-					
-					</div>
+				</div><!-- End Content -->
 
 				{block:IfShowTags}
 					<div class="meta">
@@ -736,7 +741,7 @@ blockquote
 							<ul class="tags">
 								{block:Tags}
 								<li>
-									#<a href="{TagURLChrono}">{Tag}</a>
+									<a href="{TagURLChrono}">#{Tag}</a>
 								</li>
 								{/block:Tags}
 							</ul>
@@ -751,9 +756,9 @@ blockquote
 					
 					{PostNotes}
 				{/block:PostNotes}
-			</div>
+			</div><!-- End Post -->
 		</div>	
 		
 		{/block:Posts}
-	</div>
+	</div><!-- End Main -->
 </body>
