@@ -8,6 +8,12 @@
 	Please do not remove the credit.
 -->
 
+<!-- To Do
+1. Add Analytics
+2. Make title a link
+3. Bolden quote/ask text
+-->
+
 <!-- IMAGES -->
 <meta name="image:Sidebar Image" content="http://sqrs.us/blog/wp-content/uploads/2012/05/www.jpg"/>
 <meta name="image:Sidebar Background Image" content=""/>
@@ -34,11 +40,13 @@
 <meta name="if:Show Textual Content" content="1"/>
 <meta name="if:Show Tags" content="1"/>
 <meta name="if:Show Camera Info" content="1"/>
+<meta name="if:Disable Little Sidebar Buffer" content="0"/>
 
 <!-- TEXT -->
 <meta name="text:Second Description" content=""/>
 <meta name="text:Title Size" content="60px"/>
 <meta name="text:Title Position From Top" content="40px"/>
+<meta name="text:Google Analytics ID" content=""/>
 
 <!-- LINKS -->
 <meta name="text:Link 1 URL" content="/ask"/>
@@ -104,6 +112,9 @@ p
 #sbimg img
 {
 	width: 100%;
+	{block:IfDisableLittleSidebarBuffer}
+		margin-bottom: -3px;
+	{block:IfDisableLittleSidebarBuffer}
 }
 
 #sbimg
@@ -138,16 +149,20 @@ p
 	top: 320px;
 }
 
-#title
+#title 
 {
 	opacity: 0.8;
 	z-index: 2;
 	position: absolute;
 	top: {text:Title Position From Top};
 	left: 20px;
+}
+
+#title a
+{
 	color: #fff;
 	font-size: {text:Title Size};
-	line-height: 70%;
+	line-height: 65%;
 	font-family: {font:Title};
 }
 
@@ -430,7 +445,12 @@ blockquote
 .quote
 {
 	font-size: 15px;
-			font-family: helvetica, arial;
+	font-family: helvetica, arial;
+}
+
+.input
+{
+	font-weight: bold;
 }
 
 .port
@@ -566,7 +586,7 @@ pre {
 		</div>	
 	
 		<div id="revolvingDoor"> 
-			{block:IfNotDisableTitle}<div id="title">{title}</div>{/block:IfNotDisableTitle}
+			{block:IfNotDisableTitle}<div id="title"><a href="{BlogURL}">{title}</a></div>{/block:IfNotDisableTitle}
 			<div id="sbimg"><img src="{image:Sidebar Image}"></div>
 			
 			{block:IfNotDisableSecondDescription}
@@ -655,7 +675,7 @@ pre {
 					
 					<!-- Quotes -->
 					{block:Quote}
-						<div class="quote">"{Quote}"</div>
+						<div class="quote input">"{Quote}"</div>
 							{block:Source}
 								{Source}
 							{/block:Source}
@@ -663,7 +683,7 @@ pre {
 					
 					<!-- Links -->
 					{block:Link}
-						<div class="quote">
+						<div class="quote input">
 							<a href="{URL}">{Name}</a>
 						</div>
 						{block:Description}<div class="content">{Description}</div>{/block:Description}
@@ -676,6 +696,17 @@ pre {
 						{/block:Lines}
 					{/block:Chat}
 					
+					<!-- Ask Posts -->
+					{block:Answer}
+						<div class="quote">{lang:Asker asked 2}: <span class="input">"{Question}"</span></div>
+						{block:Answerer}
+							<p>{Answerer} answered:</p>
+							<blockquote><p>{Answer}</p></blockquote>
+						{/block:Answerer}
+						
+						<p>{Replies}</p>
+					{/block:Answer}
+					
 					<!-- Audio Posts -->
 					{block:Audio}
 						{block:AudioEmbed} 
@@ -684,7 +715,9 @@ pre {
 							
 						{block:AudioPlayer} 
 							{AudioPlayerBlack}
-								<p>{block:TrackName}"{TrackName}" {/block:TrackName}{block:Artist}by {Artist}{/block:Artist}{block:Album} on "{Album}"{/block:Album}</p>
+								{block:TrackName}<p>"{TrackName}"</p>{/block:TrackName}
+								{block:Artist}<p>by {Artist}</p>{/block:Artist}
+								{block:Album}<p>on "{Album}"</p>{/block:Album}
 							{/block:AudioPlayer}
 							
 							{block:IfShowTextualContent}
@@ -712,17 +745,6 @@ pre {
 							<p>{PlayCountWithLabel}</p>
 						{/block:IfShowTextualContent}
 					{/block:Video}
-					
-					<!-- Ask Posts -->
-					{block:Answer}
-						<div class="quote">{lang:Asker asked 2}: "{Question}"</div>
-						{block:Answerer}
-							<p>{Answerer} answered:</p>
-							<blockquote><p>{Answer}</p></blockquote>
-						{/block:Answerer}
-						
-						<p>{Replies}</p>
-					{/block:Answer}
 					
 					<div id="boyYOUREAWOLF">
 						{block:ContentSource}
@@ -760,4 +782,16 @@ pre {
 		
 		{/block:Posts}
 	</div><!-- End Main -->
+	
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '{text:Google Analytics ID}', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script>	
 </body>
