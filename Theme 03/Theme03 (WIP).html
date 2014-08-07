@@ -596,7 +596,7 @@ blockquote
 	margin: 5px 5px 2px 15px;
 }
 
-.entry blockquote img, .text img
+.entry blockquote img, .entry[data-info~="text"] img
 {
 	max-width:100%;
 }
@@ -1029,7 +1029,6 @@ pre {
 					{block:Artist}<p>by {Artist}</p>{/block:Artist}
 					{block:Album}<p>on "{Album}"</p>{/block:Album}
 				{/block:PermalinkPage}
-			</div>
 			{/block:AudioEmbed}
 	
 			{block:AudioPlayer} 
