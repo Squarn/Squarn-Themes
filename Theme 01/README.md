@@ -1,10 +1,7 @@
 # Theme 01
 
 [Live Preview](http://square-theme1.tumblr.com)  
-
-[Screenshot](https://raw.githubusercontent.com/Squarn/Squarn-Themes/master/Screenshots/t1s1.png) (No Transition Trigger)  
-[Screenshot 2](https://raw.githubusercontent.com/Squarn/Squarn-Themes/master/Screenshots/t1s2.png) (Transition Trigger)  
-[Screenshot 3](https://raw.githubusercontent.com/Squarn/Squarn-Themes/master/Screenshots/t1sb.png) (Sidebar)
+[Screenshots](https://#)(Currently Unavailable)  
 
 ## Changelog
 
@@ -19,20 +16,30 @@
 
 ## Documentation
 
-Theme 01 is a contrasting single column (500px), single sidebar layout. The sidebar uses two different triggers for transitions: Mousing anywhere over the sidebar will reveal links (5) and the description. Mousing over the sidebar image will trigger a second, smaller description to appear over the image (which will in turn increase in opacity). Disabling transitions will cause these elements to be revealed by default. Like, Reblog, Note, and Permalink options are revealed when hovering over a post; a meta menu will transition from behind the post, to the right of the post.
+Theme 01 is a contrasting single column (500px), single sidebar layout. The sidebar uses two different triggers for transitions: 1. Mousing anywhere over the sidebar will reveal links (5) and the description. 2.Mousing over the sidebar image will trigger a second, smaller description to appear over the image (which will in turn increase in opacity). Disabling transitions will cause these elements to be revealed by default. Like, Reblog, Note, and Permalink options are revealed when hovering over a post and 50px to the right of each post (#gutter); a meta menu will transition from behind the post, to the right.
+
+__Links__: 5 are available by default. You can add more yourself, if the text is short, and if you want less, the links will expand horizontally to the width of the sidebar.
+
+Togglable Elements:
+- Title
+- Second Description
+- Transitions
+- Textual Content (within posts)
+- Tags
+- Camera Info
 
 ### Specs & Features
 
-- Layout Type: Single Column
-- Sidebar Type: Long, Fixed
-- Navigation Type: Sidebar
-- Tags: Toggleable
-- Captions: Toggleable
-- Links: 5 (or less)
-- Can Links Be Added: No
-- Scrollbar: Custom
-- Notes/Permalink: Hover
+- __Layout Type__: Single Column
+- __Sidebar Type__: Long, Fixed
+- __Navigation Type__: Sidebar
+- __Tags__: Toggleable
+- __Captions__: Toggleable
+- __Links__: 5 (or less)
+- __Can Links Be Added__: No
+- __Scrollbar__: Custom
+- __Notes/Permalink__: Hover
 
 ### Warnings:
 
-1. Extremely short posts (height-wise) will make it difficult to click the permalink in the transitioned single post navigation. This applies mostly to text posts that are only a line or 2 long.
+None
