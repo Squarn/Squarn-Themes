@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<head>
+
 <!-- 
 	Theme 01
 	Theme by: Squarn.tumblr.com
@@ -8,12 +8,7 @@
 	Please do not remove the credit.
 -->
 
-<!-- To Do
-1. Add Analytics
-2. Make title a link
-3. Bolden quote/ask text
--->
-
+<head>
 <!-- IMAGES -->
 <meta name="image:Sidebar Image" content="http://sqrs.us/blog/wp-content/uploads/2012/05/www.jpg"/>
 <meta name="image:Sidebar Background Image" content=""/>
@@ -60,7 +55,7 @@
 <meta name="text:Link 5 URL" content=""/>
 <meta name="text:Link 5 Name" content="V"/>
 
-<title>{title} - {block:PostTitle}{PostTitle}{/block:PostTitle}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
+<title>{title} {block:PostTitle}- {PostTitle}{/block:PostTitle}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link rel="shortcut icon" href="{Favicon}">
 <link rel="alternate" type="application/rss+xml" href="{RSS}">
@@ -69,11 +64,10 @@
 {/block:Description}
 		
 <style>
-
 body 
 {
 	background-color: {color:Background Color};
-	font-family: calibri, helvetica;
+	font-family: calibri, sans-serif;
 	font-size: 11px;
 	color: {color:Text Color};
 }
@@ -124,9 +118,7 @@ p
 	background-color: #fff;
 	opacity: .7;
 	
-	-moz-transition-duration: 1s;
-	-o-transition-duration: 1s;
-	-webkit-transition-duration: 1s;
+
 	transition-duration: 1s;
 }
 
@@ -507,6 +499,92 @@ blockquote
     -ms-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
+}
+
+/* Music Post Selectors */
+.playbox
+{
+	position:absolute;
+	background-color: #000;
+	z-index: 10;
+	margin-top: 65px;
+	margin-left: 60px;
+	opacity: .7;
+}
+
+.playbutton
+{ 
+	position:relative;
+	width:20px;
+	height:30px;
+	margin: 15px 24px 13px 16px;
+	overflow:hidden;
+	z-index:10;
+}
+
+.art
+{
+	width: 180px;
+}
+
+.audioc
+{
+	float:left;
+	min-width: 180px;
+	min-height: 180px;
+	background-color: #fff;
+}
+
+.music-info
+{
+	padding: 5px;
+	width:210px;
+	float:left;
+}
+
+.tname 
+{
+	text-align: center;
+	font-family: 'Playfair Display';
+	font-style: italic;
+	font-size: 17px;
+	color: rgb(248, 61, 136);
+}
+
+.artname
+{
+	text-align: center;
+}
+
+.alname 
+{
+	text-align: center;
+}
+
+.audio-meta 
+{
+	background-color: {color:Body Text Color};
+	margin: 0px -5px 0px -5px;
+	padding: 8px 5px;
+	color: {color:Background Color}
+}
+
+.pcount 
+{
+	margin-left: 10px;
+	background-color:{color:Body Link Color};
+	margin: 5px 0px -2px 5px;
+	padding: 6px;
+	display: block;
+	white-space: nowrap;
+	display: table;
+	color: {color:Background Color};
+}
+
+.acaption
+{
+	padding: 5px 6px 0px 5px;
+	margin-right:-5px;
 }
 
 #reblog
