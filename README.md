@@ -7,8 +7,8 @@ Squarn Themes strives to build versatile, customizable layouts for Tumblr users.
 
 ### Current Themes
 
- Theme # | Preview | Source | Version 
- :--- | :---: | :---: | :---:
+Theme #  | Preview                                 | Source | Version 
+:------- | :-------------------------------------: | :----: | :--:
 Theme 01 | [Live](http://square-theme1.tumblr.com) | Source | Ver
 Theme 02 | [Live](http://square-theme2.tumblr.com) | Source | Ver
 Theme 03 | [Live](http://square-theme3.tumblr.com) | Source | Ver
