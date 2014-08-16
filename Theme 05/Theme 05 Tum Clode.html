@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<!--
+	Love is a Warm, Buttered Gun!
+	Theme 05 : Dedicated to milou_veronica.
+	This theme is _not_ available for use.
+-->
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Arbutus+Slab|EB+Garamond|Fjalla+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+
+	<title>Rawr.</title>
+</head>
+<body>
+	<header class="top_header">
+		<div class="title">Love is a Warm, Buttered Gun!</p>
+		<div class="tagline">
+			<span class="pagp">Back &mdash; </span>
+				<span>Pull Me Into Your Perfect Circle</span>
+			<span class="pagn"> &mdash; Next</span>
+		</div>
+	</header>
+
+		<main>
+			<aside>
+				<div class="part">
+					<img src="file:///Users/Brook/Squarn-Themes/Theme%2005/tum1.jpg" alt="">	
+				</div>
+
+				<div class="part">
+					<h3>About</h3>
+					<div class="avatar"></div>
+					<div class="description">
+					<p>Squarn Themes ; A simple blog for simple themes. Staunch advocator of				
+				
+					<a href="#">Sublime Text, </a>
+					<a href="#">Github, </a> &
+					<a href="#"> HTML5. </a>
+					
+					Won't trick you on their <a href="">Terms of Service</a> page.</p></div>
+				</div>
+
+				<div class="part">
+					<h3>Links</h3>
+					<ul id="navigation">
+						<li class="nav"><a href="#">Home</a></li>
+						<li class="nav"><a href="#">Ask Me Something</a></li>
+						<li class="nav"><a href="#">Themes</a></li>
+						<li class="nav"><a href="#">Github</a></li>
+						<li class="nav"><a href="#">About / Philosophies</a></li>
+					</ul>
+				</div>
+			</aside>
+			
+			<div class="postbody">
+			{block:Posts}
+				<article>
+					<div class="gutter">
+						{block:Title}<header><h2>{Title}</h2></header>{/block:Title}
+						<div class="pbody">
+						
+						{block:Text}
+							{Body}						
+						{/block:Text}
+
+						{block:Photo}
+							<img src="">
+
+							{block:Caption}
+								{Caption}
+							{/block:Caption}
+						{/block:Photo}
+
+						</div>
+					</div>
+
+					<div class="meta">
+						{block:HasTags}
+						<ul>
+							{block:Tags}<li class="tag"><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
+						</ul>
+						{/block:HasTags}
+
+						
+						<p class="notes">
+						{block:Date}{Month} {DayOfMonths}<sup>{DayOfMonthSuffix}</sup>, {Year}{/block:Date}
+						{block:NoteCount}
+							with <a href="{Permalink}">{NoteCountWithLabel}</a>
+						{block:NoteCount}
+						</p>
+					</div>
+				</article>
+			{/block:Posts}
+			</div>
+		</main>
+	
+	<!-- <footer>Pull me into your perfect circle.</footer> -->
+
+	<script type="text/javascript">
+	// By Squarn Themes
+	// Causes .tagline and .aside to stick when $window is scrolled
+
+		$(function(){
+			$('article').mouseenter(
+				function(){$('.meta', this).slideDown("slow","easeOutBounce");}
+			);
+			$('article').mouseleave(
+				function(){$('.meta', this).slideUp("slow","linear");}
+			);	
+		});
+
+		$(function(){
+	        var tagline = $('.tagline').offset().top;
+	          
+	        $(window).scroll(function(){
+                if( $(window).scrollTop() > tagline ) {
+                        $('.tagline').addClass('stickt');
+                } else {
+                        $('.tagline').removeClass('stickt');
+                }
+
+                if($('.tagline').hasClass("stickt"))
+                {
+                	$('.pagn').fadeIn();
+                	$('.pagp').fadeIn();
+                }
+                else
+                {
+                	$('.pagn').hide();
+                	$('.pagp').hide();
+                }
+	        });
+		});
+
+		$(function(){
+	        var aside = $('aside').offset().top - 50;
+	          
+	        $(window).scroll(function(){
+                if( $(window).scrollTop() > aside ) {
+                        $('aside').addClass('sticka');
+                } else {
+                        $('aside').removeClass('sticka');
+                }
+	        });
+		});
+
+		$( ".nav" ).hover(
+			function() {$(this).stop().animate({opacity: 0.25, paddingLeft: "10",}, 1000, "easeOutBounce", function() {});},
+			function() {$(this).stop().animate({opacity: 1, paddingLeft: "0",}, 1000, "easeOutBounce", function() {});}
+		);
+	</script>
+</body>
+</html>
