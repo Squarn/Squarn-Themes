@@ -10,7 +10,7 @@
 
 <head>
 <!-- IMAGES -->
-<meta name="image:Sidebar Image" content="http://sqrs.us/blog/wp-content/uploads/2012/05/www.jpg"/>
+<meta name="image:Sidebar Image" content="http://static.tumblr.com/aan1aaf/Ry4na7b11/jpeg.jpg"/>
 <meta name="image:Sidebar Background Image" content=""/>
 
 <!-- COLORS -->
@@ -21,6 +21,7 @@
 <meta name="color:Description Text Color" content="#000000"/>
 <meta name="color:Text Color" content="#000000"/>
 <meta name="color:Link Color" content="#C1C1C1"/>
+<meta name="color:Audio Post Accent" content="#000"/>
 <meta name="color:Post Header Color" content="#0A0A0A"/>
 <meta name="color:Post Header Text Color" content="#FFFFFF"/>
 <meta name="color:Body Link Fade Color" content="#c1c1c1"/>
@@ -32,6 +33,7 @@
 <meta name="if:Disable Title" content="0"/>
 <meta name="if:Disable Second Description" content="0"/>
 <meta name="if:Disable Transitions" content="0"/>
+<meta name="if:Block Audio Style" content="1"/>
 <meta name="if:Show Textual Content" content="1"/>
 <meta name="if:Show Tags" content="1"/>
 <meta name="if:Show Camera Info" content="1"/>
@@ -78,10 +80,13 @@ p
 	 margin-bottom: 5px;
 }  
 
-.meta ul
+.clearfix:after 
 {
-	padding: 0px;
-	margin: 0px;
+	content: " "; /* Older browser do not support empty content */
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
 }
 
 #sidebar
@@ -416,6 +421,12 @@ blockquote
 	margin-top: 10px;
 }
 
+.meta ul
+{
+	padding: 0px;
+	margin: 0px;
+}
+
 .tags li
 {
 	list-style-type:none;
@@ -465,10 +476,10 @@ blockquote
 	height: 100%;
 	
 	-webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -ms-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
 }
 
 #rbmeta p
@@ -478,7 +489,7 @@ blockquote
 
 #rbmeta p:first-of-type
 {
-    margin:0px;
+	margin:0px;
 }
 
 #gutter
@@ -495,10 +506,10 @@ blockquote
 	z-index: 0;
 	
 	-webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -ms-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
 }
 
 /* Music Post Selectors */
@@ -538,8 +549,9 @@ blockquote
 .music-info
 {
 	padding: 5px;
-	width:210px;
+	width:310px;
 	float:left;
+	margin-top:10px;
 }
 
 .tname 
@@ -548,7 +560,7 @@ blockquote
 	font-family: 'Playfair Display';
 	font-style: italic;
 	font-size: 17px;
-	color: rgb(248, 61, 136);
+	color: {color:Audio Post Accent};
 }
 
 .artname
@@ -563,23 +575,55 @@ blockquote
 
 .audio-meta 
 {
-	background-color: {color:Body Text Color};
 	margin: 0px -5px 0px -5px;
 	padding: 8px 5px;
-	color: {color:Background Color}
+	color: {color:Text Color};
+	border-top: 1px solid {color:Text Color};
+	border-bottom: 1px solid {color:Text Color};
+	border-right: 1px solid {color:Text Color};
+	background-color:{color:Background Color};
 }
 
 .pcount 
 {
 	margin-left: 10px;
-	background-color:{color:Body Link Color};
+	background-color:{color:Background Color};
+	margin: 5px 0px 0px 5px;
+	padding: 6px;
+	display: block;
+	white-space: nowrap;
+	display: table;
+	color: {color:Link Color};
+
+	border-top: 1px solid {color:Text Color};
+	border-left: 1px solid {color:Text Color};
+	border-right: 1px solid {color:Text Color};
+}
+
+/* Default Audio Style */
+{block:IfBlockAudioStyle}
+.audio-meta 
+{
+	background-color: {color:Text Color};
+	margin: 0px -5px 0px -5px;
+	padding: 8px 5px;
+	color: {color:Background Color};
+	border: none;
+}
+
+.pcount 
+{
+	margin-left: 10px;
+	background-color:{color:Link Color};
 	margin: 5px 0px -2px 5px;
 	padding: 6px;
 	display: block;
 	white-space: nowrap;
 	display: table;
 	color: {color:Background Color};
+	border: none;
 }
+{/block:IfBlockAudioStyle}
 
 .acaption
 {
@@ -589,9 +633,9 @@ blockquote
 
 #reblog
 {
-    position:absolute;
-    top:0px;
-    left: 23px;
+	position:absolute;
+	top:0px;
+	left: 23px;
 }
 
 #kyo 
@@ -688,7 +732,7 @@ pre {
 			
 				<!-- Slide-out Meta Info-->
 				<div id="rbmeta">
-				    <div id="like">{likebutton}</div>
+					<div id="like">{likebutton}</div>
 					<div id="reblog">{reblogbutton}</div>
 	
 					{block:ContentSource} 
@@ -784,8 +828,55 @@ pre {
 						
 						<p>{Replies}</p>
 					{/block:Answer}
-					
-					<!-- Audio Posts -->
+
+					<!-- Audio -->
+					{block:Audio}
+						{block:AudioEmbed}
+						{AudioEmbed-400}
+							
+							{block:IndexPage}<a href="{Permalink}">Permalink</a>{/block:IndexPage}
+							
+							{block:PermalinkPage}
+								{block:TrackName}<p>"{TrackName}"</p>{/block:TrackName}
+								{block:Artist}<p>by {Artist}</p>{/block:Artist}
+								{block:Album}<p>on "{Album}"</p>{/block:Album}
+							{/block:PermalinkPage}
+						{/block:AudioEmbed}
+				
+						{block:AudioPlayer} 
+						<div class="audioc">
+							<div class="playbox">
+								<div class="playbutton">
+								{block:AudioPlayer}
+									{AudioPlayerBlack}
+								{/block:AudioPlayer}
+								</div>
+							</div>
+							
+							{block:AlbumArt}
+								<img src="{AlbumArtURL}" class="art">
+							{/block:AlbumArt}
+						</div>
+						
+						<div class="music-info">
+							<p class="pcount">{PlayCountWithLabel}</p>
+							
+							<div class="audio-meta">
+							{block:TrackName}<p class="tname">"{TrackName}"</p>{/block:TrackName}
+							{block:Artist}<p class="artname">by {Artist}</p>{/block:Artist}
+							{block:Album}<p class="alname">on "{Album}"</p>{/block:Album}
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						{block:caption}
+							<div class="acaption">{caption}</div>
+						{/block:caption}
+						
+						<div class="clearfix"></div>
+						{/block:AudioPlayer}
+					{/block:Audio}
+
+					<!-- Audio Posts
 					{block:Audio}
 						{block:AudioEmbed} 
 							{AudioEmbed}
@@ -809,7 +900,7 @@ pre {
 						{block:ExternalAudio}
 							<p><a href="{ExternalAudioURL}">Download</a></p>
 						{/block:ExternalAudio}
-					{/block:Audio}
+					{/block:Audio} -->
 					
 					<!-- Video Posts -->
 					{block:Video}
