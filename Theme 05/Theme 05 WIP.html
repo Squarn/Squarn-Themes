@@ -12,11 +12,25 @@
 	<link rel="stylesheet" href="style.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+	<script src="jquery.particleground.min.js"></script>
+	<script src="particle.js"></script>
 
 	<title>Rawr.</title>
 </head>
 <body>
-	<header class="top_header">
+<div id="particles">
+
+	<div id="starter">
+	<div id="starter_2">
+		<h1>Squarn Themes</h1>
+		<h2>Theme blog of Psychosomatica</h2>
+	</div>
+		<div class="description">
+			<p>SQUARN: {PP-V} Square &mdash; Make square or rectangular.</p>
+		</div>
+	</div>
+
+	<header class="sticktop top_header">
 		<div class="title">Love is a Warm, Buttered Gun!</p>
 		<div class="tagline">
 			<span class="pagp">Back &mdash; </span>
@@ -28,20 +42,20 @@
 		<main>
 			<aside>
 				<div class="part">
-					<img src="file:///Users/Brook/Squarn-Themes/Theme%2005/tum1.jpg" alt="">	
+					<img src="tum1.jpg" alt="">	
 				</div>
 
 				<div class="part">
 					<h3>About</h3>
 					<div class="avatar"></div>
-					<div class="description">
+					
 					<p>Squarn Themes ; A simple blog for simple themes. Staunch advocator of				
 				
 					<a href="#">Sublime Text, </a>
 					<a href="#">Github, </a> &
 					<a href="#"> HTML5. </a>
 					
-					Won't trick you on their <a href="">Terms of Service</a> page.</p></div>
+					Won't trick you on their <a href="">Terms of Service</a> page.</p>
 				</div>
 
 				<div class="part">
@@ -74,9 +88,74 @@
 							<li class="tag"><a href="">wildly</a></li>
 						</ul>
 
+						<p class="notes">posted February 2<sup>nd</sup>, with <a href="#">2,000 Notes</a>
+						</p>
+					</div>
+				</article>
+
+
+				<article>
+					<div class="gutter">
+						<header><h2>PULL ME IN TO YOUR PERFECT CIRCLE</h2></header>
+						<div class="pbody">
+							<p>This is some text inside of the blockquote.</p>
+							<blockquote>
+								<p>This is some text inside of the blockquote.</p>
+								<ul>
+									<li>This is a test</li>
+									<li>Of Lists</li>
+									<li>Inside of Blocks</li>
+									<li>Cause they usually </li>
+									<li>Come out horrible</li>
+								</ul>
+
+								<ol>
+									<li>This is</li>
+									<li>a second test</li>
+									<li>of ugly blockquotes</li>
+									<li>that tumblr</li>
+									<li>needs to fix</li>
+								</ol>
+								<p>This is some text inside of the blockquote.</p>
+							</blockquote>
+							<p>This is some text outside of the blockquote.</p>
+
+							<blockquote>
+								<ul>
+									<li>This is a test</li>
+									<li>Of Lists</li>
+									<li>Inside of Blocks</li>
+									<li>Cause they usually </li>
+									<li>Come out horrible</li>
+								</ul>
+
+								<ol>
+									<li>This is</li>
+									<li>a second test</li>
+									<li>of ugly blockquotes</li>
+									<li>that tumblr</li>
+									<li>needs to fix</li>
+								</ol>
+							</blockquote>
+						</div>
+					</div>
+
+					<div class="meta">
+						<ul>
+							<li class="tag"><a href="">Homestar</a></li>
+							<li class="tag"><a href="">Santa Fe</a></li>
+							<li class="tag"><a href="">Dry Grass of El Paso</a></li>
+							<li class="tag"><a href="">Here in the</a></li>
+							<li class="tag"><a href="">midst of</a></li>
+							<li class="tag"><a href="">rapid change</a></li>
+							<li class="tag"><a href="">bloom</a></li>
+							<li class="tag"><a href="">wildly</a></li>
+						</ul>
+
 						<p class="notes">posted February 2<sup>nd</sup>, with <a href="#">2,000 Notes</a></p>
 					</div>
 				</article>
+
 				<article>
 					<div class="gutter">
 						<header><h2>I was mesmerized by everything.</h2></header>
@@ -98,6 +177,7 @@
 						<p class="notes">posted February 2<sup>nd</sup>, with <a href="#">2,000 Notes</a></p>
 					</div>
 				</article>
+
 				<article>
 					<div class="gutter">
 						<header><h2>About / Philosophies</h2></header>
@@ -123,60 +203,13 @@
 			</div>
 		</main>
 	
-	<!-- <footer>Pull me into your perfect circle.</footer> -->
+	<footer>
+		<span class="pagp">Back &mdash; </span>
+		<span>Pull Me Into Your Perfect Circle</span>
+		<span class="pagn"> &mdash; Next</span>
+	</footer>
 
-	<script type="text/javascript">
-	// By Squarn Themes
-	// Causes .tagline and .aside to stick when $window is scrolled
-
-		$(function(){
-			$('article').mouseenter(
-				function(){$('.meta', this).slideDown("slow","easeOutBounce");}
-			);
-			$('article').mouseleave(
-				function(){$('.meta', this).slideUp("slow","linear");}
-			);	
-		});
-
-		$(function(){
-	        var tagline = $('.tagline').offset().top;
-	          
-	        $(window).scroll(function(){
-                if( $(window).scrollTop() > tagline ) {
-                        $('.tagline').addClass('stickt');
-                } else {
-                        $('.tagline').removeClass('stickt');
-                }
-
-                if($('.tagline').hasClass("stickt"))
-                {
-                	$('.pagn').fadeIn();
-                	$('.pagp').fadeIn();
-                }
-                else
-                {
-                	$('.pagn').hide();
-                	$('.pagp').hide();
-                }
-	        });
-		});
-
-		$(function(){
-	        var aside = $('aside').offset().top - 50;
-	          
-	        $(window).scroll(function(){
-                if( $(window).scrollTop() > aside ) {
-                        $('aside').addClass('sticka');
-                } else {
-                        $('aside').removeClass('sticka');
-                }
-	        });
-		});
-
-		$( ".nav" ).hover(
-			function() {$(this).stop().animate({opacity: 0.25, paddingLeft: "10",}, 1000, "easeOutBounce", function() {});},
-			function() {$(this).stop().animate({opacity: 1, paddingLeft: "0",}, 1000, "easeOutBounce", function() {});}
-		);
-	</script>
+	<script src="script.js"></script>
+</div>
 </body>
 </html>

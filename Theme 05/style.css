@@ -1,9 +1,91 @@
 body
 {
-	background: #ffffff url("noise.png");
-	font-family: "Georgia";
+	background: #ffffff url("bgs/c.png");
+	font-family: "Georgia", serif;
 	font-size: 12px;
 	color:#1c1c1c;
+}
+
+ul, ol
+{
+	line-height: 170%;
+}
+
+em
+{
+	font-weight: bold;
+}
+
+.sticktop
+{
+	position:absolute;
+	bottom: 0px;
+	left: 0px;
+	right:0px;
+	border-bottom:0px;
+}
+
+#starter
+{
+	position: absolute;
+	top: 30%;
+	left:50%;
+}
+
+#starter_2
+{
+	background-color: rgba(255,255,255,.7);
+	position: relative;
+	left: -50%;
+	text-align: center;
+	padding: 20px 20px 10px 20px;
+	border-radius: 20px;
+}
+
+#starter_2 h1, #starter_2 h2
+{
+	font-family: "fjalla one", sans-serif;
+	font-size: 100px;
+	letter-spacing: -4px;
+	text-transform: uppercase;
+	color:#171717;
+	margin-top: -10px;
+}
+
+#starter_2 h1
+{
+	line-height: 105%;
+}
+
+#starter_2 h2
+{
+	font-size: 25px;
+	letter-spacing: 1px;
+	margin-top: -15px;
+}
+
+.description
+{
+	/* text-align: left; */
+	/* margin: 0 auto; */
+	margin-top: 10px;
+	font-size: 8px;
+	/* letter-spacing: 2px; */
+	color: rgba(0, 0, 0, 0.2);
+	margin-left: -48%;
+	font-family: "fjalla one", sans-serif;
+	text-transform: uppercase;
+}
+
+#particles
+{
+	background: #ffffff url("bgs/swirl.png");
+	position:absolute !important;
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
 }
 
 a
@@ -12,15 +94,32 @@ a
 	text-decoration: none;
 }
 
+article ol, article ul
+{
+	margin-left: 30px;
+}
+
+blockquote
+{
+	border-left: 1px solid #000;
+	margin-left: 10px;
+	padding-left: 10px;
+}
+
+blockquote > p ~ ol, blockquote > p ~ ul
+{
+	margin-left: 25px;
+}
+
+blockquote > ol, blockquote > ul
+{
+	margin-left: 20px;
+}
+
 img 
 {
     vertical-align: middle;
     max-width: 100%;
-}
-
-.top_header
-{
-	border-bottom: 2px solid #454545;
 }
 
 .title, .tagline
@@ -58,7 +157,7 @@ img
 .title
 {
 	padding-top:10px;
-	font-family: helvetica;
+	font-family: helvetica, sans-serif;
 	font-size: 50px;
 	letter-spacing: -3px;
 }
@@ -66,7 +165,7 @@ img
 .tagline
 {
 	padding-bottom: 10px;
-	font-family: georgia;
+	font-family: georgia, serif;
 	font-size:10px;
 	letter-spacing: 5px;
 	z-index:10;
@@ -145,7 +244,7 @@ aside
 
 .part a
 {
-	font-style: italic;
+	font-family: "fjalla one", sans-serif;
 }
 
 main
@@ -157,7 +256,20 @@ main
 	left: -150px;
 }
 
-/*540*/
+.top_header
+{
+	border-bottom: 2px solid #2d2d2d;
+}
+
+.gutter
+{
+	width: 500px;
+	max-width: 500px;
+	padding: 15px 17px 17px 17px;
+	border: 10px solid #ededed;
+	background-color: #fff;
+}
+
 .postbody
 {
 	float:right;
@@ -171,16 +283,13 @@ article
 
 article:last-of-type
 {
-	margin-bottom: 100px;
+	margin-bottom: 150px;
 }
 
-.gutter
+article p
 {
-	width: 500px;
-	max-width: 500px;
-	padding: 15px 17px 17px 17px;
-	border: 10px solid #ededed;
-	background-color: #fff;
+	line-height: 170%;
+	margin: 2px 0px;
 }
 
 article header
@@ -192,7 +301,7 @@ article header h2
 {
 	text-align: center;
 	border-bottom: 5px solid #ededed;
-	padding: 5px 10px 10px 10px;
+	padding: 0px 10px 10px 10px;
 	margin: 0px -10px 10px -10px;
 	font-style: italic;
 	letter-spacing: -1px;
@@ -205,7 +314,7 @@ article header h2
 	width: 400px;
 	margin: 15px auto;
 	text-align: center;
-	font-family: "fjalla one";
+	font-family: "fjalla one", sans-serif;
 	display: none;
 	border: 1px solid transparent;
 }
@@ -250,6 +359,7 @@ article header h2
 
 footer
 {
+	display: none;
 	height: 10px;
 	font-size: 10px;
 	position:fixed;
@@ -262,3 +372,7 @@ footer
 	border-bottom: 2px solid #454545;
 	text-align: center;
 }
+
+::-webkit-scrollbar-thumb:vertical {background-color:#fff;}
+::-webkit-scrollbar-thumb:horizontal {background-color:#fff;height:10px !important;}
+::-webkit-scrollbar {height:7px; width:7px; background-color:#000;}
