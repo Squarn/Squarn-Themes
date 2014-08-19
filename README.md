@@ -18,9 +18,8 @@ Theme 03 and Theme 04 are currently a work in progress, and have not been publis
 
 ### Updates/Plans
 
+**[08-19-2014]** 03 has been put on hold to optimize first themes and create 05: new main layout.
 **[07-29-2014]** Theme 03 is currently being finished.  
-**[07-29-2014]** Theme 04 will be completed after 03.  
-**[07-29-2014]** Theme 01 and Theme 02 have been optimized and will be updated.
 
 ### How to Submit a Bug or Ask a Question
 
