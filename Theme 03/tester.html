@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+
+	<style>
+		/*ui-progressbar: The outer container of the progressbar. 
+			This element will additionally have a class of ui-progressbar-indeterminate for indeterminate progressbars.
+		ui-progressbar-value: The element that represents the filled portion of the progressbar.
+		ui-progressbar-overlay*/
+
+		body
+		{
+			background-color: #000;
+			color: #fff;
+		}
+
+		.text
+		{
+			width: 1000px;
+			text-align: center;
+			font-size: 100px;
+			margin: 0 auto;
+			font-family: "helvetica", sans-serif;
+			margin-top: 20%;
+		}
+
+		.load
+		{
+			width: 300px;
+			padding: 5px;
+			height: 0;
+			margin: 0 auto;
+			background-color: #272727;
+		}
+
+		.progressbar
+		{
+			background-color: #fff;
+		}
+		
+		.ui-progressbar
+		{
+			background-color: #666;
+		}
+
+		.ui-progressbar-indeterminate
+		{
+			background-color: #666;
+		}
+
+		.ui-progressbar-value
+		{
+			background-color: #fff;
+			height: 1px;
+		}
+
+		.progress-label
+		{
+			display: none;
+		}
+
+		.psycho
+		{
+			opacity: 0;
+		}
+	</style>
+
+<script>
+$(function () {
+	var progressbar = $(".progressbar"),
+	progressLabel = $(".progress-label");
+
+	progressbar.progressbar({
+		value: 0,
+		max:1,
+		change: function () {
+			valued = progressbar.progressbar("value");
+			progressLabel.text(progressbar.progressbar("value") + "　ロード中");
+			$('.psycho').css("opacity",valued);
+		},
+		complete: function () {
+			progressLabel.text("終了!");
+			$('.load').fadeOut();
+		}
+	});
+
+	function progress() {
+		var val = progressbar.progressbar("value") || 0;
+		// for non-opacity values
+
+		progressbar.progressbar("value", val + ((Math.random() * (.0009 - .000001) + .000001)*2));
+
+		if (val < 1) {
+			setTimeout(progress, 1);
+		}
+	}
+
+	setTimeout(progress, 2000);
+});
+</script>
+</head>
+<body>
+	<div class="text">
+	<p class="psycho">PSYCHOSOMATICA</p>
+	<div class="load">
+		<div class="progressbar"><div class="label"></div><div class="progress-label">ロード中</div></div>
+	</div>
+	</div>
+</body>
+</html>
