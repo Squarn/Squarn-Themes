@@ -12,10 +12,16 @@ $(document).ready(function(){
 	
 		$(function(){
 			$('article').mouseenter(
-				function(){$('.meta', this).stop().slideDown("slow","easeOutBounce");}
+				function(){
+					$('.meta', this).stop().slideDown("slow","easeOutBounce");
+					$(this).css("marginBottom",0);
+				}
 			);
 			$('article').mouseleave(
-				function(){$('.meta', this).stop().slideUp(600,"easeInBack");}
+				function(){
+					$('.meta', this).stop().slideUp(600,"easeInBack");
+					$(this).css("marginBottom",30);
+				}
 			);	
 		});
 
@@ -25,9 +31,6 @@ $(document).ready(function(){
 	        $(window).scroll(function(){
                 if( $(window).scrollTop() > tagline ) { $('.tagline').addClass('stickt'); } 
                 else { $('.tagline').removeClass('stickt'); }
-
-                if( $(window).scrollTop() > tagline ) { $('footer').fadeIn("fast"); } 
-                else { $('footer').hide(); }
 
                 if($('.tagline').hasClass("stickt"))
                 {

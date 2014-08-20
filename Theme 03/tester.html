@@ -20,26 +20,25 @@
 
 		.text
 		{
-			width: 1000px;
 			text-align: center;
-			font-size: 100px;
 			margin: 0 auto;
-			font-family: "helvetica", sans-serif;
 			margin-top: 20%;
 		}
 
 		.load
 		{
-			width: 300px;
-			padding: 5px;
+			padding: 3px;
 			height: 0;
 			margin: 0 auto;
 			background-color: #272727;
+			display: none;
+			width: 30%;
+
 		}
 
 		.progressbar
 		{
-			background-color: #fff;
+			background-color: #272727;
 		}
 		
 		.ui-progressbar
@@ -66,6 +65,10 @@
 		.psycho
 		{
 			opacity: 0;
+			font-size: 100px;
+			font-family: "helvetica", sans-serif;
+			letter-spacing: -9px;
+			margin: 0px;
 		}
 	</style>
 
@@ -74,12 +77,15 @@ $(function () {
 	var progressbar = $(".progressbar"),
 	progressLabel = $(".progress-label");
 
+	$('.load').delay(1500).fadeIn("slow");
+
 	progressbar.progressbar({
 		value: 0,
 		max:1,
+
 		change: function () {
 			valued = progressbar.progressbar("value");
-			progressLabel.text(progressbar.progressbar("value") + "　ロード中");
+			progressLabel.text(progressbar.progressbar("value") + "　パーセント");
 			$('.psycho').css("opacity",valued);
 		},
 		complete: function () {
@@ -92,7 +98,8 @@ $(function () {
 		var val = progressbar.progressbar("value") || 0;
 		// for non-opacity values
 
-		progressbar.progressbar("value", val + ((Math.random() * (.0009 - .000001) + .000001)*2));
+		progressbar.progressbar("value", val + ((Math.random() * (.0009 - .0003) + .0003)*5));
+		//progressbar.progressbar("value", val + Math.random());
 
 		if (val < 1) {
 			setTimeout(progress, 1);
@@ -105,10 +112,12 @@ $(function () {
 </head>
 <body>
 	<div class="text">
-	<p class="psycho">PSYCHOSOMATICA</p>
-	<div class="load">
-		<div class="progressbar"><div class="label"></div><div class="progress-label">ロード中</div></div>
-	</div>
+		<p class="psycho">PSYCHOSOMATICA</p>
+		<div class="load">
+			<div class="progressbar">
+				<div class="progress-label">ロード中</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

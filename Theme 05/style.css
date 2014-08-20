@@ -6,6 +6,16 @@ body
 	color:#1c1c1c;
 }
 
+/* OOCSS */
+.noise-bg
+{
+	background-image: url("noise.png");
+}
+
+.fjalla { font-family: "Fjalla One", sans-serif; }
+.arbutus { font-family: "Arbutus Slab", serif;}
+.georgia { font-family: "Georgia", serif;}
+
 canvas
 {
 	max-width: 100%;
@@ -26,19 +36,20 @@ em
 	position:absolute;
 	bottom: 0;
 	left: 0;
-	right:0;
-	border-bottom:0;
+	right: 0;
+	border-bottom: 0;
 }
 
 #starter
 {
 	position: absolute;
 	top: 30%;
-	left:50%;
+	left: 50%;
 }
 
 #starter_2
 {
+	background-color: #fff;
 	background-color: rgba(255,255,255,.7);
 	position: relative;
 	left: -50%;
@@ -49,7 +60,6 @@ em
 
 #starter_2 h1, #starter_2 h2
 {
-	font-family: "fjalla one", sans-serif;
 	font-size: 100px;
 	letter-spacing: -4px;
 	text-transform: uppercase;
@@ -71,14 +81,10 @@ em
 
 .description
 {
-	/* text-align: left; */
-	/* margin: 0 auto; */
 	margin-top: 10px;
 	font-size: 8px;
-	/* letter-spacing: 2px; */
 	color: rgba(0, 0, 0, 0.2);
 	margin-left: -48%;
-	font-family: "fjalla one", sans-serif;
 	text-transform: uppercase;
 }
 
@@ -132,7 +138,7 @@ img
 	font-style: italic;
 	color: #fff;
 	font-weight: normal;
-	background: #1c1c1c url("noise.png");
+	background-color: #1c1c1c;
 	text-align: center;
 }
 
@@ -169,7 +175,6 @@ img
 .tagline
 {
 	padding-bottom: 10px;
-	font-family: georgia, serif;
 	font-size:10px;
 	letter-spacing: 5px;
 	z-index:10;
@@ -207,7 +212,7 @@ aside
 	border: 10px solid #ededed;
 	margin-bottom: 10px;
 	font-size: 10px;
-	background: #EBEBEB url("noise.png");
+	background-color: #EBEBEB;
 }
 
 .part h3
@@ -238,19 +243,6 @@ aside
 	display: block;
 }
 
-/*.part:last-of-type ul li:hover
-{
-	border-left: 2px solid #ededed;
-	padding-left: 10px;
-	-webkit-transition: all ease .5s;
-	        transition: all ease .5s;
-}*/
-
-.part a
-{
-	font-family: "fjalla one", sans-serif;
-}
-
 main
 {
 	width: 860px;
@@ -276,18 +268,14 @@ main
 
 .postbody
 {
-	float:right;
+	float: right;
 	width: 554px;
+	padding-bottom: 150px;
 }
 
 article
 {
 	margin-bottom: 50px;
-}
-
-article:last-of-type
-{
-	margin-bottom: 150px;
 }
 
 article p
@@ -318,7 +306,6 @@ article header h2
 	width: 400px;
 	margin: 15px auto;
 	text-align: center;
-	font-family: "fjalla one", sans-serif;
 	display: none;
 	border: 1px solid transparent;
 }
@@ -370,7 +357,7 @@ footer
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: #1c1c1c url("noise.png");
+	background-color: #1c1c1c;
 	color: #ffffff;
 	padding: 10px 0;
 	border-bottom: 2px solid #454545;
