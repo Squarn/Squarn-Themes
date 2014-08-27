@@ -3,14 +3,15 @@
 <head>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
-	<meta charset="UTF-8">
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 
 	<style>
-		/*ui-progressbar: The outer container of the progressbar. 
-			This element will additionally have a class of ui-progressbar-indeterminate for indeterminate progressbars.
+		/*
+		ui-progressbar: The outer container of the progressbar. This element will additionally have a class of
+		ui-progressbar-indeterminate for indeterminate progressbars.
 		ui-progressbar-value: The element that represents the filled portion of the progressbar.
-		ui-progressbar-overlay*/
+		ui-progressbar-overlay
+		*/
 
 		body
 		{
@@ -18,7 +19,7 @@
 			color: #fff;
 		}
 
-		.text
+		.wrap
 		{
 			text-align: center;
 			margin: 0 auto;
@@ -30,10 +31,9 @@
 			padding: 3px;
 			height: 0;
 			margin: 0 auto;
-			background-color: #272727;
+			/*background-color: #272727;*/
 			display: none;
 			width: 30%;
-
 		}
 
 		.progressbar
@@ -43,12 +43,10 @@
 		
 		.ui-progressbar
 		{
-			background-color: #666;
 		}
 
 		.ui-progressbar-indeterminate
 		{
-			background-color: #666;
 		}
 
 		.ui-progressbar-value
@@ -72,46 +70,44 @@
 		}
 	</style>
 
-<script>
-$(function () {
-	var progressbar = $(".progressbar"),
-	progressLabel = $(".progress-label");
+	<script>
+	$(function () {
+		var progressbar = $(".progressbar"),
+		progressLabel = $(".progress-label");
 
-	$('.load').delay(1500).fadeIn("slow");
+		$('.load').delay(1500).fadeIn("slow");
 
-	progressbar.progressbar({
-		value: 0,
-		max:1,
+		progressbar.progressbar({
+			value: 0,
+			max:1,
 
-		change: function () {
-			valued = progressbar.progressbar("value");
-			progressLabel.text(progressbar.progressbar("value") + "　パーセント");
-			$('.psycho').css("opacity",valued);
-		},
-		complete: function () {
-			progressLabel.text("終了!");
-			$('.load').fadeOut();
+			change: function () {
+				valued = progressbar.progressbar("value");
+				progressLabel.text(progressbar.progressbar("value") + "　パーセント");
+				$('.psycho').css("opacity",valued);
+			},
+			complete: function () {
+				progressLabel.text("終了!");
+				$('.load').fadeOut();
+			}
+		});
+
+		function progress() {
+			var val = progressbar.progressbar("value") || 0;
+			progressbar.progressbar("value", val + ((Math.random() * (.0009 - .0003) + .0003)*5));
+		
+			if (val < 1) {
+				setTimeout(progress, 1);
+			}
 		}
+
+		setTimeout(progress, 2000);
 	});
-
-	function progress() {
-		var val = progressbar.progressbar("value") || 0;
-		// for non-opacity values
-
-		progressbar.progressbar("value", val + ((Math.random() * (.0009 - .0003) + .0003)*5));
-		//progressbar.progressbar("value", val + Math.random());
-
-		if (val < 1) {
-			setTimeout(progress, 1);
-		}
-	}
-
-	setTimeout(progress, 2000);
-});
-</script>
+	</script>
 </head>
+
 <body>
-	<div class="text">
+	<div class="wrap">
 		<p class="psycho">PSYCHOSOMATICA</p>
 		<div class="load">
 			<div class="progressbar">
@@ -120,4 +116,5 @@ $(function () {
 		</div>
 	</div>
 </body>
+
 </html>
