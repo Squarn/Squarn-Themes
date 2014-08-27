@@ -6,7 +6,9 @@ body
 	color:#1c1c1c;
 }
 
-/* OOCSS */
+/* OOCSS 
+italic
+*/
 .noise-bg
 {
 	background-image: url("noise.png");
