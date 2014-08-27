@@ -21,6 +21,7 @@
 <meta name="color:Description Text Color" content="#000000"/>
 <meta name="color:Text Color" content="#000000"/>
 <meta name="color:Link Color" content="#C1C1C1"/>
+<meta name="color:Nav Arrow Color" content="#ffffff"/>
 <meta name="color:Audio Post Accent" content="#000"/>
 <meta name="color:Post Header Color" content="#0A0A0A"/>
 <meta name="color:Post Header Text Color" content="#FFFFFF"/>
@@ -57,7 +58,7 @@
 <meta name="text:Link 5 URL" content=""/>
 <meta name="text:Link 5 Name" content="V"/>
 
-<title>{title} {block:PostTitle}- {PostTitle}{/block:PostTitle}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
+<title>{title} {block:PostTitle}&mdash; {PostTitle}{/block:PostTitle}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link rel="shortcut icon" href="{Favicon}">
 <link rel="alternate" type="application/rss+xml" href="{RSS}">
@@ -72,6 +73,11 @@ body
 	font-family: calibri, sans-serif;
 	font-size: 11px;
 	color: {color:Text Color};
+}
+
+img
+{
+	vertical-align: middle;
 }
 
 p
@@ -135,7 +141,7 @@ p
 	background-color: {color:Sidebar Color};
 	border: 1px solid {color:Background Color};	
 	padding: 7px;
-	color: {color:Nav Background Color};
+	color: {color:Nav Arrow Color};
 	top: 280px;
 	left: 290px;
 	text-decoration: none;
@@ -694,7 +700,9 @@ pre {
 	
 		{block:Pagination}
 			{block:PreviousPage}<div id="pagp"><a href="{PreviousPage}">></a></div>{/block:PreviousPage}
-			{block:NextPage}<div id="pagn"><a href="{NextPage}"><</a></div>{/block:NextPage}
+			{block:NextPage}<div id="pagn"><a href="{NextPage}">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="4.229px" height="7.104px" viewBox="0 0 4.229 7.104" enable-background="new 0 0 4.229 7.104" xml:space="preserve"><g><g><g><g><rect x="3.1" y="6" width="1" height="1"/><rect x="2.1" y="5" width="1" height="1"/><rect x="1.1" y="4" width="1" height="1"/><rect x="3.1" width="1" height="1"/><rect x="2.1" y="1" width="1" height="1"/><rect x="1.1" y="2" width="1" height="1"/><rect x="0.1" y="3" width="1" height="1"/></g><g></g></g></g></g><g></g></svg>
+			</a></div>{/block:NextPage}
 		{/block:Pagination}
 		
 		<div id="nav">
