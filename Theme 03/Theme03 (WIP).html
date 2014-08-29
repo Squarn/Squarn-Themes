@@ -6,13 +6,11 @@ Theme 03
 By: Squarn.tumblr.com
 Version: 1.0
 Please do not remove the credit.
-Github: https://github.com/Squarn/Squarn-Themes/tree/master/Theme%2003
+Github: 
 -->
  
 <head>
-<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400italic|Roboto+Slab:100' rel='stylesheet' type='text/css'>
-
-<title>{title} - {block:PostTitle}{PostTitle}{/block:PostTitle}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
+<title>{title} {block:PostTitle}- {PostTitle}{/block:PostTitle}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link rel="shortcut icon" href="{Favicon}">
 <link rel="alternate" type="application/rss+xml" href="{RSS}">
@@ -21,9 +19,11 @@ Github: https://github.com/Squarn/Squarn-Themes/tree/master/Theme%2003
 {/block:Description}
 
 <!-- Tumblr Variables -->
+<!-- Images -->
 <meta name="image:Background" content=""/>
 <meta name="image:Header Image" content="http://static.tumblr.com/aan1aaf/a4Zn9jlpq/img-noise-361x200.png"/>
 
+<!-- Colors -->
 <meta name="color:Background Color" content="#fff"/>
 <meta name="color:Navigation Background Color" content="#f3f3f3"/>
 <meta name="color:Navigation Link Color" content="#9bd1ce"/>
@@ -35,9 +35,11 @@ Github: https://github.com/Squarn/Squarn-Themes/tree/master/Theme%2003
 <meta name="color:Meta Background Color" content="#fff"/>
 <meta name="color:Meta Text Color" content="#000"/>
 
+<!-- Fonts -->
 <meta name="font:Title" content="Helvetica Neue"/>
 <meta name="font:Tagline" content="georgia"/>
 
+<!-- Selectors -->
 <meta name="select:Avatar" content="circled" title="Circle"/>
 <meta name="select:Avatar" content="rounded" title="Rounded"/>
 <meta name="select:Avatar" content="square" title="Square"/>
@@ -50,6 +52,7 @@ Github: https://github.com/Squarn/Squarn-Themes/tree/master/Theme%2003
 <meta name="select:Navigation" content="nav-two-column" title="Two Column Nav"/>
 <meta name="select:Navigation" content="nav-three-column" title="Three Column Nav"/>
 
+<!-- Booleans -->
 <meta name="if:Post Margins" content="1"/>
 <meta name="if:Post Background" content="0"/>
 <meta name="if:Show Textual Content" content="1"/>
@@ -57,6 +60,7 @@ Github: https://github.com/Squarn/Squarn-Themes/tree/master/Theme%2003
 <meta name="if:Display Tags Below Post" content="0"/>
 <meta name="if:Longer Blog Title" content="0"/>
 
+<!-- Text -->
 <meta name="text:Longer Title" content=""/>
 <meta name="text:Tagline" content=""/>
 
@@ -92,6 +96,15 @@ Github: https://github.com/Squarn/Squarn-Themes/tree/master/Theme%2003
 <!-- PXU Stylesheet -->
 <link href='http://static.tumblr.com/aan1aaf/WlPn9aol4/pxu.css' rel='stylesheet' type='text/css'>
 
+<!-- Google Fonts -->
+<script>
+  WebFont.load({
+    google: {
+      families: ['Droid Sans', 'Droid Serif']
+    }
+  });
+</script>
+
 <!-- Begin Stylesheet -->
 <style>
 body 
@@ -104,36 +117,30 @@ body
 	padding: 0px;
 }
 
-.clearfix:after 
-{
-	content: " "; /* Older browser do not support empty content */
-	visibility: hidden;
-	display: block;
-	height: 0;
-	clear: both;
-}
-
-a {color:{color:Body Link Color}; text-decoration:none;}
+a {color: {color:Body Link Color}; text-decoration: none;}
 
 a:hover {
+	color: {color:Body Text Color};
 	-moz-transition-duration: .5s; 
 	-o-transition-duration: .5s; 
 	-webkit-transition-duration: .5s; 
 	transition-duration: .5s;
-	color:{color:Body Text Color};
 }
 
-a:visited {}
+/*a:visited {}*/
 
 p
 {
-	margin-top:5px;
-	margin-bottom:5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
-/* End General Layout Selectors */
+
+img
+{
+	vertical-align: middle;
+}
 
 /* Header Selectors */
-
 #fixer
 {
 	position: relative;
@@ -151,7 +158,7 @@ p
 #header-positioner /*Wraps Title Content and positions it */
 {
 	position: relative;
-	height:110px;
+	height: 110px;
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
@@ -172,12 +179,12 @@ p
 
 .port /* Avatar */
 {
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
 	position: absolute;
 	left: 352px;
 	top: 8px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
 }
 
 .circled
@@ -188,7 +195,7 @@ p
 .rounded
 {
 	-webkit-border-radius: 25%;
-	-moz-border-radius: 5%;
+	-moz-border-radius: 25%;
 	border-radius: 25%;
 }
 
@@ -199,8 +206,7 @@ p
 	border-radius: 0%;
 }
 
-/* The following two classes align the title and tagline
-vertically, be careful if you change them */
+/* Align Text & Tagline Vertically */
 
 .title-and-tagline
 {
@@ -238,7 +244,7 @@ vertically, be careful if you change them */
 	font-size: 9px;
 	font-style: normal;
 	text-align: right;
-	float:right;
+	float: right;
 	margin: 0px;
 	padding: 0px;
 	line-height: 9px;
@@ -328,7 +334,6 @@ deleting a property can break the vertical alignment */
 	{/block:IfPostMargins}
 }
 {/block:IndexPage}
-/* End Header Selectors */
 
 .postbody
 { 
@@ -402,9 +407,6 @@ deleting a property can break the vertical alignment */
 .entry img
 {
 	max-width: 400px;
-	{block:IfNotPostMargins}
-	   margin-bottom:-3px;
-	{/block:IfNotPostMargins}
 }
 
 .meta
@@ -780,9 +782,19 @@ ol
 }
 {/block:PermalinkPage}
 
-.pagination /* Do not Change */
+/* Do Not Change */
+.pagination 
 {
 	display: none;
+}
+
+.clearfix:after 
+{
+	content: " "; /* Older browser do not support empty content */
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
 }
 
 #boyYOUREAWOLF
@@ -804,7 +816,7 @@ pre {
 
 /* Soundcloud fuckery fix*/
 .top_bar > .music-info {display: none;}
-.top_bar > .clearfix{display: none;}
+.top_bar > .clearfix {display: none;}
 .top_bar > .ppage {width: 400px;float: left;}
 
 /* Scrollbar */
@@ -816,6 +828,7 @@ pre {
 </style>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
 
 </head>
 <body>
