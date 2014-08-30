@@ -1,5 +1,4 @@
-Squarn Themes
-=============
+# Squarn Themes
 
 *Tumblr Themes by [Squarn.tumblr.com](http://squarn.tumblr.com)*
 

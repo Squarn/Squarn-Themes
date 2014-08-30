@@ -6,6 +6,7 @@ Broad goals.
 
 ### Theme 03
 - Progress bar on initial load
+- Google Fonts
 
 ## TODO
 - Try out SVG
