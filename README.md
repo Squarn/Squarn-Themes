@@ -12,13 +12,13 @@ Theme 01 | [Live](http://square-theme1.tumblr.com) | Source | Ver
 Theme 02 | [Live](http://square-theme2.tumblr.com) | Source | Ver
 Theme 03 | [Live](http://square-theme3.tumblr.com) | Source | Ver
 Theme 04 | [Live](http://square-theme4.tumblr.com) | Source | Ver
+Theme 05 | [Live](http://squarn.tumblr.com)        | None   | Ver
+Theme 06 | [Live](http://square-theme6.tumblr.com) | Source | Ver
 
 Theme 03 and Theme 04 are currently a work in progress, and have not been published. Sources will be available once themes have become hosted on github.
 
 ### Updates/Plans
-
-**[08-19-2014]** 03 has been put on hold to optimize first themes and create 05: new main layout.  
-**[07-29-2014]** Theme 03 is currently being finished.  
+**[09-03-2014]** Theme 05, a new site theme, is currently in priority.
 
 ### How to Submit a Bug or Ask a Question
 
