@@ -1,0 +1,169 @@
+body
+{
+	font-family: "open sans";
+	font-size: 14px;
+	color: #666;
+	background-color: #ffffff;
+}
+
+p
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+img
+{
+	vertical-align: middle;
+	max-width: 500px;
+}
+
+a
+{
+	color: #666;
+	text-decoration: none;
+}
+
+/* Header */
+header
+{
+	width: 800px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+header .title
+{	
+	text-transform: uppercase;
+	font-size: 35px;
+	letter-spacing: 4px;
+	color: #313131;
+	font-family: "montserrat", sans-serif;
+	font-weight: 700;
+}
+
+header ul
+{
+	list-style-type: none;
+	margin-top: 20px;
+}
+
+header ul li
+{
+	display: inline;
+	font-family: "montserrat", sans-serif;
+	font-size: 11px;
+	margin-right: 20px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+/* Main */
+main
+{
+	width: 500px;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.pagination
+{
+	width: 100px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.meta
+{
+	font-size: 10px;
+	color: #c1c1c1;
+}
+
+.meta a {color: #c1c1c1;}
+
+.meta ol
+{
+	display: inline;
+}
+
+.meta ol li
+{
+	display: inline;
+}
+
+.meta ol li a:after{content:",";}
+.meta ol li:last-of-type a:after{content: "";}
+
+/* Chevron Separation */
+.pagination i:first-child {margin-right: 5px;}
+.pagination i:last-child {margin-left: 5px;}
+
+/* Article */
+article
+{
+	margin-bottom: 30px;
+	line-height: 170%;
+}
+
+/* Footer */
+footer
+{
+	width: 800px;
+	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding-top: 20px;
+	border-top: 2px solid #666;
+}
+
+footer ul
+{
+	list-style-type: none;
+}
+
+footer ul li
+{
+	margin-bottom: 2px;
+	margin-left: -3px;
+}
+
+.fsection
+{
+	width: 270px;
+	float:left;
+	margin-left: 30px;
+}
+
+.second {width: 200px;}
+.third {width: 220px;}
+
+.fsection:first-child
+{
+	margin-left: 0px;
+}
+
+.titular
+{
+	font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	margin-bottom: 7px;
+}
+
+.fsection p
+{
+	line-height: 150%;
+	font-size: 12px;
+}
+
+.clearfix:after 
+{
+	content: " "; /* Older browser do not support empty content */
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}

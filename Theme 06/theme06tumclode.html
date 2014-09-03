@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<!--
+	Theme 06
+	Version 1.0
+	By Squarn Themes - http://squarn.tumblr.com
+	Font Awesome by Dave Gandy - http://fontawesome.io
+-->
+<head>
+	<title>{title} {block:PostTitle}&emdash; {PostTitle}{/block:PostTitle}{block:PostSummary} {PostSummary}{/block:PostSummary}</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+	{block:Description}
+		<meta name="description" content="{MetaDescription}" />
+	{/block:Description}
+
+	<!-- Colors -->
+	<meta name="color:Background Color" content="#ffffff" />
+	<meta name="color:Text Color" content="#666666" />
+	<meta name="color:Tag Note Color" content="#c1c1c1" />
+
+	<!-- Booleans -->
+	<meta name="if:Show Notes and Tags" content="0" />
+	<meta name="if:Show Textual Content" content="1" />
+
+	<meta name="text:Footer Text" content="<p>I will grow.</p>" />
+
+	<!-- Links -->
+	<meta name="text:Link 1 Name" content="" />
+	<meta name="text:Link 1 URL" content="" />
+	<meta name="text:Link 2 Name" content="" />
+	<meta name="text:Link 2 URL" content="" />
+	<meta name="text:Link 3 Name" content="" />
+	<meta name="text:Link 3 URL" content="" />
+	<meta name="text:Link 4 Name" content="" />
+	<meta name="text:Link 4 URL" content="" />
+	<meta name="text:Link 5 Name" content="" />
+	<meta name="text:Link 5 URL" content="" />
+
+	<meta name="text:Link 6 Name" content="" />
+	<meta name="text:Link 6 URL" content="" />
+	<meta name="text:Link 7 Name" content="" />
+	<meta name="text:Link 7 URL" content="" />
+	<meta name="text:Link 8 Name" content="" />
+	<meta name="text:Link 8 URL" content="" />
+	<meta name="text:Link 9 Name" content="" />
+	<meta name="text:Link 9 URL" content="" />
+	<meta name="text:Link 10 Name" content="" />
+	<meta name="text:Link 10 URL" content="" />
+
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div class="title">{title}</div>
+		<navigation>
+			<ul>
+				{block:IfLink1Name}
+					<li><a href="{text:Link 1 URL}">{text:Link 1 Name}</a></li>
+				{/block:IfLink1Name}
+				{block:IfLink2Name}
+					<li><a href="{text:Link 2 URL}">{text:Link 2 Name}</a></li>
+				{/block:IfLink2Name}
+				{block:IfLink3Name}
+					<li><a href="{text:Link 3 URL}">{text:Link 3 Name}</a></li>
+				{/block:IfLink3Name}
+				{block:IfLink4Name}
+					<li><a href="{text:Link 4 URL}">{text:Link 4 Name}</a></li>
+				{/block:IfLink4Name}
+				{block:IfLink5Name}
+					<li><a href="{text:Link 5 URL}">{text:Link 5 Name}</a></li>
+				{/block:IfLink5Name}
+
+				<!-- Includes pages in navigation -->				
+				{block:HasPages} 
+					{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
+				{/block:HasPages}
+			</ul>
+		</navigation>
+	</header>
+	<main>
+	{block:Posts}
+		<article>
+		<!-- Text -->
+		{block:Text}
+			{Body}		
+		{/block:Text}
+				
+		<!-- Photo -->
+		{block:Photo}
+			{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}">{LinkCloseTag}
+			
+			{block:IfShowTextualContent}
+				{block:Caption}
+					{Caption}
+				{/block:Caption}
+			{/block:IfShowTextualContent}
+		{/block:Photo}
+		
+		<!-- Photoset -->
+		{block:Photoset}
+			{Photoset-500}
+
+			{block:IfShowTextualContent}
+				{block:Caption}
+					{Caption}
+				{/block:Caption}
+			{/block:IfShowTextualContent}
+		{/block:Photoset}
+		
+		<!-- Panorama -->
+		{block:Panorama}
+			{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+			
+			{block:IfShowTextualContent}
+				{block:Caption}
+					{Caption}
+				{/block:Caption}
+			{/block:IfShowTextualContent}
+		{/block:Panorama}
+		
+		<!-- Link -->		
+		{block:Link}
+			<a href="{URL}" class="quote">{Name}</a>
+			
+			{block:Description}
+				{Description}
+			{/block:Description}
+		{/block:Link}
+				
+		<!-- Quote -->
+		{block:Quote}
+			<div class="quote"><a href="{Permalink}">"{Quote}"</a></div>
+			
+			{block:Source}
+				<p>&mdash; {Source}</p>
+			{block:Source}
+		{/block:Quote}
+				
+		<!-- Answer -->
+		{block:Answer}
+			<div class="ask">{lang:Asker asked 2}: "{Question}"</div>
+				
+			{block:Answerer}
+				<p>{Answerer} answered:</p>
+				<blockquote><p>{Answer}</p></blockquote>
+			{/block:Answerer}
+					
+			<p>{Replies}</p>
+		{/block:Answer}
+			
+		<!-- Chat -->
+		{block:Chat}
+			{block:Lines}
+				<p class="{ALT}">{Name}: {Line}</p>
+			{/block:Lines}
+		{/block:Chat}
+				
+		<!-- Audio -->
+		{block:Audio}
+			{block:AudioEmbed}
+			{AudioEmbed-400}
+				
+				{block:IndexPage}<a href="{Permalink}">Permalink</a>{/block:IndexPage}
+				
+				{block:PermalinkPage}
+					{block:TrackName}<p>"{TrackName}"</p>{/block:TrackName}
+					{block:Artist}<p>by {Artist}</p>{/block:Artist}
+					{block:Album}<p>on "{Album}"</p>{/block:Album}
+				{/block:PermalinkPage}
+			{/block:AudioEmbed}
+	
+			{block:AudioPlayer} 
+			<div class="audioc">
+				<div class="playbox">
+					<div class="playbutton">
+					{block:AudioPlayer}
+						{AudioPlayerBlack}
+					{/block:AudioPlayer}
+					</div>
+				</div>
+				
+				{block:AlbumArt}
+					<img src="{AlbumArtURL}" class="art">
+				{/block:AlbumArt}
+			</div>
+			
+			<div class="music-info">
+				<p class="pcount">{PlayCountWithLabel}</p>
+				
+				<div class="audio-meta">
+				{block:TrackName}<p class="tname">"{TrackName}"</p>{/block:TrackName}
+				{block:Artist}<p class="artname">by {Artist}</p>{/block:Artist}
+				{block:Album}<p class="alname">on "{Album}"</p>{/block:Album}
+				</div>
+				
+				{block:caption}
+					<div class="acaption">{caption}</div>
+				{/block:caption}
+			</div>
+			
+			<div class="clearfix"></div>
+			{/block:AudioPlayer}
+		{/block:Audio}
+				
+		<!-- Video -->
+		{block:Video}
+			{VideoEmbed-400}
+					
+			{block:IfShowTextualContent}
+				{block:Caption}
+					{Caption}
+				{/block:Caption}
+			{/block:IfShowTextualContent}
+		{/block:Video}
+		
+		 <!-- Gets rid of "via()" text.-->
+        <div id="boyYOUREAWOLF">
+    	    {block:ContentSource} 
+    	    	<p>from <a href="{SourceURL}">{SourceTitle}</a></p>
+        	{/block:ContentSource}
+    	    {block:ContentSource}
+    	    	{SourceTitle}
+    	    {/block:ContentSource}
+    	    {block:RebloggedFrom}
+    	    	via <a href="{ReblogParentURL}">({ReblogParentName})</a>
+    	    {/block:RebloggedFrom}
+        </div>
+
+			<div class="meta">
+				{block:NoteCount}
+					<a href="{Permalink}">{NoteCountWithLabel}</a>
+				{/block:NoteCount} &mdash; 
+
+				{block:HasTags}
+					<ol>
+						{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
+					</ol>  
+				{/block:HasTags}
+			</div>
+		</article>
+	{/block:Posts}
+
+		<!-- Pagination -->
+		{block:Pagination}
+		<div class="pagination">
+		{block:PreviousPage}
+			<a href="{PreviousPage}"><i class="fa fa-chevron-left fa-2x"></i></a>
+		{/block:PreviousPage}
+		{block:NextPage}
+			<a href="{NextPage}"><i class="fa fa-chevron-right fa-2x"></i></a>
+		{/block:NextPage}
+		</div>
+		{/block:Pagination}
+	</main>
+
+	<footer>
+		<div class="fsection">
+			<div class="titular">{title}</div>
+			<div class="description">{Description}</div>
+		</div>
+		
+		<div class="fsection second">
+			<div class="titular">Links</div>
+
+			<!-- If Font Awesome is Enabled -->
+			{block:IfEnableFontAwesome}
+			<ul>
+				{block:IfLink6Name}
+					<li><a href="{text:Link 6 URL}"><i class="fa fa-bookmark-o fa-fw"> {text:Link 6 Name}</a></li>
+				{/block:IfLink6Name}
+				{block:IfLink7Name}
+					<li><a href="{text:Link 7 URL}"><i class="fa fa-bookmark-o fa-fw"> {text:Link 7 Name}</a></li>
+				{/block:IfLink7Name}
+				{block:IfLink8Name}
+					<li><a href="{text:Link 8 URL}"><i class="fa fa-bookmark-o fa-fw"> {text:Link 8 Name}</a></li>
+				{/block:IfLink8Name}
+				{block:IfLink9Name}
+					<li><a href="{text:Link 9 URL}"><i class="fa fa-bookmark-o fa-fw"> {text:Link 9 Name}</a></li>
+				{/block:IfLink9Name}
+				{block:IfLink10Name}
+					<li><a href="{text:Link 10 URL}"><i class="fa fa-bookmark-o fa-fw"> {text:Link 10 Name}</a></li>
+				{/block:IfLink10Name}
+			</ul>
+			{/block:IfEnableFontAwesome}
+			
+			<!-- If Font Awesome is Disabled -->
+			{block:IfNotEnableFontAwesome}
+			<ul>
+				{block:IfLink6Name}
+					<li><a href="{text:Link 6 URL}">{text:Link 6 Name}</a></li>
+				{/block:IfLink6Name}
+				{block:IfLink7Name}
+					<li><a href="{text:Link 7 URL}">{text:Link 7 Name}</a></li>
+				{/block:IfLink7Name}
+				{block:IfLink8Name}
+					<li><a href="{text:Link 8 URL}">{text:Link 8 Name}</a></li>
+				{/block:IfLink8Name}
+				{block:IfLink9Name}
+					<li><a href="{text:Link 9 URL}">{text:Link 9 Name}</a></li>
+				{/block:IfLink9Name}
+				{block:IfLink10Name}
+					<li><a href="{text:Link 10 URL}">{text:Link 10 Name}</a></li>
+				{/block:IfLink10Name}
+			</ul>
+			{/block:IfNotEnableFontAwesome}
+		</div>
+
+		<div class="fsection">
+			Copyright <i class="fa fa-copyright"></i> 2014 by {title}
+		</div>
+
+		<div class="clearfix"></div>
+	</footer>
+</body>
+</html>
