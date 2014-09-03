@@ -6,9 +6,7 @@ body
 	color:#1c1c1c;
 }
 
-/* OOCSS 
-italic
-*/
+/*OOCSS*/
 .noise-bg
 {
 	background-image: url("noise.png");
@@ -17,6 +15,23 @@ italic
 .fjalla { font-family: "Fjalla One", sans-serif; }
 .arbutus { font-family: "Arbutus Slab", serif;}
 .georgia { font-family: "Georgia", serif;}
+
+p
+{
+	margin: 10px 0px;
+}
+
+a
+{
+	color: #1c1c1c;
+	text-decoration: none;
+}
+
+img 
+{
+    vertical-align: middle;
+    max-width: 100%;
+}
 
 canvas
 {
@@ -85,7 +100,7 @@ em
 {
 	margin-top: 10px;
 	font-size: 8px;
-	color: rgba(0, 0, 0, 0.2);
+	color: rgba(0, 0, 0, 0.3);
 	margin-left: -48%;
 	text-transform: uppercase;
 }
@@ -98,12 +113,6 @@ em
 	right:0;
 	bottom:0;
 	left:0;
-}
-
-a
-{
-	color: #1c1c1c;
-	text-decoration: none;
 }
 
 article ol, article ul
@@ -128,12 +137,6 @@ blockquote > ol, blockquote > ul
 	margin-left: 20px;
 }
 
-img 
-{
-    vertical-align: middle;
-    max-width: 100%;
-}
-
 .title, .tagline
 {
 	width: 100%;
@@ -143,11 +146,6 @@ img
 	background-color: #1c1c1c;
 	text-align: center;
 }
-
-/*.tagline div
-{
-	display: inline;
-}*/
 
 .pagn, .pagp
 {
@@ -201,6 +199,11 @@ aside
 	line-height: 150%;
 }
 
+aside p
+{
+	margin: 3px 0;
+}
+
 .sticka
 {
 	position:fixed;
@@ -209,21 +212,22 @@ aside
 
 .part
 {
-	width: 210px;
+	font-family: "karla";
+	width: 220px;
 	padding: 10px;
-	border: 10px solid #ededed;
+	border: 5px solid #ededed;
 	margin-bottom: 10px;
-	font-size: 10px;
+	font-size: 11px;
 	background-color: #EBEBEB;
 }
 
 .part h3
 {
 	padding: 5px 10px 4px 12px;
-	margin: 0 -10px;
+	margin: 0 -20px;
 	background-color: #ededed;
 	text-transform: uppercase;
-	font-size: 9px;
+	font-size: 10px;
 	letter-spacing: 4px;
 	margin-bottom: 10px;
 }
@@ -283,7 +287,12 @@ article
 article p
 {
 	line-height: 170%;
-	margin: 2px 0;
+	margin-bottom: 10px;
+}
+
+article p:last-child
+{
+	margin-bottom: 0px;
 }
 
 article header
