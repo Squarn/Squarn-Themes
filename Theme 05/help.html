@@ -8,7 +8,8 @@
 	<style>
 	body
 	{
-		font-family: "open sans";
+		font-family: "open sans", sans-serif;
+		font-size: 12px;
 	}
 
 	main
@@ -27,7 +28,7 @@
 
 	h2
 	{
-		font-family: "Montserrat";
+		font-family: "Montserrat", sans-serif;
 		font-size: 90px;
 		letter-spacing: 8px;
 		font-weight: bold;
@@ -36,17 +37,18 @@
 
 	h3
 	{
-		font-family: monospace;
+		font-family: "Source Code Pro";
+		font-weight: 200;
 		font-size: 20px;
 		text-align: center;
-		letter-spacing: 3px;
-		margin-top: -10px;
-		margin-bottom: 30px;
+		letter-spacing: 0px;
+		margin-top: -15px;
+		margin-bottom: 20px;
 	}
 
 	.mon
 	{
-		font-family: "Montserrat",sans-serif;
+		font-family: "Montserrat", sans-serif;
 		font-weight: bold;
 		letter-spacing: 2px;
 		font-size: 12px;
@@ -55,40 +57,40 @@
 
 	p
 	{
-		line-height: 180%;
-		margin-bottom: 20px;
+		line-height: 170%;
+		margin-bottom: 10px;
+		text-align: justify;
 	}
 
 	b
 	{
 		font-weight: bold;
 	}
+
+	span.hl
+	{
+		background-color: #FFF895;
+		padding: 0 5px;
+		border-radius: 5px;
+		border: 1px solid #BFC600;
+	}
 	</style>
 </head>
 <body>
 	<main>
-		<h2>HELP!</h2>
+		<h2><span class="hl">HELP!</span></h2>
 		<h3>Squarn theme help & documentation</h3>
 
-		<p><span class="mon">POLICY</span> I know what it's like to learn how to handle HTML and CSS, what it's like to be mystified by a bit of code, so I will help and provide documentation to the best of my ability. In general, I will help with vanilla errors 
-		(I can't test every case, and you can only go so dynamic) and adding functionality that wasn't reaching enough to make it into the tumblr customization menu. I won't write vast swathes of personal edits for you, but if you're asking for help from a learning standpoint, I will at least give you pseudocode or a point in the right direction. If you want to know how I did something in a theme, I will be more than happy to help.</p>
+		<p><span class="mon">POLICY</span> I know what it's like to learn how to handle HTML and CSS, what it's like to be mystified by a bit of code, so I will help and provide documentation to the best of my ability. In general, <span class="hl">I will help with vanilla errors</span> 
+		(I can't test every case, and you can only go so dynamic) and adding functionality that wasn't reaching enough to make it into the tumblr customization menu. <span class="hl">I won't write vast swathes of personal edits for you</span>, but if you're asking for help from a learning standpoint, I will at least give you pseudocode or a point in the right direction. If you want to know how I did something in a theme, I will be more than happy to help.</p>
 
-		<p><span class="mon">GITHUB</span> I host all of my themes and their documentation on Github.com, a version controlled code hosting site where many devs nurture their code repositories and projects. It allows me to make edits on my desktop (using Sublime Text) and easily push these edits (commits) to the Github server without mucking around copying and pasting to pastebin. With version control, you can even keep track of edits and fork/merge files. Learn more here.</p>
+		<p><span class="mon">ASKING A QUESTION</span> Asking off anon makes things loads easier, because I can inspect your theme's code directly and try to find the problem. I'm really not going to judge you, for anything. If you must use anon, <span class="hl">PLEASE be as specific as possible</span>. Please don't ask me to fix problems in code you already edited. Refer to the "policy" section above for asking how to edit. If I've made a blunder, PLEASE tell me.</p>
+
+		<!-- <iframe frameborder="0" scrolling="no" width="100%" height="190" src="http://www.tumblr.com/ask_form/URL.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('ask_form').allowTransparency=true;</script><![endif]-->
 
 		<p><span class="mon">GISTS</span> I host my explanations and code snippets on Github's Gist feature so that they're easily editable, you don't have to dig through tumblr to find them, and because Github flavored Markdown is rather smashing. Find all of my gists <a href="https://gist.github.com/Squarn">here.</a></p>
 
-		<p><span class="mon">ASKING A QUESTION</span> Asking off anon makes things loads easier, because I can inspect your theme's code directly and try to find the problem. I'm really not going to judge you, for anything. If you must use anon, PLEASE be as specific as possible. Please don't ask me to fix problems in code you already edited. Refer to the "policy" section above for asking how to edit. If I've made a blunder, PLEASE tell me.</p>
-
-		<iframe frameborder="0" scrolling="no" width="100%" height="190" src="http://www.tumblr.com/ask_form/URL.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('ask_form').allowTransparency=true;</script><![endif]-->
-		
-		<p><span class="mon">For those of you who code, here's a breakdown of my set-up:</span> </p>
-		<p><span class="mon">EDITOR:</span> Sublime Text &mdash; I've only been using this text editor for about a month but it's already changed so much about how I work. It uses an addon called Package Control to add plugins and third-party syntax highlighting AND UNF. It's a sexy, sexy program and I wouldn't let anyone use anything else.</p>
-		<p>My favorite plugin is called <b>Emmet</b>, which basically lets you use shorthand for writing all of your html tags. On a large scale, you could write <code><b>html>(head>title+style)+body>(header>navigation>ul>li*5>a)+(main>article*5)+footer</b></code>, hit TAB, and it would expand to the base for an ENTIRE layout, something that would take me many minutes to write out. It looks daunting, but it's really easy to get into once you read the syntax doc. On a small scale, I can simply write out "div.soup", hit TAB, and it will expand to <code>~div class="soup~/div~</code>. It really saves so much time once you get used to it.</p>
-		<p>
-			The third party color themes for Sublime Text are really nice. I recommend the theme Spacegray, which uses the base 16 color schemes ocean dark, ocean light, and eighties. I recommend using Package Control to install the Base 16 color schemes as well. Other nice ones are Afterglow and Glacier. Browse more on wbond.net.
-		</p>
-		
-		<p><span class="mon">STANDARDS</span> I try to keep up to date and use the most current WC3 standards of HTML5 and CSS3. I see people using old doctyes while using new css3 techniques and it's a bit mind-boggling. I am by NO means perfect, however, and I will never claim to be, which is why I'm always reading articles and docs.</p>
+		<p><span class="mon">GITHUB</span> I host all of my themes and their documentation on Github.com, a version controlled code hosting site where many devs nurture their code repositories and projects. It allows me to make edits on my desktop (using Sublime Text) and easily push these edits (commits) to the Github server without mucking around copying and pasting to pastebin. With version control, you can even keep track of edits and fork/merge files. Learn more here.</p>
 	</main>
 </body>
 </html>

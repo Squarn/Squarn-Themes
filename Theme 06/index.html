@@ -12,13 +12,42 @@
 	<link rel="stylesheet" href="normalize.css">
 	<link rel="stylesheet" href="style.css">
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+
+	<script>
+	$(function(){
+		var minHeight = 1;
+		var mask = $(".mask");
+
+		if (document.referrer == null || document.referrer.indexOf(window.location.hostname) < 0 ) {
+
+			$("header").css("marginTop",200);
+
+			$(window).scroll(function(){
+				if( $(window).scrollTop() > minHeight ) { 
+					mask.fadeOut("slow");
+					console.log("Got to check.");
+				} 
+				else { 
+					mask.fadeIn("fast");
+				}
+			});
+		}
+		else{
+			mask.css("opacity",0);
+		}
+	});
+	</script>
 </head>
 <body>
+	<div class="mask"></div>
 	<header>
 		<div class="title">Sensual Squares</div>
 		<navigation>
 			<ul>
-				<li><a href="#">Afterlife</a></li>
+				<li><a href="file://localhost/Users/Brook/Squarn-Themes/Theme%2006/index.html">Afterlife</a></li>
 				<li><a href="#">The Awful Word</a></li>
 				<li><a href="#">Eurydice</a></li>
 				<li><a href="#">Phantasm</a></li>
@@ -28,6 +57,7 @@
 			</ul>
 		</navigation>
 	</header>
+
 	<main>
 		<article>
 			<p>Afterlife, oh my god, what an awful word. After all the breath, and the dirt, and the fire that burnt.</p>
@@ -78,7 +108,6 @@
 		<div class="fsection">
 			Copyright <i class="fa fa-copyright"></i> 2014 by Psychosomatica
 			<p><i>Please be respectful and kind.</i></p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae at commodi laborum suscipit, cum, veritatis voluptatem blanditiis voluptates vero minima sit accusantium neque, dolor nihil. Sequi, libero adipisci id voluptates!</p>
 		</div>
 
 		<div class="clearfix"></div>
