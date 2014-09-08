@@ -49,12 +49,45 @@
 	<meta name="text:Link 10 Name" content="" />
 	<meta name="text:Link 10 URL" content="" />
 
-	<link rel="stylesheet" href="reset.css">
-	<link rel="stylesheet" href="normalize.css">
-	<link rel="stylesheet" href="style.css">
+	<!-- Reset -->
+	<link rel="stylesheet" href="http://static.tumblr.com/aan1aaf/QF9nbilpk/reset.css">
+	<!-- Normalize -->
+	<link rel="stylesheet" href="http://static.tumblr.com/aan1aaf/YqPnbilpk/normalize.css">
+	<!-- Style -->
+	<link rel="stylesheet" href="http://static.tumblr.com/aan1aaf/FIPnbim9i/style.css">
+	<!-- FontA -->
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+
+	<script>
+	$(function(){
+		var minHeight = 1;
+		var mask = $(".mask");
+
+		if (document.referrer == null || document.referrer.indexOf(window.location.hostname) < 0 ) {
+
+			$("header").css("marginTop",200);
+
+			$(window).scroll(function(){
+				if( $(window).scrollTop() > minHeight ) { 
+					mask.fadeOut("slow");
+					console.log("Got to check.");
+				} 
+				else { 
+					mask.fadeIn("fast");
+				}
+			});
+		}
+		else{
+			mask.css("display","none");
+		}
+	});
+	</script>
 </head>
 <body>
+	<div class="mask"></div>
 	<header>
 		<div class="title">{title}</div>
 		<navigation>
@@ -248,12 +281,12 @@
 		<!-- Pagination -->
 		{block:Pagination}
 		<div class="pagination">
-		{block:PreviousPage}
-			<a href="{PreviousPage}"><i class="fa fa-chevron-left fa-2x"></i></a>
-		{/block:PreviousPage}
-		{block:NextPage}
-			<a href="{NextPage}"><i class="fa fa-chevron-right fa-2x"></i></a>
-		{/block:NextPage}
+			{block:PreviousPage}
+				<a href="{PreviousPage}"><i class="fa fa-chevron-left fa-2x"></i></a>
+			{/block:PreviousPage}
+			{block:NextPage}
+				<a href="{NextPage}"><i class="fa fa-chevron-right fa-2x"></i></a>
+			{/block:NextPage}
 		</div>
 		{/block:Pagination}
 	</main>
@@ -271,19 +304,19 @@
 			{block:IfEnableFontAwesome}
 			<ul>
 				{block:IfLink6Name}
-					<li><a href="{text:Link 6 URL}"><i class="fa fa-bookmark-o fa-fw"> {text:Link 6 Name}</a></li>
+					<li><a href="{text:Link 6 URL}"><i class="fa fa-bookmark-o fa-fw"></i> {text:Link 6 Name}</a></li>
 				{/block:IfLink6Name}
 				{block:IfLink7Name}
-					<li><a href="{text:Link 7 URL}"><i class="fa fa-bookmark-o fa-fw"> {text:Link 7 Name}</a></li>
+					<li><a href="{text:Link 7 URL}"><i class="fa fa-bookmark-o fa-fw"></i> {text:Link 7 Name}</a></li>
 				{/block:IfLink7Name}
 				{block:IfLink8Name}
-					<li><a href="{text:Link 8 URL}"><i class="fa fa-bookmark-o fa-fw"> {text:Link 8 Name}</a></li>
+					<li><a href="{text:Link 8 URL}"><i class="fa fa-bookmark-o fa-fw"></i> {text:Link 8 Name}</a></li>
 				{/block:IfLink8Name}
 				{block:IfLink9Name}
-					<li><a href="{text:Link 9 URL}"><i class="fa fa-bookmark-o fa-fw"> {text:Link 9 Name}</a></li>
+					<li><a href="{text:Link 9 URL}"><i class="fa fa-bookmark-o fa-fw"></i> {text:Link 9 Name}</a></li>
 				{/block:IfLink9Name}
 				{block:IfLink10Name}
-					<li><a href="{text:Link 10 URL}"><i class="fa fa-bookmark-o fa-fw"> {text:Link 10 Name}</a></li>
+					<li><a href="{text:Link 10 URL}"><i class="fa fa-bookmark-o fa-fw"></i> {text:Link 10 Name}</a></li>
 				{/block:IfLink10Name}
 			</ul>
 			{/block:IfEnableFontAwesome}

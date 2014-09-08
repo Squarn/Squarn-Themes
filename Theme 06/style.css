@@ -30,6 +30,13 @@ header
 	z-index: 20;
 }
 
+blockquote
+{
+	padding-left:10px;
+	border-left: 1px solid #666;
+	margin-left: 10px;
+}
+
 .mask
 {
 	position: fixed;
@@ -111,7 +118,7 @@ main
 	display: inline;
 }
 
-.meta ol li a:after{content:",";}
+.meta ol li a:after{content:", ";}
 .meta ol li:last-of-type a:after{content: "";}
 
 /* Chevron Separation */
@@ -184,4 +191,9 @@ footer ul li
 	display: block;
 	height: 0;
 	clear: both;
+}
+
+#boyYOUREAWOLF
+{
+	display: none;
 }

@@ -1,7 +1,7 @@
 body
 {
 	background: #ffffff url("bgs/c.png");
-	font-family: "Georgia", serif;
+	font-family: "Arbutus Slab", serif;
 	font-size: 12px;
 	color:#1c1c1c;
 }
@@ -324,7 +324,7 @@ article header h2
 .meta li
 {
 	display:inline-block;
-	padding: 4px 5px;
+	padding: 2px 5px;
 	background: #1c1c1c url("noise.png");
 	color: #fff;
 	text-transform: uppercase;
