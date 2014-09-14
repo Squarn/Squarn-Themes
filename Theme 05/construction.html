@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Under Construction!</title>
+
+	<link href='https://fonts.googleapis.com/css?family=Karla|Open+Sans:400,300|Montserrat' rel='stylesheet' type='text/css'>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<style>
+	body
+	{
+		font-family: "open sans";
+		font-weight: 300;
+		color: #000;
+	}
+
+	.wrap
+	{
+		text-align: center;
+		width: 90%;
+		margin: 0 auto;
+		margin-top: 15%;
+	}
+
+	.text
+	{
+		font-family: "montserrat", sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-size: 150px;
+		line-height: 90%;
+	}
+
+	.tag
+	{
+		color: #fff;
+		margin-top: 50px;
+	}
+
+	.hi
+	{
+		background-color: #ECCD35;
+		padding: 20px;
+	}
+
+	a
+	{
+		text-decoration: none;
+		color: #666;
+		font-family: "karla";
+	}
+
+	.links
+	{
+		width: 500px;
+		margin: 0 auto;
+		margin-top: 25px;
+	}
+
+	ol
+	{
+		list-style-type: none;
+		margin:0px;
+		padding: 0px;
+	}
+	
+	ol li
+	{
+		display: inline;
+		text-transform: uppercase;
+		margin-left: 10px;
+	}
+
+	ol li:first-child
+	{
+		margin-left: 0px;
+	}
+
+	a i
+	{
+		font-size: 20px;
+	}
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script>
+	$(function(){
+		
+		var racolor = Math.floor(Math.random() * (7 - 1) + 1);
+		var color = "#000";
+
+		switch(racolor) {
+			case 1 : 
+				color = "#F14D4C"; // Pastel pinkish red
+				break;
+			case 2 :
+				color = "#1BE0B9"; // Bright blue
+				break;
+			case 3 : 
+				color = "#5D8784"; // Blue grey
+				break;
+			case 4 : 
+				color = "#FF3300"; // Sat redorange
+				break;
+			case 5 : 
+				color = "#ADD8C7"; // Mint
+				break;
+			case 6 :
+				color = "#FFCC00"; // Mustard
+				break;
+			default :
+				color = "#ADD8C7";
+		}
+
+		console.log(color);
+		$(".hi").css("backgroundColor",color);
+		$("a i").css("color",color);
+	});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="text">Under Construction</div>
+		<div class="tag"><span class="hi">Squarn themes is being revamped, please check back soon.</span></div>
+		<div class="links">
+			<ol>
+				<li><a href="http://github.com/squarn"><i class="fa fa-github-square fa-fw"></i> Github</a></li>
+				<li><a href="http://psychosomatica.tumblr.com"><i class="fa fa-camera fa-fw"></i> Psychosomatica</a></li>
+				<li><a href="/ask"><i class="fa fa-question-circle fa-fw"></i> Ask</a></li>
+				<li><a href=""></a></li>
+			</ol>
+		</div>
+	</div>
+</body>
+</html>
