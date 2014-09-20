@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<!--
+    Love is a Warm, Buttered Gun!
+    Theme 05 : Dedicated to milou_veronica.
+    All is written by Squarn.tumblr.com unless specified otherwise.
+    This theme is _not_ available for use.
+
+    ## Particleground by Jonathan Nicol on Github
+    ## Backgrounds are Credit: Unknown
+-->
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Fjalla+One|Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+    <title>{title} {block:PostTitle}- {PostTitle}{/block:PostTitle}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <!-- {block:Description} -->
+        <meta name="description" content="{MetaDescription}" />
+    <!-- {/block:Description} -->
+
+    <link rel="stylesheet" href="http://static.tumblr.com/aan1aaf/YZCnc7p4m/normalize.css">
+    <link rel="stylesheet" href="http://static.tumblr.com/aan1aaf/vnKnc7p4m/reset.css">
+
+    <style>
+    body
+    {
+        background: #ffffff url("bgs/c.png");
+        font-family: "Karla", sans-serif;
+        font-size: 12px;
+        color: #1c1c1c;
+        height: 100%;
+    }
+
+    html { height: 100%;}
+
+    /* OOCSS */
+    .noise-bg { background-image: url("noise.png"); }
+
+    .fjalla   { font-family: "Fjalla One", sans-serif; }
+
+    p         { margin: 10px 0px; }
+    a         { color: #1c1c1c; text-decoration: none; }
+    img       { vertical-align: middle; max-width: 100%; }
+    canvas    { max-width: 100%; }
+    ul, ol    { line-height: 170%; }
+    em        { font-weight: bold; }
+
+    .help, .insert
+    {
+        display: none;
+    }
+
+    .sticktop
+    {
+        position:absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-bottom: 0;
+    }
+
+    #particles
+    {
+        background: #ffffff url("bgs/swirl.png");
+        position: relative !important;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    #starter
+    {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+    }
+
+    #starter_2
+    {
+        background-color: #fff;
+        background-color: rgba(255,255,255,.7);
+        position: relative;
+        left: -50%;
+        text-align: center;
+        padding: 20px 20px 10px 20px;
+        border-radius: 20px;
+    }
+
+    #starter_2 h1, #starter_2 h2
+    {
+        font-size: 100px;
+        letter-spacing: -4px;
+        text-transform: uppercase;
+        color:#171717;
+        margin-top: -10px;
+    }
+
+    #starter_2 h1
+    {
+        line-height: 105%;
+    }
+
+    #starter_2 h2
+    {
+        font-size: 25px;
+        letter-spacing: 0px;
+        margin-top: -15px;
+        font-family: "Karla", sans-serif;
+    }
+
+    .description
+    {
+        margin-top: 10px;
+        font-size: 8px;
+        color: rgba(0, 0, 0, 0.3);
+        margin-left: -48%;
+        text-transform: uppercase;
+    }
+
+    article ol, article ul
+    {
+        margin-left: 30px;
+    }
+
+    blockquote
+    {
+        border-left: 1px solid #1c1c1c;
+        margin-left: 10px;
+        padding-left: 10px;
+    }
+
+    blockquote > p ~ ol, blockquote > p ~ ul
+    {
+        margin-left: 25px;
+    }
+
+    blockquote > ol, blockquote > ul
+    {
+        margin-left: 20px;
+    }
+
+    .title, .tagline
+    {
+        width: 100%;
+        //font-style: italic;
+        color: #fff;
+        font-weight: normal;
+        background-color: #1c1c1c;
+        text-align: center;
+    }
+
+    .pagn, .pagp
+    {
+        display: none;  
+        font-size: 8px;
+        text-transform: uppercase;
+    }
+
+    .pagn
+    {
+        margin-left: 30px;
+    }
+
+    .pagp
+    {
+        margin-right: 30px;
+    }
+
+    .title
+    {
+        font-weight: 100;
+        font-size: 50px;
+        font-style: italic;
+        letter-spacing: -3px;
+        text-transform: uppercase;
+
+        margin-bottom: -5px;
+        padding-top: 7px;
+    }
+
+    .tagline
+    {
+        font-family: "Karla", sans-serif;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        font-size: 10px;
+        letter-spacing: 8px;
+        z-index: 10;
+        line-height: 90%;
+        padding-top: 5px;
+    }
+
+    .stickt
+    {
+        position: fixed;
+        letter-spacing: 5px;
+        top: 0;
+        padding-top: 10px;
+    }
+
+    h1,h2
+    {
+
+    }
+
+    aside
+    {
+        width: 210px;
+        float: left;
+        line-height: 150%;
+    }
+
+    aside h1
+    {
+        width: 210px;
+        font-size: 15px;
+        margin-bottom: -4px;
+        text-align: left;
+        font-family: "Karla", sans-serif;
+        letter-spacing: 2px;
+        color: #1c1c1c;
+        line-height: 100%;
+        text-transform: uppercase;
+    }
+
+    aside p
+    {
+        margin: 3px 0;
+    }
+
+    .sticka
+    {
+        position: fixed;
+        top: 50px;
+    }
+
+    .part
+    {
+        width: 230px;
+        padding: 10px;
+        /*border: 5px solid #3d3d3d;*/
+        margin-bottom: 10px;
+        font-size: 10px;
+        background-color: #1c1c1c;
+        color: #c1c1c1;
+        letter-spacing: 1px;
+        font-family: "Karla", sans-serif;
+    }
+
+    .part a
+    {
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    /*.part h3
+    {
+        padding: 5px 10px 4px 12px;
+        margin: 0 -20px;
+        background-color: #1c1c1c;
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 4px;
+        margin-bottom: 10px;
+    }*/
+
+    .part ul 
+    {
+        list-style-type: none;
+        display: inline;
+    }
+
+    .part li
+    {
+        padding: 1px;
+        display: block;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    main
+    {
+        width: 860px;
+        margin: 0 auto;
+        margin-top: 20px;
+        position: relative;
+        left: -150px;
+    }
+
+    .top_header
+    {
+        border-bottom: 2px solid #2d2d2d;
+    }
+
+    .article h1 {font-size: 1.8em;}
+    .article h2 {font-size: 1.5em;}
+    .article h3 {font-size: 1.2em;}
+
+    .gutter
+    {
+        width: 500px;
+        max-width: 500px;
+        padding: 15px 17px 17px 17px;
+        border: 10px solid #1c1c1c;
+        background-color: #fff;
+        margin-top: 40px;
+    }
+
+    article:first-of-type .gutter
+    {
+        margin-top: 0;
+    }
+
+    .postbody, .postbody_insert
+    {
+        float: right;
+        width: 554px;
+    }
+
+    article p
+    {
+        line-height: 180%;
+        margin-bottom: 10px;
+        text-indent: 20px;
+        font-size: 13px;
+        text-align: justify;
+    }
+
+    article > p:last-child
+    {
+        margin-bottom: 0px;
+    }
+
+    article header
+    {
+        width: 100%;
+    }
+
+    article header h2
+    {
+        text-align: center;
+        border-bottom: 4px solid #ededed;
+        padding: 5px 10px 15px 10px;
+        margin: 0 -10px 15px -10px;
+        //font-style: italic;
+        letter-spacing: 3px;
+        font-size: 15px;
+        color: #3B383C;
+        text-transform: uppercase;
+        font-family: "Karla", sans-serif;
+    }
+
+    .meta
+    {
+        width: 400px;
+        margin: 15px auto;
+        text-align: center;
+        display: none;
+        border: 1px solid transparent;
+    }
+
+    .meta p {text-indent: 0;}
+
+    .meta li
+    {
+        display:inline-block;
+        padding: 2px 5px;
+        background: #1c1c1c url("noise.png");
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 1px;
+        margin-top: 5px;
+    }
+
+    .meta li a
+    {
+        color: #fff;
+    }
+
+    .meta ul
+    {
+        margin: 0;
+    }
+
+    .notes
+    {
+        margin: 12px 0;
+        padding-top: 10px;
+        font-size: 12px;
+        border-top: 1px solid #1c1c1c;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        width: 400px;
+        text-align: center;
+    }
+
+    .notes a
+    {
+        color: #323232;
+    }
+
+    .notes sup
+    {
+        font-size: 50%;
+    }
+
+    footer
+    {
+        height: 10px;
+        font-size: 10px;
+        /*position: relative;
+        bottom: 0;
+        left: 0;
+        right: 0;*/
+        background-color: #1c1c1c;
+        color: #ffffff;
+        padding: 10px 0;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    pre 
+    {
+        overflow-x: auto; 
+        white-space: pre-wrap; /* css-3 */
+        white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        /* width: 99%; */
+        word-wrap: break-word; /* Internet Explorer 5.5+ */
+        font-family: "source code pro", monospace;
+        font-weight: 400;
+        text-align: left;
+        margin: 5px 0;
+        padding: 10px;
+        color: #fff;
+        background-color: #1c1c1c;
+    }
+
+    .group:after 
+    {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    ::-webkit-scrollbar-thumb:vertical {background-color:#fff;}
+    ::-webkit-scrollbar-thumb:horizontal {background-color:#fff;height:10px !important;}
+    ::-webkit-scrollbar {height:7px; width:7px; background-color:#1c1c1c;}
+    </style>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    <script src="http://static.tumblr.com/aan1aaf/zeunc7p4l/jquery.particleground.min.js"></script>
+</head>
+
+<body>
+    <div id="particles">
+        <div id="starter" class="fjalla">
+            <div id="starter_2">
+                <h1>Squarn Themes</h1>
+                <h2>Theme blog of <a style="font-style:italic;margin-left:-3px;" href="http://www.psychosomatica.tumblr.com">Psychosomatica</a></h2>
+            </div>
+            <div class="description">
+                <p>SQUARN: {PP-V} Square &mdash; Make square or rectangular.</p>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticktop top_header">
+        <div class="title noise-bg"><img src="log.png" alt=""></div>
+
+        <div class="tagline noise-bg">
+            <span class="pagp">Back &mdash; </span>
+                <span>Pull Me Into Your Perfect Circle</span>
+            <span class="pagn"> &mdash; Next</span>
+        </div>
+    </header>
+
+        <main class="group">
+            <aside>
+                <h1>Squarn Themes</h1>
+
+                <div class="part noise-bg">
+                    <ul id="navigation">
+                        <li class="nav"><a href="{BlogURL}">Home</a></li>
+                        <li class="nav"><a href="#">Themes</a></li>
+                        <li class="nav"><a href="#">Support</a></li>
+                        <li class="nav"><a href="#">Ask Me Something</a></li>
+                        <li class="nav"><a href="#">Github</a></li>
+                        <li class="nav"><a href="#">Gists</a></li>
+                        <li class="nav"><a href="#">About / Philosophies</a></li>
+                        <li class="nav poop">Poop</li>
+                    </ul>
+                </div>
+
+                <div class="part noise-bg">
+                    <!-- <h3>ABOUT</h3> -->
+                    <div class="avatar"></div>
+                    
+                    <p>Squarn Themes by <a href="http://psychosomatica.tumblr.com">Psychosomatica</a>; A simple blog for simple themes. Staunch advocator of                
+                
+                    <a href="#">Sublime Text, </a>
+                    <a href="#">Github, </a> &
+                    <a href="#"> HTML5. </a>
+                    
+                    Won't trick you on their <a href="">Terms of Service</a> page.</p>
+                </div>
+            </aside>
+
+            <!-- <div class="postbody help">
+                <article>
+                    <div class="gutter">
+                        <div class="pbody">
+                            <p></p>  
+                        </div>
+                    </div>
+                </article>
+            </div> -->
+            
+            <div class="postbody">
+                {block:Posts}
+
+                <article>
+                    <div class="gutter">
+                        {block:PostTitle}<header>
+                            <h2>
+                                {PostTitle}
+                                {block:Answer}
+                                    {lang:Asker asked 2}, "{Question}"
+                                {/block:Answer}
+                            </h2>
+                        </header>{/block:PostTitle}
+                        <div class="pbody">
+                            {block:Text}
+                                {Body}
+                            {/block:Text}
+
+                            {block:Photo}
+                                <img src="{PhotoURL-500}" alt="{PhotoAlt}">
+                            {/block:Photo}
+
+                            {block:Photoset}
+                                {Photoset-500}
+                                {Caption}
+                            {/block:Photoset}
+
+                            {block:Answer}
+                                {Answer}
+
+                                {block:Answerer}
+                                    <p>{Answerer} answered:</p>
+                                    <blockquote><p>{Answer}</p></blockquote>
+                                {/block:Answerer}
+                        
+                                {Replies}
+                            {/block:Answer}
+                        </div>
+                    </div>
+
+                    <div class="meta fjalla">
+                        {block:HasTags} 
+                        <ul>
+                            {block:Tags}<li class="tag"><a href="{TagURL}">{Tag}</a></li>{/block:Tags} 
+                        </ul>
+                        {/block:HasTags}
+
+                        {block:Date}
+                        <p class="notes">posted {Month} {DayOfMonth}<sup>{DayOfMonthSuffix}</sup>
+                            {block:NoteCount}, with <a href="#">{NoteCountWithLabel}</a>{/block:NoteCount}
+                        </p>
+                        {/block:Date}
+                    </div>
+                </article>
+            {/block:Posts}
+            </div>
+            
+        </main>
+    
+    <footer class="noise-bg">
+        これがフーターでに書いてある
+    </footer>
+    <script type="text/javascript" charset="utf-8" async defer>
+        $(document).ready(function(){
+    // By Squarn Themes
+        
+        // Particleground load
+        $('#particles').particleground({
+            minSpeedX: 0.1,
+            maxSpeedX: 0.1,
+            minSpeedY: 0.1,
+            maxSpeedY: 0.1,
+            directionX: 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
+            directionY: 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
+            density: 10000, // How many particles will be generated: one particle every n pixels
+            dotColor: '#3d3d3d',
+            lineColor: '#666666',
+            particleRadius: 10, // Dot size
+            lineWidth: 0.5,
+            curvedLines: false,
+            proximity: 120, // How close two dots need to be before they join
+            parallax: true,
+            parallaxMultiplier: 8, // The lower the number, the more extreme the parallax effect
+            onInit: function() { console.log("Particles initiated properly."); },
+            onDestroy: function() {}
+        });
+
+        // Meta slide down
+        $(function(){
+            $('article').mouseenter(
+                function(){
+                    $('.meta', this).stop().slideDown(1000,"easeOutBounce");
+                    //$(this).css("marginBottom",0);
+                }
+            );
+            $('article').mouseleave(
+                function(){
+                    $('.meta', this).stop().slideUp(300,"linear");
+                    //$(this).css("marginBottom",30);
+                }
+            );  
+        });
+
+        // Tagline Stick
+        $(function(){
+            var tagline = $('.tagline').offset().top - 5;
+
+            $(window).scroll(function(){
+                if( $(window).scrollTop() > tagline ) { $('.tagline').addClass('stickt'); } 
+                else { $('.tagline').removeClass('stickt'); }
+
+                // Pagination Fade In
+                if($('.tagline').hasClass("stickt"))
+                {
+                    $('.pagn').fadeIn();
+                    $('.pagp').fadeIn();
+                }
+                else
+                {
+                    $('.pagn').hide();
+                    $('.pagp').hide();
+                }
+            });
+        });
+
+        $(function(){
+            // Sidebar Stick
+            var aside = $('aside').offset().top - 50;
+
+            $(window).scroll(function(){
+                if( $(window).scrollTop() > aside ) {
+                    $('aside').addClass('sticka');
+                } else {
+                    $('aside').removeClass('sticka');
+                }
+            });
+        });
+
+        $( ".nav" ).hover(
+            function() {$(this).stop().animate({opacity: 0.5, paddingLeft: "10"}, 300, "easeOutBounce", function() {});},
+            function() {$(this).stop().animate({opacity: 1, paddingLeft: "0"}, 300, "easeOutBounce", function() {});}
+        );
+
+        if ( document.referrer === null || document.referrer.indexOf(window.location.hostname) < 0 ) 
+        {
+            
+        }
+
+        else {$('#particles').particlegound('destroy');}
+
+        $(".poop").click(function() {
+            $(".postbody").fadeOut();
+            $(".help").fadeIn();
+        });
+        });
+    </script>
+</body>
+</html>
