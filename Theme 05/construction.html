@@ -7,6 +7,7 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 	<style>
+	
 	body
 	{
 		font-family: "open sans";
@@ -19,7 +20,6 @@
 		text-align: center;
 		width: 90%;
 		margin: 0 auto;
-		margin-top: 15%;
 	}
 
 	.text
@@ -29,18 +29,24 @@
 		letter-spacing: 2px;
 		font-size: 150px;
 		line-height: 90%;
+		margin-top: 10%;
+		border: 1px solid #fff;
 	}
 
 	.tag
 	{
 		color: #fff;
+		margin: 0 auto;
 		margin-top: 50px;
-	}
-
-	.hi
-	{
 		background-color: #ECCD35;
 		padding: 20px;
+		width: 500px;
+	}
+	
+	.tag p
+	{
+	    margin: 0;
+	    padding: 0;
 	}
 
 	a
@@ -54,7 +60,7 @@
 	{
 		width: 500px;
 		margin: 0 auto;
-		margin-top: 25px;
+		margin-top: 15px;
 	}
 
 	ol
@@ -79,6 +85,24 @@
 	a i
 	{
 		font-size: 20px;
+	}
+	
+	iframe
+	{
+	    display: none;
+	}
+	
+	.tag .second
+	{
+    	display: none;
+    	margin-top: 20px;
+	}
+	
+	.spacer
+	{
+	    margin-top: 5%;
+	    vertical-align: top;
+	    display: inline-block;
 	}
 	</style>
 
@@ -113,21 +137,35 @@
 		}
 
 		console.log(color);
-		$(".hi").css("backgroundColor",color);
+		$(".tag").css("backgroundColor",color);
 		$("a i").css("color",color);
+		
+		$(".event").click(function(){
+		    $(".spacer").slideUp("slow");
+		    $(".tag .first").fadeOut("slow");
+		    
+		    $("iframe").fadeIn("slow"); 
+		    $(".tag .second").fadeIn("slow");
+		});
 	});
 	</script>
 </head>
 <body>
+    <div class="spacer">&nbsp;</div>
 	<div class="wrap">
-		<div class="text">Under Construction</div>
-		<div class="tag"><span class="hi">Squarn themes is being revamped, please check back soon.</span></div>
+		<div class="text">Under Con</span></span>struction</div>
+		<div class="tag"><p class="first">The Squarn themes blog is being revamped, please check back soon.</p>
+		    
+<iframe frameborder="0" scrolling="no" width="100%" height="190" src="http://www.tumblr.com/ask_form/squarn.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('ask_form').allowTransparency=true;</script><![endif]-->
+		    
+<p class="second">All themes are still supported, so if you have an issue, please be as specific as possible and ask away! Taking off anon helps as well.</p>
+		    
+		</div>
 		<div class="links">
 			<ol>
 				<li><a href="http://github.com/squarn"><i class="fa fa-github-square fa-fw"></i> Github</a></li>
 				<li><a href="http://psychosomatica.tumblr.com"><i class="fa fa-camera fa-fw"></i> Psychosomatica</a></li>
-				<li><a href="/ask"><i class="fa fa-question-circle fa-fw"></i> Ask</a></li>
-				<li><a href=""></a></li>
+				<li><a href="#" class="event"><i class="fa fa-question-circle fa-fw"></i> Ask</a></li>
 			</ol>
 		</div>
 	</div>

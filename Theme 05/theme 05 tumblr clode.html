@@ -10,35 +10,36 @@
     ## Backgrounds are Credit: Unknown
 -->
 <head>
+    <!-- Fjalla One, Karla, Source Code Pro -->
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Fjalla+One|Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
     <title>{title} {block:PostTitle}- {PostTitle}{/block:PostTitle}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link rel="shortcut icon" href="{Favicon}">
-    <link rel="alternate" type="application/rss+xml" href="{RSS}">
-    <!-- {block:Description} -->
-        <meta name="description" content="{MetaDescription}" />
-    <!-- {/block:Description} -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+    {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
 
-    <link rel="stylesheet" href="http://static.tumblr.com/aan1aaf/YZCnc7p4m/normalize.css">
-    <link rel="stylesheet" href="http://static.tumblr.com/aan1aaf/vnKnc7p4m/reset.css">
+    <link rel="stylesheet" href="http://static.tumblr.com/aan1aaf/YZCnc7p4m/normalize.css" />
+    <link rel="stylesheet" href="http://static.tumblr.com/aan1aaf/vnKnc7p4m/reset.css" />
 
     <style>
     body
     {
-        background: #ffffff url("bgs/c.png");
         font-family: "Karla", sans-serif;
         font-size: 12px;
         color: #1c1c1c;
+
+        background: #ffffff url("http://static.tumblr.com/aan1aaf/9ienclfig/c.png");
         height: 100%;
     }
 
-    html { height: 100%;}
+    html { height: 100%; }
 
     /* OOCSS */
-    .noise-bg { background-image: url("noise.png"); }
+    .noise-bg { background-image: url("http://static.tumblr.com/aan1aaf/JpHnclfhs/noise.png"); }
 
     .fjalla   { font-family: "Fjalla One", sans-serif; }
+    .karla    { font-family: "Karla", sans-serif; }
 
     p         { margin: 10px 0px; }
     a         { color: #1c1c1c; text-decoration: none; }
@@ -54,16 +55,14 @@
 
     .sticktop
     {
-        position:absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        position: absolute; 
+        bottom: 0; left: 0; right: 0;
         border-bottom: 0;
     }
 
     #particles
     {
-        background: #ffffff url("bgs/swirl.png");
+        background: #fff url("http://static.tumblr.com/aan1aaf/N3Enclfj7/swirl.png");
         position: relative !important;
         height: 100%;
         width: 100%;
@@ -80,7 +79,7 @@
 
     #starter_2
     {
-        background-color: #fff;
+        background-color: #fff; /* For degradation */
         background-color: rgba(255,255,255,.7);
         position: relative;
         left: -50%;
@@ -94,7 +93,7 @@
         font-size: 100px;
         letter-spacing: -4px;
         text-transform: uppercase;
-        color:#171717;
+        color: #171717;
         margin-top: -10px;
     }
 
@@ -115,6 +114,7 @@
     {
         margin-top: 10px;
         font-size: 8px;
+        color: #666; /* For Degradation */
         color: rgba(0, 0, 0, 0.3);
         margin-left: -48%;
         text-transform: uppercase;
@@ -159,14 +159,12 @@
         text-transform: uppercase;
     }
 
-    .pagn
-    {
-        margin-left: 30px;
-    }
+    .pagn { margin-left: 30px; }
+    .pagp { margin-right: 30px; }
 
-    .pagp
+    .pagn a, .pagp a
     {
-        margin-right: 30px;
+        color: #fff;
     }
 
     .title
@@ -193,6 +191,7 @@
         padding-top: 5px;
     }
 
+    /* Sidebar */
     .stickt
     {
         position: fixed;
@@ -201,29 +200,26 @@
         padding-top: 10px;
     }
 
-    h1,h2
-    {
-
-    }
-
     aside
     {
         width: 210px;
         float: left;
         line-height: 150%;
+        margin-top: 10px;
     }
 
     aside h1
     {
-        width: 210px;
         font-size: 15px;
-        margin-bottom: -4px;
-        text-align: left;
         font-family: "Karla", sans-serif;
         letter-spacing: 2px;
         color: #1c1c1c;
+        text-align: left;
         line-height: 100%;
         text-transform: uppercase;
+        
+        margin-bottom: -4px;
+        width: 210px;
     }
 
     aside p
@@ -239,15 +235,15 @@
 
     .part
     {
-        width: 230px;
-        padding: 10px;
-        /*border: 5px solid #3d3d3d;*/
-        margin-bottom: 10px;
+        font-family: "Karla", sans-serif;
         font-size: 10px;
-        background-color: #1c1c1c;
         color: #c1c1c1;
         letter-spacing: 1px;
-        font-family: "Karla", sans-serif;
+        
+        width: 230px;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #1c1c1c;
     }
 
     .part a
@@ -288,16 +284,23 @@
         margin-top: 20px;
         position: relative;
         left: -150px;
+
+        min-height: 500px;
     }
 
-    .top_header
+    .pbody
+    {
+        padding-top: 3px;
+    }
+
+    /*.top_header
     {
         border-bottom: 2px solid #2d2d2d;
-    }
+    }*/
 
-    .article h1 {font-size: 1.8em;}
-    .article h2 {font-size: 1.5em;}
-    .article h3 {font-size: 1.2em;}
+    .article h1 { font-size: 1.8em; }
+    .article h2 { font-size: 1.5em; }
+    .article h3 { font-size: 1.2em; }
 
     .gutter
     {
@@ -318,20 +321,30 @@
     {
         float: right;
         width: 554px;
+        margin-top: 20px;
     }
 
     article p
     {
-        line-height: 180%;
+        line-height: 160%;
         margin-bottom: 10px;
-        text-indent: 20px;
         font-size: 13px;
         text-align: justify;
     }
 
-    article > p:last-of-type
+    .pbody > p:last-of-type
     {
-        margin-bottom: 0px;
+        margin-bottom: 0;
+    }
+
+    .pbody > p:first-of-type
+    {
+        margin-top: 0;
+    }
+
+    pre ~ p, img ~ p, .html_photoset ~ p
+    {
+        margin-top: 10px;
     }
 
     article header
@@ -345,11 +358,9 @@
         border-bottom: 4px solid #ededed;
         padding: 5px 10px 15px 10px;
         margin: 0 -10px 15px -10px;
-        //font-style: italic;
         letter-spacing: 3px;
         font-size: 15px;
         color: #3B383C;
-        text-transform: uppercase;
         font-family: "Karla", sans-serif;
     }
 
@@ -358,15 +369,18 @@
         width: 400px;
         margin: 15px auto;
         text-align: center;
-        display: none;
+        {block:IndexPage}display: none;{/block:IndexPage}
         border: 1px solid transparent;
     }
 
-    .meta p {text-indent: 0;}
+    blockquote p, .meta p 
+    {
+        text-indent: 0;
+    }
 
     .meta li
     {
-        display:inline-block;
+        display: inline-block;
         padding: 2px 5px;
         background: #1c1c1c url("noise.png");
         color: #fff;
@@ -374,6 +388,7 @@
         font-size: 10px;
         letter-spacing: 1px;
         margin-top: 5px;
+        margin-right: 3px;
     }
 
     .meta li a
@@ -386,7 +401,7 @@
         margin: 0;
     }
 
-    .notes
+    .mnotes
     {
         margin: 12px 0;
         padding-top: 10px;
@@ -398,14 +413,40 @@
         text-align: center;
     }
 
-    .notes a
+    .mnotes a
     {
         color: #323232;
     }
 
-    .notes sup
+    .mnotes sup
     {
-        font-size: 50%;
+        font-size: 70%;
+    }
+
+    .notes-list
+    {
+        margin: 0 auto;
+    }
+
+    .notes-list img
+    {
+        display: none;
+    }
+
+    .info
+    {
+        background-color: #1c1c1c;
+        color: #F0F0F0;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-top: -20px;
+    }
+
+    .info a
+    {
+        color: #fff;
+        font-weight: bold;
     }
 
     footer
@@ -423,6 +464,7 @@
         margin-top: 40px;
     }
 
+    /* Source Code */
     pre 
     {
         overflow-x: auto; 
@@ -441,6 +483,11 @@
         background-color: #1c1c1c;
     }
 
+    pre a 
+    {
+        color: #fff;
+    }
+
     .group:after 
     {
         content: "";
@@ -448,9 +495,14 @@
         clear: both;
     }
 
-    ::-webkit-scrollbar-thumb:vertical {background-color:#fff;}
-    ::-webkit-scrollbar-thumb:horizontal {background-color:#fff;height:10px !important;}
-    ::-webkit-scrollbar {height:7px; width:7px; background-color:#1c1c1c;}
+    #boyYOUREAWOLF
+    {
+        display: none;
+    }
+
+    ::-webkit-scrollbar-thumb:vertical { background-color: #fff; }
+    ::-webkit-scrollbar-thumb:horizontal { background-color: #fff; height: 10px !important;}
+    ::-webkit-scrollbar { height: 7px; width: 7px; background-color: #1c1c1c; }
     </style>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -472,29 +524,33 @@
     </div>
 
     <header class="sticktop top_header">
-        <div class="title noise-bg"><img src="log.png" alt=""></div>
+        <div class="title noise-bg"><img src="http://static.tumblr.com/aan1aaf/X6znclfgq/log.png" alt=""></div>
 
         <div class="tagline noise-bg">
-            <span class="pagp">Back &mdash; </span>
+            {block:Pagination}{block:PreviousPage}<span class="pagp">
+                <a href="{PreviousPage}">Back &mdash;</a> </span>
+            {/block:PreviousPage}{/block:Pagination}
                 <span>Pull Me Into Your Perfect Circle</span>
-            <span class="pagn"> &mdash; Next</span>
+            {block:Pagination}{block:NextPage}
+                <span class="pagn"><a href="{NextPage}"> &mdash; Next</a></span>
+            {/block:NextPage}{/block:Pagination}
         </div>
     </header>
 
         <main class="group">
+        
             <aside>
                 <h1>Squarn Themes</h1>
 
                 <div class="part noise-bg">
                     <ul id="navigation">
                         <li class="nav"><a href="{BlogURL}">Home</a></li>
-                        <li class="nav"><a href="#">Themes</a></li>
-                        <li class="nav"><a href="#">Support</a></li>
-                        <li class="nav"><a href="#">Ask Me Something</a></li>
-                        <li class="nav"><a href="#">Github</a></li>
-                        <li class="nav"><a href="#">Gists</a></li>
-                        <li class="nav"><a href="#">About / Philosophies</a></li>
-                        <li class="nav poop">Poop</li>
+                        <li class="nav"><a href="http://squarn.tumblr.com/themes">Themes</a></li>
+                        <li class="nav"><a href="/themenotes">Support</a></li>
+                        <li class="nav"><a href="http://squarn.tumblr.com/ask">Ask Me Something</a></li>
+                        <li class="nav"><a href="https://github.com/Squarn/Squarn-Themes">Github</a></li>
+                        <li class="nav"><a href="http://squarn.tumblr.com/gists">Gists</a></li>
+                        <li class="nav"><a href="/about">About / Philosophies</a></li>
                     </ul>
                 </div>
 
@@ -504,37 +560,24 @@
                     
                     <p>Squarn Themes by <a href="http://psychosomatica.tumblr.com">Psychosomatica</a>; A simple blog for simple themes. Staunch advocator of                
                 
-                    <a href="#">Sublime Text, </a>
-                    <a href="#">Github, </a> &
-                    <a href="#"> HTML5. </a>
+                    <a href="http://www.sublimetext.com/">Sublime Text, </a>
+                    <a href="http://www.github.com">Github, </a> &
+                    <a href="http://www.w3.org/TR/html5/"> HTML5. </a>
                     
                     Won't trick you on their <a href="">Terms of Service</a> page.</p>
                 </div>
             </aside>
-
-            <!-- <div class="postbody help">
-                <article>
-                    <div class="gutter">
-                        <div class="pbody">
-                            <p></p>  
-                        </div>
-                    </div>
-                </article>
-            </div> -->
             
             <div class="postbody">
                 {block:Posts}
 
-                <article>
+                <article class="{PostType}">
                     <div class="gutter">
-                        {block:PostTitle}<header>
+                        {block:Title} <header>
                             <h2>
-                                {PostTitle}
-                                {block:Answer}
-                                    {lang:Asker asked 2}, "{Question}"
-                                {/block:Answer}
+                                <span style="text-transform: uppercase;">{Title}</span>
                             </h2>
-                        </header>{/block:PostTitle}
+                        </header>{/block:Title}
                         <div class="pbody">
                             {block:Text}
                                 {Body}
@@ -542,6 +585,7 @@
 
                             {block:Photo}
                                 <img src="{PhotoURL-500}" alt="{PhotoAlt}">
+                                {Caption}
                             {/block:Photo}
 
                             {block:Photoset}
@@ -550,15 +594,31 @@
                             {/block:Photoset}
 
                             {block:Answer}
-                                {Answer}
+                                <header>
+                                    <h2>
+                                    <span style="text-transform: uppercase;">{lang:Asker asked 2},</span> "{Question}"</h2>
+                                </header>
 
                                 {block:Answerer}
                                     <p>{Answerer} answered:</p>
                                     <blockquote><p>{Answer}</p></blockquote>
                                 {/block:Answerer}
-                        
+
                                 {Replies}
                             {/block:Answer}
+
+                             <!-- Gets rid of "via()" text. Don't ask why I named  it how I did.--> 
+                            <div id="boyYOUREAWOLF">
+                                {block:ContentSource} 
+                                    <p>from <a href="{SourceURL}">{SourceTitle}</a></p>
+                                {/block:ContentSource}
+                                {block:ContentSource}
+                                    {SourceTitle}
+                                {/block:ContentSource}
+                                {block:RebloggedFrom}
+                                    via <a href="{ReblogParentURL}">({ReblogParentName})</a>
+                                {/block:RebloggedFrom}
+                            </div>
                         </div>
                     </div>
 
@@ -570,11 +630,25 @@
                         {/block:HasTags}
 
                         {block:Date}
-                        <p class="notes">posted {Month} {DayOfMonth}<sup>{DayOfMonthSuffix}</sup>
+                        <p class="mnotes"><a href="{Permalink}">posted {Month} {DayOfMonth}<sup>{DayOfMonthSuffix}</sup></a>
                             {block:NoteCount}, with <a href="#">{NoteCountWithLabel}</a>{/block:NoteCount}
                         </p>
                         {/block:Date}
                     </div>
+
+                    {block:PermalinkPage}
+
+                    <div class="info">
+                        If you need help or want to ask a question, please <a href="http://squarn.tumblr.com/ask">leave an ask</a> or submit an <a href="https://github.com/Squarn/Squarn-Themes/issues">issue on Github.</a>
+                    </div>
+
+                    {block:PostNotes} 
+                        <div class="notes-list">
+                            {PostNotes}                            
+                        </div>  
+                    {/block:PostNotes}
+                    {/block:PermalinkPage}
+                    
                 </article>
             {/block:Posts}
             </div>
@@ -582,34 +656,41 @@
         </main>
     
     <footer class="noise-bg">
-        これがフーターでに書いてある
+        UNDER CONSTRUCTION中
     </footer>
+
     <script type="text/javascript" charset="utf-8" async defer>
         $(document).ready(function(){
-    // By Squarn Themes
+        // By Squarn Themes
+
+        {block:PermalinkPage}
+            var top = $(".top_header").offset().top;
+            $(document).scrollTop(top);
+        {/block:PermalinkPage}
         
         // Particleground load
         $('#particles').particleground({
             minSpeedX: 0.1,
-            maxSpeedX: 0.1,
+            maxSpeedX: 0.3,
             minSpeedY: 0.1,
-            maxSpeedY: 0.1,
+            maxSpeedY: 0.3,
             directionX: 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
             directionY: 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
             density: 10000, // How many particles will be generated: one particle every n pixels
             dotColor: '#3d3d3d',
             lineColor: '#666666',
             particleRadius: 10, // Dot size
-            lineWidth: 0.5,
+            lineWidth: 0.6,
             curvedLines: false,
             proximity: 120, // How close two dots need to be before they join
-            parallax: true,
+            parallax: false,
             parallaxMultiplier: 8, // The lower the number, the more extreme the parallax effect
             onInit: function() { console.log("Particles initiated properly."); },
             onDestroy: function() {}
         });
 
         // Meta slide down
+        {block:IndexPage}
         $(function(){
             $('article').mouseenter(
                 function(){
@@ -627,7 +708,7 @@
 
         // Tagline Stick
         $(function(){
-            var tagline = $('.tagline').offset().top - 5;
+            var tagline = $('.tagline').offset().top; // -5
 
             $(window).scroll(function(){
                 if( $(window).scrollTop() > tagline ) { $('.tagline').addClass('stickt'); } 
@@ -646,10 +727,11 @@
                 }
             });
         });
+        {/block:IndexPage}
 
+        // Sidebar Stick
         $(function(){
-            // Sidebar Stick
-            var aside = $('aside').offset().top - 50;
+            var aside = $('aside').offset().top - 10; // -50
 
             $(window).scroll(function(){
                 if( $(window).scrollTop() > aside ) {
@@ -660,6 +742,7 @@
             });
         });
 
+        // Side Animation
         $( ".nav" ).hover(
             function() {$(this).stop().animate({opacity: 0.5, paddingLeft: "10"}, 300, "easeOutBounce", function() {});},
             function() {$(this).stop().animate({opacity: 1, paddingLeft: "0"}, 300, "easeOutBounce", function() {});}
@@ -670,12 +753,14 @@
             
         }
 
-        else {$('#particles').particlegound('destroy');}
+        else {
+            // $('#particles').css("height",100);
+            // $('#particles canvas').css("position","fixed");
+            // $('.top_header').css("display","none");
+            var top = $(".top_header").offset().top;
+            $(document).scrollTop(top);
+        }
 
-        $(".poop").click(function() {
-            $(".postbody").fadeOut();
-            $(".help").fadeIn();
-        });
         });
     </script>
 </body>

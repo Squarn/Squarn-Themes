@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<!--
+    Love is a Warm, Buttered Gun!
+    Theme 05 : Dedicated to milou_veronica.
+    All is written by Squarn.tumblr.com unless specified otherwise.
+    This theme is _not_ available for use.
+
+    ## Particleground by Jonathan Nicol on Github
+    ## Backgrounds are Credit: Unknown
+-->
+<head>
+    <!-- Fjalla One, Karla, Source Code Pro -->
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Fjalla+One|Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+    <title>{title} {block:PostTitle}- {PostTitle}{/block:PostTitle}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+    <!-- {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description} -->
+
+    <link rel="stylesheet" href="http://static.tumblr.com/aan1aaf/YZCnc7p4m/normalize.css" />
+    <link rel="stylesheet" href="http://static.tumblr.com/aan1aaf/vnKnc7p4m/reset.css" />
+
+    <style>
+    body
+    {
+        font-family: "Karla", sans-serif;
+        font-size: 12px;
+        color: #1c1c1c;
+        background: #fff url("http://static.tumblr.com/aan1aaf/N3Enclfj7/swirl.png");
+
+        background: #ffffff url("http://static.tumblr.com/aan1aaf/9ienclfig/c.png");
+        height: 100%;
+    }
+
+    html { height: 100%; }
+
+    /* OOCSS */
+    .noise-bg { background-image: url("http://static.tumblr.com/aan1aaf/JpHnclfhs/noise.png"); }
+
+    .fjalla   { font-family: "Fjalla One", sans-serif; }
+    .karla    { font-family: "Karla", sans-serif; }
+
+    /*p         { margin: 10px 0px; }*/
+    a         { color: #1c1c1c; text-decoration: none; }
+    img       { vertical-align: middle; max-width: 100%; max-height: 500px;}
+    canvas    { max-width: 100%; }
+    ul, ol    { line-height: 170%; }
+    em        { font-weight: bold; }
+
+
+    #particles
+    {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    #particles canvas
+    {
+        position: fixed;
+        z-index: -1;
+    }
+
+
+
+    ::-webkit-scrollbar-thumb:vertical { background-color: #fff; }
+    ::-webkit-scrollbar-thumb:horizontal { background-color: #fff; height: 10px !important;}
+    ::-webkit-scrollbar { height: 7px; width: 7px; background-color: #1c1c1c; }
+    </style>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    <script src="http://static.tumblr.com/aan1aaf/zeunc7p4l/jquery.particleground.min.js"></script>
+</head>
+
+<body>
+    <div id="particles">
+        <div id="starter" class="fjalla">
+            <div id="starter_2">
+                <h1>Squarn Themes</h1>
+                <h2>Theme blog of <a style="font-style:italic;margin-left:-3px;" href="http://www.psychosomatica.tumblr.com">Psychosomatica</a></h2>
+            </div>
+
+            <div id="starter_2">
+                ALL THE THEMES!
+            </div>
+        </div>
+
+        <div class="view">
+            If you didnt know, now you know, blah!
+        </div>
+
+        <div class="theme">
+            <img src="tum1.jpg" alt="" width="400">
+        </div>
+        <div class="theme">
+            
+        </div>
+        <div class="theme">
+            
+        </div>
+    </div>
+    
+    <footer class="noise-bg">
+        これがフーターに書いてある
+    </footer>
+
+    <script type="text/javascript" charset="utf-8" async defer>
+        $(document).ready(function(){
+        // By Squarn Themes
+
+
+        
+        // Particleground load
+        $('#particles').particleground({
+            minSpeedX: 0.1,
+            maxSpeedX: 0.3,
+            minSpeedY: 0.1,
+            maxSpeedY: 0.3,
+            directionX: 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
+            directionY: 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
+            density: 10000, // How many particles will be generated: one particle every n pixels
+            dotColor: '#3d3d3d',
+            lineColor: '#666666',
+            particleRadius: 10, // Dot size
+            lineWidth: 0.6,
+            curvedLines: false,
+            proximity: 120, // How close two dots need to be before they join
+            parallax: false,
+            parallaxMultiplier: 8, // The lower the number, the more extreme the parallax effect
+            onInit: function() { console.log("Particles initiated properly."); },
+            onDestroy: function() {}
+        });
+
+        // Side Animation
+        $( ".nav" ).hover(
+            function() {$(this).stop().animate({opacity: 0.5, paddingLeft: "10"}, 300, "easeOutBounce", function() {});},
+            function() {$(this).stop().animate({opacity: 1, paddingLeft: "0"}, 300, "easeOutBounce", function() {});}
+        );
+
+        });
+    </script>
+</body>
+</html>
