@@ -1,70 +1,102 @@
 <html>
-    <head>
-        <title>Work Process</title>
-        <style>
-            body
-            {
-                width: 800px;
-                margin: 20px auto;
-                background-image: url("http://static.tumblr.com/aan1aaf/Xk4nclcwm/tree_bark.png");
-                font-family: helvetica, sans-serif;
-                font-size: 11px;
-                color: #666;
-                margin-bottom: 30px;
-            }
-            
-            a
-            {
-                color: #F0F0F0;
-                text-decoration: none;
-                font-weight: bold;
-            }
-            
-            .info
-            {
-                background-color: #1c1c1c;
-                color: #F0F0F0;
-                border-radius: 5px;
-                padding: 10px;
-                margin-bottom: 10px;
-            }
-            
-            p
-            {
-                padding: 3px;
-                line-height: 160%;
-                margin: 3;
-            }
-            
-            .strut
-            {
-                text-transform: uppercase;
-                color: #1c1c1c;
-                letter-spacing: -4px;
-                font-size: 40px;
-                font-family: helvetica, arial, sans-serif;
-                margin-bottom: -20px;
-                margin-left: -20px;
-                font-weight: bold;
-            }
-        </style>
-    </head>
+
+<head>
+<title>Gist List!</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="{Favicon}" />
+<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic|Roboto:400,400italic,700,700italic|Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+<style>
+    body
+    {
+        width: 800px;
+        margin: 20px auto;
+        background-image: url("http://static.tumblr.com/aan1aaf/Xk4nclcwm/tree_bark.png");
+        font-family: "Roboto", sans-serif;
+        font-size: 11px;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    /* BGS
+        http://static.tumblr.com/aan1aaf/Xk4nclcwm/tree_bark.png
+        http://static.tumblr.com/aan1aaf/9ienclfig/c.png
+        http://static.tumblr.com/aan1aaf/N3Enclfj7/swirl.png
+        http://static.tumblr.com/aan1aaf/JpHnclfhs/noise.png
+    */
     
-    <!-- 
-    http://static.tumblr.com/aan1aaf/Xk4nclcwm/tree_bark.png
-    -->
     
+    a
+    {
+        color: #F0F0F0;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .info
+    {
+        background-color: #1c1c1c;
+        background-image: url("http://static.tumblr.com/aan1aaf/JpHnclfhs/noise.png");
+        color: #F0F0F0;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    p
+    {
+        padding: 3px;
+        line-height: 160%;
+        margin: 3;
+    }
+    
+    .strut
+    {
+        text-transform: uppercase;
+        color: #1c1c1c;
+        letter-spacing: -4px;
+        font-size: 45px;
+        margin-bottom: -20px;
+        margin-left: -20px;
+        font-weight: bold;
+    }
+</style>
+</head>
+
 <body>
+    <!-- GISTS
+        Gist List - <script src="https://gist.github.com/Squarn/b811daba1adb492e640a.js"></script>
+        Adding Links - <script src="https://gist.github.com/Squarn/16a2cd922bede8191401.js"></script>
+        System - <script src="https://gist.github.com/Squarn/865a2f717d3d6a0884a2.js"></script>
+     -->
     
-    <div class="info"><p>To comment, ask questions, or see the changes made to this gist via github, click the gist file name at the bottom of the page. Otherwise, you can send an ask <a href="http://squarn.tumblr.com/ask">here!</a> Please be specific when asking questions; if you see any errors, let me know!</p>
-        <p><a href="http://squarn.tumblr.com/gists">Return to Gist List</a></p>
+    <div class="info">
+        <p>To comment, ask questions, or see the changes made to this gist via github, click the gist file name at the bottom of the page. Otherwise, you can send an ask <a href="http://squarn.tumblr.com/ask">here!</a> Please be specific when asking questions; if you see any errors, let me know!</p>
+        <!-- <p><a href="http://squarn.tumblr.com/gists">Return to Gist List</a></p> -->
     </div>
+
     <div class="strut">Squarn Themes + Gist</div>
-    <script src="https://gist.github.com/Squarn/865a2f717d3d6a0884a2.js"></script>
+
+    <script src="https://gist.github.com/Squarn/b811daba1adb492e640a.js"></script>
     
     <style>
-        .gist, .gist-file
+        .gist a
         {
+            color: #3d3d3d !important;
+        }
+        
+        .gist, .markdown-body
+        {
+            font-family: "Source Sans Pro", sans-serif !important;
+        }
+        
+        .gist pre, .gist code
+        {
+            color: #1B4955;
+            font-family: "Source Code Pro", monospace !important;
         }
         
         .markdown-body
@@ -72,6 +104,5 @@
             padding-top: 30px !important;
         }
     </style>
-    
 </body>
 </html>
