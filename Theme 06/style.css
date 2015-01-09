@@ -37,6 +37,12 @@ blockquote
 	margin-left: 10px;
 }
 
+blockquote ul, blockquote ol
+{
+	margin-left: 10px;
+	padding-left: 10px;
+}
+
 .mask
 {
 	position: fixed;

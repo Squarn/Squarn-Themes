@@ -263,18 +263,21 @@
     	    	via <a href="{ReblogParentURL}">({ReblogParentName})</a>
     	    {/block:RebloggedFrom}
         </div>
-
+            
+            {block:IfShowNotesAndTags}
 			<div class="meta">
 				{block:NoteCount}
 					<a href="{Permalink}">{NoteCountWithLabel}</a>
-				{/block:NoteCount} &mdash; 
+				{/block:NoteCount} 
 
 				{block:HasTags}
+				&mdash; 
 					<ol>
 						{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
 					</ol>  
 				{/block:HasTags}
 			</div>
+			{/block:IfShowNotesAndTags}
 		</article>
 	{/block:Posts}
 

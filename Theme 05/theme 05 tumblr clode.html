@@ -500,6 +500,13 @@
         display: none;
     }
 
+    {block:IndexPage}
+    .x
+    {
+        display:none;
+    }
+    {/block:IndexPage}
+
     ::-webkit-scrollbar-thumb:vertical { background-color: #fff; }
     ::-webkit-scrollbar-thumb:horizontal { background-color: #fff; height: 10px !important;}
     ::-webkit-scrollbar { height: 7px; width: 7px; background-color: #1c1c1c; }
@@ -571,7 +578,7 @@
             <div class="postbody">
                 {block:Posts}
 
-                <article class="{PostType}">
+                <article class="{PostType} {TagsAsClasses}">
                     <div class="gutter">
                         {block:Title} <header>
                             <h2>
