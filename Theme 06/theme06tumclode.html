@@ -23,6 +23,7 @@
 	<!-- Booleans -->
 	<meta name="if:Show Notes and Tags" content="0" />
 	<meta name="if:Show Textual Content" content="1" />
+	<meta name="if:Enable Font Awesome" content="1" />
 
 	<meta name="text:Footer Text" content="<p>I will grow.</p>" />
 
@@ -89,7 +90,7 @@
 <body>
 	<div class="mask"></div>
 	<header>
-		<div class="title">{title}</div>
+		<a class="title" href="{BlogURL}">{title}</a>
 		<navigation>
 			<ul>
 				{block:IfLink1Name}
@@ -307,19 +308,19 @@
 			{block:IfEnableFontAwesome}
 			<ul>
 				{block:IfLink6Name}
-					<li><a href="{text:Link 6 URL}"><i class="fa fa-bookmark-o fa-fw"></i> {text:Link 6 Name}</a></li>
+					<li><a href="{text:Link 6 URL}"><i class="fa fa-code fa-fw fa-fw"></i> {text:Link 6 Name}</a></li>
 				{/block:IfLink6Name}
 				{block:IfLink7Name}
 					<li><a href="{text:Link 7 URL}"><i class="fa fa-bookmark-o fa-fw"></i> {text:Link 7 Name}</a></li>
 				{/block:IfLink7Name}
 				{block:IfLink8Name}
-					<li><a href="{text:Link 8 URL}"><i class="fa fa-bookmark-o fa-fw"></i> {text:Link 8 Name}</a></li>
+					<li><a href="{text:Link 8 URL}"><i class="fa fa-cloud fa-fw"></i> {text:Link 8 Name}</a></li>
 				{/block:IfLink8Name}
 				{block:IfLink9Name}
-					<li><a href="{text:Link 9 URL}"><i class="fa fa-bookmark-o fa-fw"></i> {text:Link 9 Name}</a></li>
+					<li><a href="{text:Link 9 URL}"><i class="fa fa-code-fork fa-fw"></i> {text:Link 9 Name}</a></li>
 				{/block:IfLink9Name}
 				{block:IfLink10Name}
-					<li><a href="{text:Link 10 URL}"><i class="fa fa-bookmark-o fa-fw"></i> {text:Link 10 Name}</a></li>
+					<li><a href="{text:Link 10 URL}"><i class="fa fa-check fa-fw"></i> {text:Link 10 Name}</a></li>
 				{/block:IfLink10Name}
 			</ul>
 			{/block:IfEnableFontAwesome}
