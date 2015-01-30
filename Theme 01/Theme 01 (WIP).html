@@ -14,18 +14,17 @@
 <meta name="image:Sidebar Background Image" content=""/>
 
 <!-- COLORS -->
-<meta name="color:Background Color" content="#ffffff"/>
-<meta name="color:Sidebar Color" content="#000000"/>
+<meta name="color:Background Color" content="#000"/>
+<meta name="color:Sidebar Color" content="#ededed"/>
 <meta name="color:Nav Link Color" content="#000000"/>
 <meta name="color:Nav Background Color" content="#FFFFFF"/>
 <meta name="color:Description Text Color" content="#000000"/>
-<meta name="color:Text Color" content="#000000"/>
-<meta name="color:Link Color" content="#C1C1C1"/>
+<meta name="color:Text Color" content="#FFF"/>
+<meta name="color:Link Color" content="#939393"/>
 <meta name="color:Nav Arrow Color" content="#ffffff"/>
-<meta name="color:Audio Post Accent" content="#000"/>
-<meta name="color:Post Header Color" content="#0A0A0A"/>
+<meta name="color:Post Header Color" content="#000"/>
 <meta name="color:Post Header Text Color" content="#FFFFFF"/>
-<meta name="color:Body Link Fade Color" content="#c1c1c1"/>
+<meta name="color:Body Link Fade Color" content="#313131"/>
 
 <!-- FONTS -->
 <meta name="font:Title" content="Georgia"/>
@@ -34,11 +33,9 @@
 <meta name="if:Disable Title" content="0"/>
 <meta name="if:Disable Second Description" content="0"/>
 <meta name="if:Disable Transitions" content="0"/>
-<meta name="if:Block Audio Style" content="1"/>
 <meta name="if:Show Textual Content" content="1"/>
 <meta name="if:Show Tags" content="1"/>
 <meta name="if:Show Camera Info" content="1"/>
-<meta name="if:Disable Little Sidebar Buffer" content="0"/>
 
 <!-- TEXT -->
 <meta name="text:Second Description" content=""/>
@@ -70,8 +67,9 @@
 body 
 {
 	background-color: {color:Background Color};
-	font-family: calibri, sans-serif;
-	font-size: 11px;
+	font-family: "Source Code Pro", monospace;
+	font-size: 10px;
+	font-weight: 100;
 	color: {color:Text Color};
 }
 
@@ -95,6 +93,8 @@ p
 	clear: both;
 }
 
+/*Layout Structure*/
+
 #sidebar
 {
 	position: fixed;
@@ -103,23 +103,17 @@ p
 	background-color: {color:Sidebar Color};
 	background-image: url('{image:Sidebar Background Image}');
 	height: 100%;
-	left: 0px;
-	top: 0px;
+	left: 0;
+	top: 0;
+	bottom: 0;
 	z-index: 10;
 }
 
-#sidebar a
-{
-	color: {color:Description Text Color};
-	text-decoration: none;
-}
+#sidebar a { color: {color:Description Text Color}; text-decoration: none; }
 
 #sbimg img
 {
-	width: 100%;
-	{block:IfDisableLittleSidebarBuffer}
-		margin-bottom: -3px;
-	{block:IfDisableLittleSidebarBuffer}
+	max-width: 100%;
 }
 
 #sbimg
@@ -128,29 +122,30 @@ p
 	position: relative;
 	background-color: #fff;
 	opacity: .7;
-	
 
+	-moz-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	-webkit-transition-duration: 1s;
 	transition-duration: 1s;
 }
-
-/* Pagination */
 
 #pagn a, #pagp a
 {
 	position: absolute;
-	background-color: {color:Sidebar Color};
-	border: 1px solid {color:Background Color};	
-	padding: 7px;
-	color: {color:Nav Arrow Color};
 	top: 280px;
 	left: 290px;
+	border: 1px solid #fff;	
+	padding: 7px;
+	background-color: {color:Sidebar Color};
+	color: {color:Nav Arrow Color};
 	text-decoration: none;
+
+	-webkit-box-shadow: 1px 1px 0px 0px rgba(50,50,50,0.13);
+	-moz-box-shadow: 1px 1px 0px 0px rgba(50,50,50,0.13);
+	box-shadow: 1px 1px 0px 0px rgba(50,50,50,0.13);
 }
 
-#pagp a
-{
-	top: 320px;
-}
+#pagp a { top: 320px; }
 
 #title 
 {
@@ -175,11 +170,15 @@ p
 	top: 100px;
 	width: 80%;
 	margin: auto;
+	border: 7px solid #fff;
 	background-color: #fff;
+
+	-moz-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	-webkit-transition-duration: 1s;
+	transition-duration: 1s;
 }
 
-/* If Transitions are Enabled */
-{block:IfNotDisableTransitions}
 #prize
 {
 	z-index: 2;
@@ -188,10 +187,14 @@ p
 	padding: 10px;
 	position: absolute;
 	bottom: 20px;
-	width: 80%;
+	width: 80%; 
 	margin: auto;
 	color: #fff;
-	
+
+	-webkit-box-shadow: 1px 1px 0px 0px rgba(50,50,50,0.5);
+	-moz-box-shadow: 1px 1px 0px 0px rgba(50,50,50,0.5);
+	box-shadow: 3px 3px 0px 0px rgba(50,50,50,0.4);
+
 	-moz-transition-duration: 1s;
 	-o-transition-duration: 1s;
 	-webkit-transition-duration: 1s;
@@ -203,13 +206,13 @@ p
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	opacity: 0.0;
-	background-color: #fff;
-	color: #000;
+	background-color: {color:Nav Background Color};
+	color: {color:Description Text Color};
 	padding: 10px;
-	width: 80%;
+	width: 85%;
 	margin: auto;
 	position: relative;
-	top: 5px;
+	top: 10px;
 	
 	-moz-transition-duration: .8s;
 	-o-transition-duration: .8s;
@@ -220,48 +223,16 @@ p
 #nav 
 {
 	display: table;
-	top: 200px;
+	top: 190px;
 	padding: 6px 0px;
+	text-align: center;
 }
-{/block:IfNotDisableTransitions}
 
 /* If Transitions are Disabled */
 {block:IfDisableTransitions}
-#prize
-{
-	z-index: 2;
-	opacity: 1;
-	background-color: #0A0A0A;
-	padding: 10px;
-	position: absolute;
-	bottom: 20px;
-	width: 80%
-	margin: auto;
-	color: #fff;
-}
-
-#loser, #nav
-{
-	box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	opacity: 1;
-	background-color: #fff;
-	color: {color:Description Text Color};
-	padding: 10px;
-	width: 80%;
-	margin: auto;
-	position: relative;
-	top: 105px;
-}
-
-#nav 
-{
-	display: table;
-	top: 95px;
-	padding: 6px 0px;
-	text-align: center;
-	background-color: {color:Nav Background Color};
-}
+	#prize { opacity: 1; }
+	#loser, #nav {opacity: 1; top: 105px;}
+	#nav { top: 95px; }
 {/block:IfDisableTransitions}
 
 #nav a
@@ -314,7 +285,7 @@ p
 }
 
 {block:IfNotDisableTransitions}
-#revolvingDoor:hover #prize
+#revolvingDoor:hover #prize, #revolvingDoor:hover #sbimg
 {
 	opacity: 1.0;
 	-moz-transition-duration: 1s;
@@ -323,14 +294,14 @@ p
 	transition-duration: 1s;
 }
 
-#revolvingDoor:hover #sbimg
+/*#revolvingDoor:hover #sbimg
 {
 	opacity: 1;
 	-moz-transition-duration: 1s;
 	-o-transition-duration: 1s;
 	-webkit-transition-duration: 1s;
 	transition-duration: 1s;
-}
+}*/
 
 #sidebar:hover #loser, #sidebar:hover #nav
 {
@@ -349,7 +320,6 @@ p
 }
 {/block:IfNotDisableTransitions}
 
-
 /* Main Post Container */
 
 #main
@@ -357,6 +327,7 @@ p
 	width:500px;
 	margin: auto;
 	z-index: 2;
+	margin-bottom: 100px;
 }
 
 #main a
@@ -453,13 +424,12 @@ blockquote
 
 .quote
 {
-	font-size: 15px;
-	font-family: helvetica, arial;
-}
-
-.input
-{
-	font-weight: bold;
+	font-size: 13px;
+	font-family: "Source Code Pro Light";
+	border: 1px solid #fff;
+	box-shadow: -2px 2px {color:Link Color};
+	padding: 10px;
+	margin-bottom: 10px;
 }
 
 .port
@@ -549,7 +519,7 @@ blockquote
 	float:left;
 	min-width: 180px;
 	min-height: 180px;
-	background-color: #fff;
+	background-color: {color:Background Color};
 }
 
 .music-info
@@ -563,10 +533,9 @@ blockquote
 .tname 
 {
 	text-align: center;
-	font-family: 'Playfair Display';
-	font-style: italic;
-	font-size: 17px;
-	color: {color:Audio Post Accent};
+	font-size: 16px;
+	font-family: "Source Code Pro Light";
+	margin: 5px 0 0 0 !important;
 }
 
 .artname
@@ -579,7 +548,7 @@ blockquote
 	text-align: center;
 }
 
-.audio-meta 
+.audio-meta
 {
 	margin: 0px -5px 0px -5px;
 	padding: 8px 5px;
@@ -588,59 +557,37 @@ blockquote
 	border-bottom: 1px solid {color:Text Color};
 	border-right: 1px solid {color:Text Color};
 	background-color:{color:Background Color};
+	box-shadow: -2px 2px {color:Link Color};
+	position: relative;
+	z-index: -10;
 }
 
 .pcount 
 {
 	margin-left: 10px;
 	background-color:{color:Background Color};
-	margin: 5px 0px 0px 5px;
+	margin: 5px 0 0 10px;
 	padding: 6px;
 	display: block;
 	white-space: nowrap;
 	display: table;
 	color: {color:Link Color};
 
-	border-top: 1px solid {color:Text Color};
-	border-left: 1px solid {color:Text Color};
-	border-right: 1px solid {color:Text Color};
+	border-top: 1px solid {color:Link Color};
+	border-left: 1px solid {color:Link Color};
+	border-right: 1px solid {color:Link Color};
 }
-
-/* Default Audio Style */
-{block:IfBlockAudioStyle}
-.audio-meta 
-{
-	background-color: {color:Text Color};
-	margin: 0px -5px 0px -5px;
-	padding: 8px 5px;
-	color: {color:Background Color};
-	border: none;
-}
-
-.pcount 
-{
-	margin-left: 10px;
-	background-color:{color:Link Color};
-	margin: 5px 0px -2px 5px;
-	padding: 6px;
-	display: block;
-	white-space: nowrap;
-	display: table;
-	color: {color:Background Color};
-	border: none;
-}
-{/block:IfBlockAudioStyle}
 
 .acaption
 {
-	padding: 5px 6px 0px 5px;
+	padding: 5px 6px 0 5px;
 	margin-right:-5px;
 }
 
 #reblog
 {
 	position:absolute;
-	top:0px;
+	top: 0;
 	left: 23px;
 }
 
@@ -883,32 +830,6 @@ pre {
 						<div class="clearfix"></div>
 						{/block:AudioPlayer}
 					{/block:Audio}
-
-					<!-- Audio Posts
-					{block:Audio}
-						{block:AudioEmbed} 
-							{AudioEmbed}
-						{/block:AudioEmbed}
-							
-						{block:AudioPlayer} 
-							{AudioPlayerBlack}
-								{block:TrackName}<p>"{TrackName}"</p>{/block:TrackName}
-								{block:Artist}<p>by {Artist}</p>{/block:Artist}
-								{block:Album}<p>on "{Album}"</p>{/block:Album}
-							{/block:AudioPlayer}
-							
-							{block:IfShowTextualContent}
-								<p>{block:Caption}{Caption}{/block:Caption}</p>
-									
-								{block:PlayCount}
-									<p>{PlayCountWithLabel}</p>
-								{/block:PlayCount}
-							{/block:IfShowTextualContent}
-						
-						{block:ExternalAudio}
-							<p><a href="{ExternalAudioURL}">Download</a></p>
-						{/block:ExternalAudio}
-					{/block:Audio} -->
 					
 					<!-- Video Posts -->
 					{block:Video}
