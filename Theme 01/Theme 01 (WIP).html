@@ -22,7 +22,7 @@
 <meta name="color:Text Color" content="#FFF"/>
 <meta name="color:Link Color" content="#939393"/>
 <meta name="color:Nav Arrow Color" content="#ffffff"/>
-<meta name="color:Post Header Color" content="#000"/>
+<meta name="color:Post Header Color" content="#010101"/>
 <meta name="color:Post Header Text Color" content="#FFFFFF"/>
 <meta name="color:Body Link Fade Color" content="#313131"/>
 
@@ -55,6 +55,8 @@
 <meta name="text:Link 5 URL" content=""/>
 <meta name="text:Link 5 Name" content="V"/>
 
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
 <title>{title} {block:PostTitle}&mdash; {PostTitle}{/block:PostTitle}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link rel="shortcut icon" href="{Favicon}">
@@ -69,7 +71,6 @@ body
 	background-color: {color:Background Color};
 	font-family: "Source Code Pro", monospace;
 	font-size: 10px;
-	font-weight: 100;
 	color: {color:Text Color};
 }
 
@@ -81,8 +82,32 @@ img
 p
 {
 	 margin: 0px;
-	 margin-bottom: 5px;
+	 margin-bottom: 10px;
 }  
+
+ol, ul
+{
+	padding-left: 20px;
+}
+
+b, h2, strong
+{
+	font-family: "Source Code Pro", monospace;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+hr
+{
+	border: 0;
+	height: 1px;
+	color: #f00;
+	background-color: {color:Text Color};
+	width: 70%;
+	opacity: .7;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
 
 .clearfix:after 
 {
@@ -193,7 +218,7 @@ p
 
 	-webkit-box-shadow: 1px 1px 0px 0px rgba(50,50,50,0.5);
 	-moz-box-shadow: 1px 1px 0px 0px rgba(50,50,50,0.5);
-	box-shadow: 3px 3px 0px 0px rgba(50,50,50,0.4);
+	box-shadow: 3px 3px 0px 0px rgba(218,218,218,0.4);
 
 	-moz-transition-duration: 1s;
 	-o-transition-duration: 1s;
@@ -356,15 +381,28 @@ p
 #ptitle
 {
 	background-color: {color:Post Header Color};
-	color: #fff;
+	color: {color:Text Color};
 	font-size: 11px;
 	text-transform: uppercase;
 	padding: 10px;
+	margin-left: -10px;
+	margin-right: -10px;
+	margin-bottom: 20px;
+	border-left: 1px solid {color:Text Color};
+	border-bottom: 1px solid {color:Text Color};
+	border-right: 1px solid {color:Text Color};
+
+	font-size: 13px;
+	font-family: "Source Code Pro Light", monospace;
+	border: 1px solid #fff;
+	box-shadow: -2px 2px {color:Link Color};
+	padding: 10px;
+	margin-bottom: 10px;
 }
 
 #ptitle a
 {
-	color:{color:Post Header Text Color};
+	color:{color:Text Color};
 }
 
 #post p:first-child
@@ -427,7 +465,7 @@ blockquote
 .quote
 {
 	font-size: 13px;
-	font-family: "Source Code Pro Light";
+	font-family: "Source Code Pro Light", monospace;
 	border: 1px solid #fff;
 	box-shadow: -2px 2px {color:Link Color};
 	padding: 10px;
@@ -480,7 +518,7 @@ blockquote
 #gutter:hover #rbmeta
 {
 	opacity: 1;
-	left: 510px;
+	left: 520px;
 	z-index: 0;
 	
 	-webkit-transition: all 1s ease-in-out;
@@ -540,7 +578,7 @@ blockquote
 .tname 
 {
 	font-size: 16px;
-	font-family: "Source Code Pro Light";
+	font-family: "Source Code Pro Light", monospace;
 	margin: 5px 0 0 0 !important;
 }
 
@@ -638,7 +676,7 @@ pre {
  white-space: -o-pre-wrap; /* Opera 7 */
  /* width: 99%; */
  word-wrap: break-word; /* Internet Explorer 5.5+ */
- font-family: calibri;
+ font-family: "Source Code Pro", monospace;
 }
 
 ::-webkit-scrollbar-thumb:vertical {background-color:{color:Sidebar Color};}
@@ -899,4 +937,3 @@ pre {
   ga('require', 'displayfeatures');
   ga('send', 'pageview');
 </script>	
-</body>
