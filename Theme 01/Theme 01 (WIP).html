@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 
 <!-- 
-	Theme 01
+	Theme 01 - Scholar
 	Theme by: Squarn.tumblr.com
 	Version: 2.0
 	Github: http://goo.gl/43wnGy
-	Please do not remove the credit.
+	Please do not remove the credit/info
 -->
 
 <head>
 <!-- IMAGES -->
 <meta name="image:Sidebar Image" content="http://static.tumblr.com/aan1aaf/Ry4na7b11/jpeg.jpg"/>
 <meta name="image:Sidebar Background Image" content=""/>
+<meta name="image:Background Image" content="http://static.tumblr.com/aan1aaf/Mfjnjflmf/tumblr_ndpupodtro1rnmh3no1_250_1_.png"/>
 
 <!-- COLORS -->
 <meta name="color:Background Color" content="#000"/>
 <meta name="color:Sidebar Color" content="#ededed"/>
-<meta name="color:Nav Link Color" content="#000000"/>
-<meta name="color:Nav Background Color" content="#FFFFFF"/>
-<meta name="color:Description Text Color" content="#000000"/>
-<meta name="color:Text Color" content="#FFF"/>
+<meta name="color:Sidebar Img Border Color" content="#fff">
+<meta name="color:Nav Link Color" content="#000"/>
+<meta name="color:Nav Background Color" content="#fff"/>
+<meta name="color:Description Text Color" content="#000"/>
+<meta name="color:Text Color" content="#fff"/>
 <meta name="color:Link Color" content="#939393"/>
-<meta name="color:Nav Arrow Color" content="#ffffff"/>
+<meta name="color:Pagination Arrow Color" content="#000"/>
 <meta name="color:Post Header Color" content="#010101"/>
-<meta name="color:Post Header Text Color" content="#FFFFFF"/>
-<meta name="color:Body Link Fade Color" content="#313131"/>
+<meta name="color:Post Header Text Color" content="#fff"/>
+<meta name="color:Body Link Fade Color" content="#c1c1c1"/>
 
 <!-- FONTS -->
 <meta name="font:Title" content="Georgia"/>
@@ -69,15 +71,13 @@
 body 
 {
 	background-color: {color:Background Color};
+	background-image: url('{image:Background Image}');
 	font-family: "Source Code Pro", monospace;
 	font-size: 10px;
 	color: {color:Text Color};
 }
 
-img
-{
-	vertical-align: middle;
-}
+img { vertical-align: middle; }
 
 p
 {
@@ -85,17 +85,7 @@ p
 	 margin-bottom: 10px;
 }  
 
-ol, ul
-{
-	padding-left: 20px;
-}
-
-b, h2, strong
-{
-	font-family: "Source Code Pro", monospace;
-	font-weight: 700;
-	text-transform: uppercase;
-}
+ol, ul { padding-left: 20px; }
 
 hr
 {
@@ -109,16 +99,28 @@ hr
 	margin-bottom: 20px;
 }
 
+h2
+{
+    font-weight: 300;
+    font-size: 17px;
+}
+
+b, strong
+{
+	font-family: "Source Code Pro", monospace;
+	font-weight: 700;
+}
+
 .clearfix:after 
 {
-	content: " "; /* Older browser do not support empty content */
+	content: " "; /* Older browsers do not support empty content, fuck them anyway */
 	visibility: hidden;
 	display: block;
 	height: 0;
 	clear: both;
 }
 
-/*Layout Structure*/
+/* Layout Structure */
 
 #sidebar
 {
@@ -159,7 +161,7 @@ hr
 	position: absolute;
 	top: 280px;
 	left: 290px;
-	border: 1px solid #fff;	
+	border: 1px solid {color:Sidebar Img Border Color};	
 	padding: 7px;
 	background-color: {color:Sidebar Color};
 	color: {color:Nav Arrow Color};
@@ -171,6 +173,11 @@ hr
 }
 
 #pagp a { top: 320px; }
+
+rect
+{
+	fill: {color:Pagination Arrow Color};
+}
 
 #title 
 {
@@ -195,7 +202,7 @@ hr
 	top: 100px;
 	width: 80%;
 	margin: auto;
-	border: 7px solid #fff;
+	border: 7px solid {color:Sidebar Img Border Color};
 	background-color: #fff;
 
 	-moz-transition-duration: 1s;
@@ -347,9 +354,19 @@ hr
 
 /* Main Post Container */
 
+#wrap
+{
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	overflow: scroll;
+}
+
 #main
 {
-	width:500px;
+	width: 500px;
 	margin: auto;
 	z-index: 2;
 	margin-bottom: 100px;
@@ -381,23 +398,22 @@ hr
 #ptitle
 {
 	background-color: {color:Post Header Color};
-	color: {color:Text Color};
 	font-size: 11px;
 	text-transform: uppercase;
 	padding: 10px;
-	margin-left: -10px;
-	margin-right: -10px;
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 	border-left: 1px solid {color:Text Color};
 	border-bottom: 1px solid {color:Text Color};
 	border-right: 1px solid {color:Text Color};
 
+	color: {color:Text Color};
 	font-size: 13px;
-	font-family: "Source Code Pro Light", monospace;
+	font-family: "Source Code Pro", monospace;
+	font-weight: 300;
+
 	border: 1px solid #fff;
 	box-shadow: -2px 2px {color:Link Color};
 	padding: 10px;
-	margin-bottom: 10px;
 }
 
 #ptitle a
@@ -438,15 +454,15 @@ blockquote
 	margin-top: 10px;
 }
 
-.meta ul
+.meta ul, #narrow_nav ul
 {
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 }
 
-.tags li
+.tags li, #narrow_nav li
 {
-	list-style-type:none;
+	list-style-type: none;
 	display:inline;
 	color: #c1c1c1;
 	padding-right: 15px;
@@ -457,6 +473,24 @@ blockquote
 	transition-duration: .5s;
 }
 
+#narrow_nav li {padding-right: 5px;}
+
+#narrow_nav
+{
+	display: none;
+	margin-top: 30px;
+	margin-bottom: -30px;
+	line-height: 40px;
+}
+
+#narrow_nav li a
+{
+	font-size: 14px;
+	border: 1px solid {color:text color};
+	padding: 5px 7px;
+	color: {color:text color};
+}
+
 .pcaption
 {
 	margin-top: 5px;
@@ -465,11 +499,12 @@ blockquote
 .quote
 {
 	font-size: 13px;
-	font-family: "Source Code Pro Light", monospace;
+	font-family: "Source Code Pro", monospace;
+	font-weight: 300;
 	border: 1px solid #fff;
 	box-shadow: -2px 2px {color:Link Color};
 	padding: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 }
 
 .port
@@ -486,7 +521,7 @@ blockquote
 {
 	opacity: 0;
 	position: absolute;
-	left: 410px;
+	left: 450px;
 	width: 100px;
 	z-index: -10;
 	height: 100%;
@@ -500,12 +535,12 @@ blockquote
 
 #rbmeta p
 {
-	margin: 2px 0px;
+	margin: 2px 0;
 }
 
 #rbmeta p:first-of-type
 {
-	margin:0px;
+	margin: 0;
 }
 
 #gutter
@@ -518,14 +553,14 @@ blockquote
 #gutter:hover #rbmeta
 {
 	opacity: 1;
-	left: 520px;
+	left: 510px;
 	z-index: 0;
 	
 	-webkit-transition: all 1s ease-in-out;
-	-moz-transition: all 1s ease-in-out;
+	-moz-transition: all .5 ease-in-out;
 	-ms-transition: all 1s ease-in-out;
 	-o-transition: all 1s ease-in-out;
-	transition: all 1s ease-in-out;
+	transition: all .5s ease-in-out;
 }
 
 /* Music Post Selectors */
@@ -578,13 +613,14 @@ blockquote
 .tname 
 {
 	font-size: 16px;
-	font-family: "Source Code Pro Light", monospace;
+	font-family: "Source Code Pro", monospace;
+	font-weight: 300;
 	margin: 5px 0 0 0 !important;
 }
 
 .artname
 {
-	margin-top: 5px;
+	margin-top: 10px;
 }
 
 .alname 
@@ -683,17 +719,59 @@ pre {
 ::-webkit-scrollbar-thumb:horizontal {background-color:{color:Sidebar Color};height:10px !important;}
 ::-webkit-scrollbar {height:7px; width:7px; background-color:{color:Background Color};}
 
+@media screen and (max-width: 1100px) {
+    #wrap
+    {
+    	left: 330px;
+    	-webkit-transition: all 1s ease;
+		-moz-transition: all 1s ease;
+		-ms-transition: all 1s ease;
+		-o-transition: all 1s ease;
+		transition: all 1s ease;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #sidebar { display: none; }
+	#narrow_nav { display: inherit; }
+	#wrap { left: 10px; }
+
+    #wrap, #narrow_nav, #sidebar
+    {
+    	-webkit-transition: all 1s ease;
+		-moz-transition: all 1s ease;
+		-ms-transition: all 1s ease;
+		-o-transition: all 1s ease;
+		transition: all 1s ease;
+    }
+}
+
 </style>
 </head>
+
 <body>
 	<div id="sidebar">
-	
 		{block:Pagination}
 			{block:PreviousPage}<div id="pagp"><a href="{PreviousPage}">
-				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0px" y="0px" width="4.229px" height="7.104px" viewBox="0 0 4.229 7.104" enable-background="new 0 0 4.229 7.104" xml:space="preserve"><rect x="0.1" y="6" width="1" height="1"/><rect x="1.1" y="5" width="1" height="1"/><rect x="2.1" y="4" width="1" height="1"/><rect x="0.1" y="0" width="1" height="1"/><rect x="1.1" y="1" width="1" height="1"/><rect x="2.1" y="2" width="1" height="1"/><rect x="3.1" y="3" width="1" height="1"/></svg>
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0px" y="0px" width="4.229px" height="7.104px" viewBox="0 0 4.229 7.104" enable-background="new 0 0 4.229 7.104" xml:space="preserve">
+				<rect x="0.1" y="6" width="1" height="1"/>
+				<rect x="1.1" y="5" width="1" height="1"/>
+				<rect x="2.1" y="4" width="1" height="1"/>
+				<rect x="0.1" y="0" width="1" height="1"/>
+				<rect x="1.1" y="1" width="1" height="1"/>
+				<rect x="2.1" y="2" width="1" height="1"/>
+				<rect x="3.1" y="3" width="1" height="1"/></svg>
 			</a></div>{/block:PreviousPage}
 			{block:NextPage}<div id="pagn"><a href="{NextPage}">
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="4.229px" height="7.104px" viewBox="0 0 4.229 7.104" enable-background="new 0 0 4.229 7.104" xml:space="preserve"><g><g><g><g><rect x="3.1" y="6" width="1" height="1"/><rect x="2.1" y="5" width="1" height="1"/><rect x="1.1" y="4" width="1" height="1"/><rect x="3.1" width="1" height="1"/><rect x="2.1" y="1" width="1" height="1"/><rect x="1.1" y="2" width="1" height="1"/><rect x="0.1" y="3" width="1" height="1"/></g><g></g></g></g></g><g></g></svg>
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="4.229px" height="7.104px" viewBox="0 0 4.229 7.104" style="background: white" enable-background="new 0 0 4.229 7.104" xml:space="preserve"><g><g><g><g>
+				<rect x="3.1" y="6" width="1" height="1"/>
+				<rect x="2.1" y="5" width="1" height="1"/>
+				<rect x="1.1" y="4" width="1" height="1"/>
+				<rect x="3.1" width="1" height="1"/>
+				<rect x="2.1" y="1" width="1" height="1"/>
+				<rect x="1.1" y="2" width="1" height="1"/>
+				<rect x="0.1" y="3" width="1" height="1"/>
+				</g><g></g></g></g></g><g></g></svg>
 			</a></div>{/block:NextPage}
 		{/block:Pagination}
 		
@@ -725,7 +803,31 @@ pre {
 		</div>
 	</div><!-- End Sidebar -->
 	
+	<div id="wrap">
 	<div id="main">
+
+		<div id="narrow_nav">
+			<ul>
+				{block:Pagination}
+					{block:PreviousPage}
+					<li><a href="{PreviousPage}">Hi</a></li>
+					{/block:PreviousPage}
+				{/block:Pagination}
+
+				{block:IfLink1Name}<li><a href="{text:Link 1 URL}" class="tag_narrow">{text:Link 1 Name}</a></li>{/block:IfLink1Name}
+				{block:IfLink2Name}<li><a href="{text:Link 2 URL}" class="tag_narrow">{text:Link 2 Name}</a></li>{/block:IfLink2Name}
+				{block:IfLink3Name}<li><a href="{text:Link 3 URL}" class="tag_narrow">{text:Link 3 Name}</a></li>{/block:IfLink3Name}
+				{block:IfLink4Name}<li><a href="{text:Link 4 URL}" class="tag_narrow">{text:Link 4 Name}</a></li>{/block:IfLink4Name}
+				{block:IfLink5Name}<li><a href="{text:Link 5 URL}" class="tag_narrow">{text:Link 5 Name}</a></li>{/block:IfLink5Name}
+
+				{block:Pagination}
+					{block:NextPage}
+					<li><a href="{NextPage}">Bye</a></li>
+					{/block:NextPage}
+				{/block:Pagination}
+			</ul>
+		</div>
+
 		{block:Posts}
 		<div id="gutter">
 			<div id="post">
@@ -799,7 +901,7 @@ pre {
 					{block:Quote}
 						<div class="quote input">"{Quote}"</div>
 							{block:Source}
-								{Source}
+								<div style="text-align: right">{Source}</div>
 							{/block:Source}
 					{/block:Quote}
 					
@@ -925,6 +1027,7 @@ pre {
 		
 		{/block:Posts}
 	</div><!-- End Main -->
+	</div>
 	
 <!-- Google Analytics -->
 <script>

@@ -10,8 +10,9 @@
     ## Backgrounds are Credit: Unknown
 -->
 <head>
-    <!-- Fjalla One, Karla, Source Code Pro -->
+    <!-- Fjalla One, Open Sans, Roboto, Source Code Pro -->
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Fjalla+One|Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,400|Roboto:400italic,300,700,400' rel='stylesheet' type='text/css'>
 
     <title>{title} {block:PostTitle}- {PostTitle}{/block:PostTitle}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -21,15 +22,21 @@
 
     <link rel="stylesheet" href="http://static.tumblr.com/aan1aaf/YZCnc7p4m/normalize.css" />
     <link rel="stylesheet" href="http://static.tumblr.com/aan1aaf/vnKnc7p4m/reset.css" />
+    
+    <meta name="image:background" content=""/>
+    <meta name="image:bodybg" content=""/>
+    
+    <meta name="text:Font Size" content="11px"/>
+    <meta name="text:Font" content="Open Sans, sans-serif"/>
 
     <style>
     body
     {
-        font-family: "Karla", sans-serif;
-        font-size: 12px;
-        color: #1c1c1c;
+        font-family: {text:Font};
+        font-size: {text:Font Size};
+        color: #252120;
 
-        background: #ffffff url("http://static.tumblr.com/aan1aaf/9ienclfig/c.png");
+        background: #ffffff url("{image:bodybg}");
         height: 100%;
     }
 
@@ -38,20 +45,90 @@
     /* OOCSS */
     .noise-bg { background-image: url("http://static.tumblr.com/aan1aaf/JpHnclfhs/noise.png"); }
 
-    .fjalla   { font-family: "Fjalla One", sans-serif; }
-    .karla    { font-family: "Karla", sans-serif; }
-
     p         { margin: 10px 0px; }
-    a         { color: #1c1c1c; text-decoration: none; }
+    a         { color: #252120; text-decoration: none; }
     img       { vertical-align: middle; max-width: 100%; }
     canvas    { max-width: 100%; }
     ul, ol    { line-height: 170%; }
     em        { font-weight: bold; }
 
-    .help, .insert
+    /* Font Style Editing */
+    /* 
+        Font Family
+        Font Size
+        Font Weight
+        Font Style
+        Color
+        Letter Spacing
+        Text Transform
+        Text Align
+    */
+
+    .meta 
     {
-        display: none;
+        font-family: "Roboto", sans-serif;
     }
+
+    article header h2
+    {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-size: 15px;
+        color: #3B383C;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+    #starter_2 h1, #starter_2 h2
+    {
+        font-size: 112px;
+        letter-spacing: -4px;
+        text-transform: uppercase;
+        color: #FEFDF9;
+        margin-top: -10px;
+        text-shadow: -1px 1px 1px #B9B8C2;
+        text-shadow: -1px 4px 13px rgba(40, 36, 35, 0.12);
+    }
+
+    #starter_2 h2
+    {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-size: 13px;
+        letter-spacing: 8px;
+    }
+
+    .title
+    {
+        font-family: "Times New Roman", serif;
+        font-size: 50px;
+        font-weight: 100;
+        font-style: italic;
+        letter-spacing: -3px;
+        text-transform: uppercase;
+    }
+
+    aside h1
+    {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-size: 22px;
+        color: #252120;
+        letter-spacing: 2px;
+        text-align: left;
+        text-transform: uppercase;
+        line-height: 100%;
+    }
+
+    .part
+    {
+        font-family: "Roboto", sans-serif;
+        font-size: 9px;
+        color: #c1c1c1;
+        letter-spacing: 1px;
+    }
+
+    /* End Font Style Editing */
 
     .sticktop
     {
@@ -62,7 +139,10 @@
 
     #particles
     {
-        background: #fff url("http://static.tumblr.com/aan1aaf/N3Enclfj7/swirl.png");
+        /*background: #fff url("http://static.tumblr.com/aan1aaf/Nfjnjjbvl/cover.jpg");*/
+        background-image: url("{image:background}");
+        background-size: cover;
+        background-position: 10% 70%;
         position: relative !important;
         height: 100%;
         width: 100%;
@@ -79,35 +159,19 @@
 
     #starter_2
     {
-        background-color: #fff; /* For degradation */
-        background-color: rgba(255,255,255,.7);
+        background-color: #fff;
+        background-color: rgba(223, 222, 228, .9);
         position: relative;
         left: -50%;
         text-align: center;
         padding: 20px 20px 10px 20px;
-        border-radius: 20px;
-    }
-
-    #starter_2 h1, #starter_2 h2
-    {
-        font-size: 100px;
-        letter-spacing: -4px;
-        text-transform: uppercase;
-        color: #171717;
-        margin-top: -10px;
+        border-radius: 7px;
     }
 
     #starter_2 h1
     {
         line-height: 105%;
-    }
-
-    #starter_2 h2
-    {
-        font-size: 25px;
-        letter-spacing: 0px;
-        margin-top: -15px;
-        font-family: "Karla", sans-serif;
+        font-family: "Fjalla One", sans-serif;
     }
 
     .description
@@ -115,7 +179,7 @@
         margin-top: 10px;
         font-size: 8px;
         color: #666; /* For Degradation */
-        color: rgba(0, 0, 0, 0.3);
+        color: rgba(205, 203, 208, 0.7);
         margin-left: -48%;
         text-transform: uppercase;
     }
@@ -127,7 +191,7 @@
 
     blockquote
     {
-        border-left: 1px solid #1c1c1c;
+        border-left: 1px solid #C7C7C7;
         margin-left: 10px;
         padding-left: 10px;
     }
@@ -145,11 +209,16 @@
     .title, .tagline
     {
         width: 100%;
-        //font-style: italic;
         color: #fff;
         font-weight: normal;
-        background-color: #1c1c1c;
+        background-color: #252120;
         text-align: center;
+        
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
     }
 
     .pagn, .pagp
@@ -169,26 +238,21 @@
 
     .title
     {
-        font-weight: 100;
-        font-size: 50px;
-        font-style: italic;
-        letter-spacing: -3px;
-        text-transform: uppercase;
-
-        margin-bottom: -5px;
+        margin-bottom: -10px;
         padding-top: 7px;
     }
 
     .tagline
     {
-        font-family: "Karla", sans-serif;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
         text-transform: uppercase;
         padding-bottom: 10px;
         font-size: 10px;
         letter-spacing: 8px;
         z-index: 10;
         line-height: 90%;
-        padding-top: 5px;
+        padding-top: 10px;
     }
 
     /* Sidebar */
@@ -206,18 +270,16 @@
         float: left;
         line-height: 150%;
         margin-top: 10px;
+        
+        -webkit-transition: all 2s ease;
+        -moz-transition: all 2s ease;
+        -ms-transition: all 2s ease;
+        -o-transition: all 2s ease;
+        transition: all 2s ease;
     }
 
     aside h1
     {
-        font-size: 15px;
-        font-family: "Karla", sans-serif;
-        letter-spacing: 2px;
-        color: #1c1c1c;
-        text-align: left;
-        line-height: 100%;
-        text-transform: uppercase;
-        
         margin-bottom: -4px;
         width: 210px;
     }
@@ -235,15 +297,10 @@
 
     .part
     {
-        font-family: "Karla", sans-serif;
-        font-size: 10px;
-        color: #c1c1c1;
-        letter-spacing: 1px;
-        
         width: 230px;
         padding: 10px;
         margin-bottom: 10px;
-        background-color: #1c1c1c;
+        background-color: #252120;
     }
 
     .part a
@@ -256,7 +313,7 @@
     {
         padding: 5px 10px 4px 12px;
         margin: 0 -20px;
-        background-color: #1c1c1c;
+        background-color: #252120;
         text-transform: uppercase;
         font-size: 10px;
         letter-spacing: 4px;
@@ -307,7 +364,7 @@
         width: 500px;
         max-width: 500px;
         padding: 15px 17px 17px 17px;
-        border: 10px solid #1c1c1c;
+        border: 10px solid #252120;
         background-color: #fff;
         margin-top: 40px;
     }
@@ -328,7 +385,7 @@
     {
         line-height: 160%;
         margin-bottom: 10px;
-        font-size: 13px;
+        font-size: {text:Font Size};
         text-align: justify;
     }
 
@@ -354,14 +411,9 @@
 
     article header h2
     {
-        text-align: center;
         border-bottom: 4px solid #ededed;
         padding: 5px 10px 15px 10px;
         margin: 0 -10px 15px -10px;
-        letter-spacing: 3px;
-        font-size: 15px;
-        color: #3B383C;
-        font-family: "Karla", sans-serif;
     }
 
     .meta
@@ -381,14 +433,14 @@
     .meta li
     {
         display: inline-block;
-        padding: 2px 5px;
-        background: #1c1c1c url("noise.png");
+        padding: 2px 6px;
+        background: #252120 url("noise.png");
         color: #fff;
         text-transform: uppercase;
         font-size: 10px;
         letter-spacing: 1px;
         margin-top: 5px;
-        margin-right: 3px;
+        margin-right: 4px;
     }
 
     .meta li a
@@ -406,7 +458,7 @@
         margin: 12px 0;
         padding-top: 10px;
         font-size: 12px;
-        border-top: 1px solid #1c1c1c;
+        border-top: 1px solid #252120;
         text-transform: uppercase;
         letter-spacing: 1px;
         width: 400px;
@@ -435,7 +487,7 @@
 
     .info
     {
-        background-color: #1c1c1c;
+        background-color: #252120;
         color: #F0F0F0;
         border-radius: 5px;
         padding: 10px;
@@ -457,7 +509,7 @@
         bottom: 0;
         left: 0;
         right: 0;*/
-        background-color: #1c1c1c;
+        background-color: #252120;
         color: #ffffff;
         padding: 10px 0;
         text-align: center;
@@ -480,7 +532,7 @@
         margin: 5px 0;
         padding: 10px;
         color: #fff;
-        background-color: #1c1c1c;
+        background-color: #252120;
     }
 
     pre a 
@@ -509,12 +561,11 @@
 
     ::-webkit-scrollbar-thumb:vertical { background-color: #fff; }
     ::-webkit-scrollbar-thumb:horizontal { background-color: #fff; height: 10px !important;}
-    ::-webkit-scrollbar { height: 7px; width: 7px; background-color: #1c1c1c; }
+    ::-webkit-scrollbar { height: 7px; width: 7px; background-color: #252120; }
     </style>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
-    <script src="http://static.tumblr.com/aan1aaf/zeunc7p4l/jquery.particleground.min.js"></script>
 </head>
 
 <body>
@@ -531,7 +582,7 @@
     </div>
 
     <header class="sticktop top_header">
-        <div class="title noise-bg"><img src="http://static.tumblr.com/aan1aaf/X6znclfgq/log.png" alt=""></div>
+        <div class="title noise-bg">Love is a warm, buttered gun!</div>
 
         <div class="tagline noise-bg">
             {block:Pagination}{block:PreviousPage}<span class="pagp">
@@ -603,7 +654,7 @@
                             {block:Answer}
                                 <header>
                                     <h2>
-                                    <span style="text-transform: uppercase;">{lang:Asker asked 2},</span> "{Question}"</h2>
+                                    <span>{lang:Asker asked 2},</span><br> "{Question}"</h2>
                                 </header>
 
                                 {block:Answerer}
@@ -629,7 +680,7 @@
                         </div>
                     </div>
 
-                    <div class="meta fjalla">
+                    <div class="meta">
                         {block:HasTags} 
                         <ul>
                             {block:Tags}<li class="tag"><a href="{TagURL}">{Tag}</a></li>{/block:Tags} 
@@ -663,7 +714,7 @@
         </main>
     
     <footer class="noise-bg">
-        UNDER CONSTRUCTION中
+        The days of men are coming to an end.
     </footer>
 
     <script type="text/javascript" charset="utf-8" async defer>
@@ -675,26 +726,6 @@
             $(document).scrollTop(top);
         {/block:PermalinkPage}
         
-        // Particleground load
-        $('#particles').particleground({
-            minSpeedX: 0.1,
-            maxSpeedX: 0.3,
-            minSpeedY: 0.1,
-            maxSpeedY: 0.3,
-            directionX: 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
-            directionY: 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
-            density: 10000, // How many particles will be generated: one particle every n pixels
-            dotColor: '#3d3d3d',
-            lineColor: '#666666',
-            particleRadius: 10, // Dot size
-            lineWidth: 0.6,
-            curvedLines: false,
-            proximity: 120, // How close two dots need to be before they join
-            parallax: false,
-            parallaxMultiplier: 8, // The lower the number, the more extreme the parallax effect
-            onInit: function() { console.log("Particles initiated properly."); },
-            onDestroy: function() {}
-        });
 
         // Meta slide down
         {block:IndexPage}
@@ -715,11 +746,11 @@
 
         // Tagline Stick
         $(function(){
-            var tagline = $('.tagline').offset().top; // -5
+            var tagline = $('.tagline').offset().top;
 
             $(window).scroll(function(){
-                if( $(window).scrollTop() > tagline ) { $('.tagline').addClass('stickt'); } 
-                else { $('.tagline').removeClass('stickt'); }
+                if( $(window).scrollTop() > tagline ) { $('.tagline').addClass('stickt'); $('aside').addClass('sticka'); } 
+                else { $('.tagline').removeClass('stickt'); $('aside').removeClass('sticka'); }
 
                 // Pagination Fade In
                 if($('.tagline').hasClass("stickt"))
@@ -735,19 +766,6 @@
             });
         });
         {/block:IndexPage}
-
-        // Sidebar Stick
-        $(function(){
-            var aside = $('aside').offset().top - 10; // -50
-
-            $(window).scroll(function(){
-                if( $(window).scrollTop() > aside ) {
-                    $('aside').addClass('sticka');
-                } else {
-                    $('aside').removeClass('sticka');
-                }
-            });
-        });
 
         // Side Animation
         $( ".nav" ).hover(
