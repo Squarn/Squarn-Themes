@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Under Construction!</title>
+
+	<link href='https://fonts.googleapis.com/css?family=Karla|Open+Sans:400,300|Montserrat' rel='stylesheet' type='text/css'>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<style>
+	
+	iframe
+	{
+	    display:none;
+	   	-webkit-transition: all 600ms ease;
+        -moz-transition: all 600ms ease;
+        -ms-transition: all 600ms ease;
+        -o-transition: all 600ms ease;
+        transition: all 600ms ease;
+	}
+	
+	body
+	{
+		font-family: "open sans";
+		font-weight: 300;
+		color: #000;
+		-webkit-transition: all 600ms ease;
+        -moz-transition: all 600ms ease;
+        -ms-transition: all 600ms ease;
+        -o-transition: all 600ms ease;
+        transition: all 600ms ease;
+	}
+
+	.wrap
+	{
+		text-align: center;
+		width: 90%;
+		margin: 0 auto;
+		-webkit-transition: all 600ms ease;
+        -moz-transition: all 600ms ease;
+        -ms-transition: all 600ms ease;
+        -o-transition: all 600ms ease;
+        transition: all 600ms ease;
+	}
+
+	.text
+	{
+		font-family: "montserrat", sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-size: 150px;
+		line-height: 90%;
+		margin-top: 10%;
+		border: 1px solid #fff;
+		-webkit-transition: all 600ms ease;
+        -moz-transition: all 600ms ease;
+        -ms-transition: all 600ms ease;
+        -o-transition: all 600ms ease;
+        transition: all 600ms ease;
+	}
+
+	.tag
+	{
+		color: #fff;
+		margin: 0 auto;
+		margin-top: 50px;
+		background-color: #ECCD35;
+		padding: 20px;
+		width: 500px;
+		-webkit-transition: all 600ms ease;
+        -moz-transition: all 600ms ease;
+        -ms-transition: all 600ms ease;
+        -o-transition: all 600ms ease;
+        transition: all 600ms ease;
+	}
+	
+	.tag p
+	{
+	    margin: 0;
+	    padding: 0;
+	}
+
+	a
+	{
+		text-decoration: none;
+		color: #666;
+		font-family: "karla";
+	}
+
+	.links
+	{
+		width: 500px;
+		margin: 0 auto;
+		margin-top: 15px;
+	}
+
+	ol
+	{
+		list-style-type: none;
+		margin:0px;
+		padding: 0px;
+	}
+	
+	ol li
+	{
+		display: inline;
+		text-transform: uppercase;
+		margin-left: 10px;
+	}
+
+	ol li:first-child
+	{
+		margin-left: 0px;
+	}
+
+	a i
+	{
+		font-size: 20px;
+	}
+	
+	.tag .second
+	{
+    	display: none;
+    	margin-top: 20px;
+	}
+	
+	.spacer
+	{
+	    margin-top: 5%;
+	    vertical-align: top;
+	    display: inline-block;
+	}
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script>
+	$(function(){
+		
+		var racolor = Math.floor(Math.random() * (7 - 1) + 1);
+		var color = "#000";
+
+		switch(racolor) {
+			case 1 : 
+				color = "#F14D4C"; // Pastel pinkish red
+				break;
+			case 2 :
+				color = "#1BE0B9"; // Bright blue
+				break;
+			case 3 : 
+				color = "#5D8784"; // Blue grey
+				break;
+			case 4 : 
+				color = "#FF3300"; // Sat redorange
+				break;
+			case 5 : 
+				color = "#ADD8C7"; // Mint
+				break;
+			case 6 :
+				color = "#FFCC00"; // Mustard
+				break;
+			default :
+				color = "#ADD8C7";
+		}
+
+		console.log(color);
+		$(".tag").css("backgroundColor",color);
+		$("a i").css("color",color);
+		
+		$(".event").click(function(){
+		    $(".spacer").slideUp("slow");
+		    $(".tag .first").fadeOut("slow");
+		    
+		    $(".wrap iframe").fadeIn("slow"); 
+		    $(".tag .second").fadeIn("slow");
+		});
+	});
+	</script>
+</head>
+<body>
+    <div class="spacer">&nbsp;</div>
+	<div class="wrap">
+		<div class="text">Under Con</span></span>struction</div>
+		<div class="tag"><p class="first">The Squarn themes blog is being revamped, please check back soon.</p>
+		    
+<iframe frameborder="0" scrolling="no" width="100%" height="190" src="http://www.tumblr.com/ask_form/squarn.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('ask_form').allowTransparency=true;</script><![endif]-->
+		    
+<p class="second">All themes are still supported, so if you have an issue, please be as specific as possible and ask away! Taking off anon helps as well.</p>
+		    
+		</div>
+		<div class="links">
+			<ol>
+				<li><a href="http://github.com/squarn"><i class="fa fa-github-square fa-fw"></i> Github</a></li>
+				<li><a href="http://psychosomatica.tumblr.com"><i class="fa fa-camera fa-fw"></i> Psychosomatica</a></li>
+				<li><a href="#" class="event"><i class="fa fa-question-circle fa-fw"></i> Ask</a></li>
+			</ol>
+		</div>
+	</div>
+</body>
+</html>

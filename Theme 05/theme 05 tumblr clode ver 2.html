@@ -23,53 +23,51 @@
     <meta name="image:bodybg" content=""/>
     
     <meta name="text:Font Size" content="11px"/>
-    <meta name="text:Font" content="Open Sans, sans-serif"/>
 
     <style>
 
-    html { height: 100%; }
+    html, body { height: 100%; }
 
     body
     {
-        font-family: {text:Font};
+        font-family: "Roboto", sans-serif;
         font-size: {text:Font Size};
         color: #252120;
-
         background: #ffffff url("{image:bodybg}");
+        background-attachment: fixed;
+    }
+
+    #container
+    {
+        min-height: 100%;
+        height: auto !important;
         height: 100%;
+        margin: 0 auto -30px;
     }
 
     /* OOCSS */
-    .noise-bg { background-image: url("http://static.tumblr.com/aan1aaf/JpHnclfhs/noise.png"); }
+    p           { margin: 10px 0px; }
+    .postbody a { color: #000;}
+    a           { color: #fff; text-decoration: none; }
+    img         { vertical-align: middle; max-width: 100%; }
+    canvas      { max-width: 100%; }
+    iframe      { max-width: 100%; }
+    ul, ol      { line-height: 170%; }
+    em          { font-weight: bold; }
 
-    p         { margin: 10px 0px; }
-    a         { color: #252120; text-decoration: none; }
-    img       { vertical-align: middle; max-width: 100%; }
-    canvas    { max-width: 100%; }
-    iframe    { max-width: 100%; }
-    ul, ol    { line-height: 170%; }
-    em        { font-weight: bold; }
-
-    /* Font Style Editing Order
-
-        Font Family
-        Font Size
-        Font Weight
-        Font Style
-        Color
-        Letter Spacing
-        Text Transform
-        Text Align
+    /*  Font Style Editing Order
+            Font Family
+            Font Size
+            Font Weight
+            Font Style
+            Color
+            Letter Spacing
+            Text Transform
+            Text Align
     */
-
-    .meta 
-    {
-        font-family: "Roboto", sans-serif;
-    }
 
     article header h2
     {
-        font-family: "Roboto", sans-serif;
         font-weight: 300;
         font-size: 15px;
         color: #3B383C;
@@ -84,31 +82,18 @@
         text-transform: uppercase;
         color: #FEFDF9;
         margin-top: -10px;
-        text-shadow: -1px 1px 1px #B9B8C2;
-        text-shadow: -1px 4px 13px rgba(40, 36, 35, 0.12);
+        text-shadow: -1px 1px 1px #000000;
     }
 
     #starter_2 h2
     {
-        font-family: "Roboto", sans-serif;
         font-weight: 300;
         font-size: 13px;
         letter-spacing: 8px;
     }
 
-    .title
-    {
-        font-family: "Times New Roman", serif;
-        font-size: 50px;
-        font-weight: 100;
-        font-style: italic;
-        letter-spacing: -3px;
-        text-transform: uppercase;
-    }
-
     aside h1
     {
-        font-family: "Roboto", sans-serif;
         font-weight: 300;
         font-size: 22px;
         color: #252120;
@@ -120,7 +105,6 @@
 
     .part
     {
-        font-family: "Roboto", sans-serif;
         font-size: 9px;
         color: #c1c1c1;
         letter-spacing: 1px;
@@ -130,22 +114,27 @@
 
     .sticktop
     {
-        position: absolute; 
+        position: relative; 
         bottom: 0; left: 0; right: 0;
         border-bottom: 0;
     }
 
-    #particles
+    #cover
     {
         /*background: #fff url("http://static.tumblr.com/aan1aaf/Nfjnjjbvl/cover.jpg");*/
         background-image: url("{image:background}");
         background-size: cover;
-        background-position: 10% 70%;
+        background-position: 10% 100%;
         position: relative !important;
-        height: 100%;
+        height: 220px;
         width: 100%;
         top: 0;
         left: 0;
+        -webkit-transition: all 2s ease;
+        -moz-transition: all 2s ease;
+        -ms-transition: all 2s ease;
+        -o-transition: all 2s ease;
+        transition: all 2s ease;
     }
 
     #starter
@@ -157,13 +146,9 @@
 
     #starter_2
     {
-        background-color: #fff;
-        background-color: rgba(223, 222, 228, .9);
         position: relative;
         left: -50%;
         text-align: center;
-        padding: 20px 20px 10px 20px;
-        border-radius: 7px;
     }
 
     #starter_2 h1
@@ -175,10 +160,10 @@
     .description
     {
         margin-top: 10px;
+        font-family: Calibri, sans-serif;
         font-size: 8px;
-        color: #666; /* For Degradation */
-        color: rgba(205, 203, 208, 0.7);
-        margin-left: -48%;
+        color: #666;
+        color: rgba(143, 143, 143, 0.52);
         text-transform: uppercase;
     }
 
@@ -242,12 +227,11 @@
 
     .tagline
     {
-        font-family: "Roboto", sans-serif;
-        font-weight: 300;
+        font-family: Calibri, sans-serif;
         text-transform: uppercase;
         padding-bottom: 10px;
-        font-size: 10px;
-        letter-spacing: 8px;
+        font-size: 8px;
+        letter-spacing: 5px;
         z-index: 10;
         line-height: 90%;
         padding-top: 10px;
@@ -257,7 +241,6 @@
     .stickt
     {
         position: fixed;
-        letter-spacing: 5px;
         top: 0;
         padding-top: 10px;
     }
@@ -334,13 +317,13 @@
 
     main
     {
-        width: 860px;
+        width: 840px;
         margin: 0 auto;
         margin-top: 20px;
         position: relative;
-        left: -150px;
-
+        left: -158px;
         min-height: 500px;
+        padding-bottom: 100px;
     }
 
     .pbody
@@ -348,34 +331,40 @@
         padding-top: 3px;
     }
 
-    /*.top_header
-    {
-        border-bottom: 2px solid #2d2d2d;
-    }*/
-
     .article h1 { font-size: 1.8em; }
     .article h2 { font-size: 1.5em; }
     .article h3 { font-size: 1.2em; }
+    
+    /* Wrapper around entire post */
 
     .gutter
     {
         width: 500px;
         max-width: 500px;
         padding: 15px 17px 17px 17px;
-        border: 10px solid #252120;
+        /*border: 10px solid #252120;*/
         background-color: #fff;
-        margin-top: 40px;
+    }
+    
+    .postbody article
+    {
+        margin-top: 80px;
     }
 
-    article:first-of-type .gutter
+    article:first-of-type
     {
-        margin-top: 0;
+        margin-top: 9px;
+    }
+    
+    .gutter:first-of-type
+    {
+        margin-top: 8px;
     }
 
     .postbody, .postbody_insert
     {
         float: right;
-        width: 554px;
+        width: 534px;
         margin-top: 20px;
     }
 
@@ -432,8 +421,8 @@
     {
         display: inline-block;
         padding: 2px 6px;
-        background: #252120 url("noise.png");
         color: #fff;
+        background-color: #252120;
         text-transform: uppercase;
         font-size: 10px;
         letter-spacing: 1px;
@@ -476,6 +465,32 @@
     .notes-list
     {
         margin: 0 auto;
+        text-transform: capitalize;
+    }
+
+    .notes-list li
+    {
+        padding-left: 5px;
+        line-height: 20px;
+    }
+
+    .notes-list li:last-of-type
+    {
+        list-style-type: none;
+    }
+
+    .notes-list li:last-of-type a
+    {
+        background-color: #252120;
+        color: #fff;
+        padding: 6px 8px;
+        font-size: 12px;
+        line-height: 50px;
+    }
+
+    .notes-list li blockquote
+    {
+        background-color: #fff;
     }
 
     .notes-list img
@@ -490,7 +505,7 @@
         border-radius: 5px;
         padding: 10px;
         margin-bottom: 20px;
-        margin-top: -20px;
+        margin-top: 0px;
     }
 
     .info a
@@ -503,15 +518,17 @@
     {
         height: 10px;
         font-size: 10px;
-        /*position: relative;
-        bottom: 0;
-        left: 0;
-        right: 0;*/
+        position: absolute;
+        width: 100%;
         background-color: #252120;
         color: #ffffff;
         padding: 10px 0;
         text-align: center;
-        margin-top: 40px;
+    }
+
+    .pad
+    {
+        height: 30px;
     }
 
     /* Source Code */
@@ -551,10 +568,14 @@
     }
 
     {block:IndexPage}
-    .x
+    .poet, .poet pre
     {
-        display:none;
+        font-family: Calibri, sans-serif;
+        line-height: 100%;
+        font-size: 8px;
+        text-transform: uppercase;
     }
+
     {/block:IndexPage}
 
     ::-webkit-scrollbar-thumb:vertical { background-color: #fff; }
@@ -565,24 +586,21 @@
     <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script> -->
 </head>
-
 <body>
-    <div id="particles">
+    <div id="container">
+    <div id="cover">
         <div id="starter" class="fjalla">
             <div id="starter_2">
                 <h1>Squarn Themes</h1>
                 <h2>Theme blog of <a style="font-style:italic;margin-left:-3px;" href="http://www.psychosomatica.tumblr.com">Psychosomatica</a></h2>
             </div>
-            <div class="description">
-                <p>SQUARN: {PP-V} Square &mdash; Make square or rectangular.</p>
-            </div>
         </div>
     </div>
 
     <header class="sticktop top_header">
-        <div class="title noise-bg">Love is a warm, buttered gun!</div>
-
-        <div class="tagline noise-bg">
+        <!-- <div class="title">Love is a warm, buttered gun!</div>
+ -->
+        <div class="tagline">
             {block:Pagination}{block:PreviousPage}<span class="pagp">
                 <a href="{PreviousPage}">Back &mdash;</a> </span>
             {/block:PreviousPage}{/block:Pagination}
@@ -594,11 +612,10 @@
     </header>
 
         <main class="group">
-        
             <aside>
                 <h1>Squarn Themes</h1>
 
-                <div class="part noise-bg">
+                <div class="part">
                     <ul id="navigation">
                         <li class="nav"><a href="{BlogURL}">Home</a></li>
                         <li class="nav"><a href="http://squarn.tumblr.com/themes">Themes</a></li>
@@ -610,7 +627,7 @@
                     </ul>
                 </div>
 
-                <div class="part noise-bg">
+                <div class="part">
                     <!-- <h3>ABOUT</h3> -->
                     <div class="avatar"></div>
                     
@@ -622,6 +639,11 @@
                     
                     Won't trick you on their <a href="">Terms of Service</a> page.</p>
                 </div>
+
+                <div class="description">
+                <p>SQUARN: {PP-V} Square &mdash; Make square or rectangular.</p>
+                <p class="poet">Soon, soon I will climb <br> from this blackened earth<br> into the diffident light</p>
+                </div>
             </aside>
             
             <div class="postbody">
@@ -631,7 +653,7 @@
                     <div class="gutter">
                         {block:Title} <header>
                             <h2>
-                                <span style="text-transform: uppercase;">{Title}</span>
+                                <span style="text-transform: uppercase;"><a href="{Permalink}">{Title}</a></span>
                             </h2>
                         </header>{/block:Title}
                         <div class="pbody">
@@ -687,7 +709,7 @@
 
                         {block:Date}
                         <p class="mnotes"><a href="{Permalink}">posted {Month} {DayOfMonth}<sup>{DayOfMonthSuffix}</sup></a>
-                            {block:NoteCount}, with <a href="#">{NoteCountWithLabel}</a>{/block:NoteCount}
+                            {block:NoteCount}, with <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}
                         </p>
                         {/block:Date}
                     </div>
@@ -708,41 +730,53 @@
                 </article>
             {/block:Posts}
             </div>
-            
         </main>
-    
-    <footer class="noise-bg">
+        <div class="pad"></div>
+    </div>
+
+    <footer>
         The days of men are coming to an end.
     </footer>
+    
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
     <script type="text/javascript" charset="utf-8" async defer>
         $(document).ready(function(){
         // By Squarn Themes
+        
+        {block:TagPage}
+        $('article').removeClass('x');
+        {block:TagPage}
+        
+        {block:IndexPage}
+        $('.x').remove();
+        {/block:IndexPage}
 
         {block:PermalinkPage}
             var top = $(".top_header").offset().top;
             $(document).scrollTop(top);
         {/block:PermalinkPage}
-        
+       
+        $(function(){
+            $('.poet').hover(function(){
+                $('#cover').css('background-position', '11% 10%');
+                }, function(){
+                $('#cover').css('background-position', '');
+                console.log("uhm.");
+            });
+        });
 
         // Meta slide down
         {block:IndexPage}
-        $(function(){
-            $('article').mouseenter(
-                function(){
-                    $('.meta', this).stop().slideDown(1000,"easeOutBounce");
-                    //$(this).css("marginBottom",0);
-                }
-            );
-            $('article').mouseleave(
-                function(){
-                    $('.meta', this).stop().slideUp(300,"linear");
-                    //$(this).css("marginBottom",30);
-                }
-            );  
-        });
+        $('article').hover(
+        function(){
+            $('.meta', this).stop().slideDown(1000,"easeOutBounce");
+        },
+        function(){
+            $('.meta', this).stop().slideUp(300,"linear");
+        }
+        );
 
         // Tagline Stick
         $(function(){
@@ -763,7 +797,7 @@
                     $('.pagn').hide();
                     $('.pagp').hide();
                 }
-            });
+            });  
         });
         {/block:IndexPage}
 
@@ -772,20 +806,6 @@
             function() {$(this).stop().animate({opacity: 0.5, paddingLeft: "10"}, 300, "easeOutBounce", function() {});},
             function() {$(this).stop().animate({opacity: 1, paddingLeft: "0"}, 300, "easeOutBounce", function() {});}
         );
-
-        if ( document.referrer === null || document.referrer.indexOf(window.location.hostname) < 0 ) 
-        {
-            
-        }
-
-        else {
-            // $('#particles').css("height",100);
-            // $('#particles canvas').css("position","fixed");
-            // $('.top_header').css("display","none");
-            var top = $(".top_header").offset().top;
-            $(document).scrollTop(top);
-        }
-
         });
     </script>
 </body>
