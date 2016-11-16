@@ -30,7 +30,6 @@ Send an e-mail to Kotsuzui@gmail.com
 ## Terms of Use
 
 - Do not claim any theme or code portion as your own
-- If you are inspired by a theme or theme element and mirror it on your own theme, please leave a credit to Squarn.tumblr.com
 - Do not remove or tamper with the credit on the top of a theme source
 - Do not remove the theme credit in the body of the layout
 - Squarn.tumblr.com will supply support through asks, github, and e-mail. 
